@@ -40,7 +40,7 @@ The app is the first prototypr for a text based NFT market place for posting, an
 - Wallet id
 - ...
 
-## Bacis functions
+## Basic functions
 - Users beable to login/logout
 - Users able to post ideas
 - ...
