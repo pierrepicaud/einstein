@@ -10,7 +10,9 @@ A platform for exchanging ideas.
 ## About einstein
 "It's like twitter ~~for programmers~~ but you can exchange your your tweets" - Thomas
 
-The app is the first prototypr for a text based NFT market place for posting, and selling ideas. The first version of a this app will simulate the actuall app. In other words, this app is just a prototype of the full app.
+Frequently programmer or team of professionals may meet the problem that they don't have idea for their next project. On the other side, creative guys may have idea for project or know how to solve most common problem but they doesn't have developers team who will help them. This application will allow to creators earn money just for their ideas and to developers simplify communication with customers and always have ideas for projects.
+The app is the first prototypr for a text based NFT market place for posting, and selling ideas. 
+ The first version of a this app will simulate the actuall app. In other words, this app is just a prototype of the full app.
 
 ## Features
 - Users can login/create.
