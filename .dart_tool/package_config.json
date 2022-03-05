@@ -38,6 +38,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "crypto",
+      "rootUri": "file:///home/wat4er/.pub-cache/hosted/pub.dartlang.org/crypto-3.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "cupertino_icons",
       "rootUri": "file:///home/wat4er/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.4",
       "packageUri": "lib/",
@@ -64,6 +70,12 @@
     {
       "name": "flutter_test",
       "rootUri": "file:///opt/flutter/packages/flutter_test",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "hive",
+      "rootUri": "file:///home/wat4er/.pub-cache/hosted/pub.dartlang.org/hive-2.0.6",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -158,7 +170,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-03-05T14:01:13.761902Z",
+  "generated": "2022-03-05T22:43:22.480177Z",
   "generator": "pub",
   "generatorVersion": "2.16.1"
 }
