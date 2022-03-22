@@ -52,7 +52,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlutterLogin(
       title: Constants.appName,
-      logo: const AssetImage('assets/images/ecorp.png'),
+      logo: const AssetImage('../logo.png'),
       logoTag: Constants.logoTag,
       titleTag: Constants.titleTag,
       navigateBackAfterRecovery: true,
@@ -61,8 +61,8 @@ class LoginScreen extends StatelessWidget {
       loginAfterSignUp: false,
       loginProviders: [
         LoginProvider(
-          button: Buttons.LinkedIn,
-          label: 'Sign in with LinkedIn',
+          button: Buttons.Twitter,
+          label: 'Twitter',
           callback: () async {
             return null;
           },
@@ -70,23 +70,7 @@ class LoginScreen extends StatelessWidget {
             // put here your logic to conditionally show the additional fields
             return Future.value(true);
           },
-        ),
-        LoginProvider(
-          icon: FontAwesomeIcons.google,
-          label: 'Google',
-          callback: () async {
-            return null;
-          },
-        ),
-        LoginProvider(
-          icon: FontAwesomeIcons.githubAlt,
-          callback: () async {
-            debugPrint('start github sign in');
-            await Future.delayed(loginTime);
-            debugPrint('stop github sign in');
-            return null;
-          },
-        ),
+        )
       ],
       termsOfService: [
         TermOfService(
