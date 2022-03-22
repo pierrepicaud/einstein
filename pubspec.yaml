@@ -11,8 +11,13 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+
   hive: ^2.0.6
   crypto: ^3.0.1
+
+  firebase_core: ^1.13.1
+  firebase_auth: ^3.3.11
+  twitter_login: ^4.0.1
 
 dev_dependencies:
   flutter_test:
