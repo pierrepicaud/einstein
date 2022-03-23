@@ -10,7 +10,7 @@ class AccountDatabase {
       String email, String password) async {
     try {
       UserCredential userCredential = await _auth.signInWithEmailAndPassword(
-          email: "barry.allen@example.com", password: "SuperSecretPassword!");
+          email: email, password: password);
       return userCredential;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
@@ -27,8 +27,8 @@ class AccountDatabase {
     try {
       UserCredential userCredential =
           await _auth.createUserWithEmailAndPassword(
-              email: "barry.allen@example.com",
-              password: "SuperSecretPassword!");
+              email: email,
+              password: password);
       return userCredential;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {

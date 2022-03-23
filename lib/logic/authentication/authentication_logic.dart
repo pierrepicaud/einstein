@@ -15,16 +15,16 @@ class Authentication {
     });
   }
 
-  Future<bool> signIn(String login, String password) async {
+  Future<String?> signIn(String login, String password) async {
     _setListener();
     final userCred = await db.signInWithPassword(login, password);
-    return userCred != null;
+    return userCred != null? null : "User not found";
   }
 
-  Future<bool> signUp(String login, String password) async {
+  Future<String?> signUp(String login, String password) async {
     _setListener();
     final userCred = await db.signUpWithPassword(login, password);
-    return userCred != null;
+    return userCred != null? null : "Cannot create such user";
   }
 
   Future<bool> signInWithTwitter() async {

@@ -4,24 +4,7 @@
             "outputFile": "/home/wat4er/Study/Flutter/einstein/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-da/values-da.xml",
             "map": [
                 {
-                    "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/7dd77388cce3f359ce455eec9aaa3ec9/jetified-play-services-base-17.1.0/res/values-da/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "245,349,541,666,773,975,1098,1244,1374,1589,1693,1886,2011,2215,2419,2511,2599",
-                        "endColumns": "103,191,124,106,201,122,145,129,214,103,192,124,203,203,91,87,102",
-                        "endOffsets": "348,540,665,772,974,1097,1243,1373,1588,1692,1885,2010,2214,2418,2510,2598,2701"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,213,405,534,645,847,974,1124,1444,1659,1767,1960,2089,2293,2501,2597,2689",
-                        "endColumns": "107,191,128,110,201,126,149,133,214,107,192,128,203,207,95,91,106",
-                        "endOffsets": "208,400,529,640,842,969,1119,1253,1654,1762,1955,2084,2288,2496,2592,2684,2791"
-                    }
-                },
-                {
-                    "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/fac72d06312fcb43068360ce90e568c9/jetified-play-services-basement-17.1.0/res/values-da/values.xml",
+                    "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/f849fbc2f3558608220e6a8128cc2d69/jetified-play-services-basement-17.1.0/res/values-da/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/res/values-da/values-da.xml",
+                    "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/values-da/values-da.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -55,7 +38,24 @@
                     }
                 },
                 {
-                    "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/aedf566e5f243b523c377082a7dcd67b/browser-1.3.0/res/values-da/values-da.xml",
+                    "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/bf0b65c331b116fb5eb73feb7e866481/jetified-play-services-base-17.1.0/res/values-da/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "245,349,541,666,773,975,1098,1244,1374,1589,1693,1886,2011,2215,2419,2511,2599",
+                        "endColumns": "103,191,124,106,201,122,145,129,214,103,192,124,203,203,91,87,102",
+                        "endOffsets": "348,540,665,772,974,1097,1243,1373,1588,1692,1885,2010,2214,2418,2510,2598,2701"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,213,405,534,645,847,974,1124,1444,1659,1767,1960,2089,2293,2501,2597,2689",
+                        "endColumns": "107,191,128,110,201,126,149,133,214,107,192,128,203,207,95,91,106",
+                        "endOffsets": "208,400,529,640,842,969,1119,1253,1654,1762,1955,2084,2288,2496,2592,2684,2791"
+                    }
+                },
+                {
+                    "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/4af9ffe5ecd0677310b3d551e5d1c1d0/browser-1.3.0/res/values-da/values-da.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

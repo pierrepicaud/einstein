@@ -1,3 +1,4 @@
+import 'package:einstein/logic/authentication/authentication_logic.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 import 'package:flutter_login/flutter_login.dart';
@@ -9,21 +10,19 @@ import '../dashboard_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   static const routeName = '/auth';
+  final _authLogic = Authentication();
 
-  const LoginScreen({Key? key}) : super(key: key);
+  LoginScreen({Key? key}) : super(key: key);
 
   Duration get loginTime => Duration(milliseconds: timeDilation.ceil() * 2250);
 
   Future<String?> _loginUser(LoginData data) {
-    return Future.delayed(loginTime).then((_) {
-      return null;
-    });
+    return _authLogic.signIn(data.name, data.password);
   }
 
   Future<String?> _signupUser(SignupData data) {
-    return Future.delayed(loginTime).then((_) {
-      return null;
-    });
+    if(data.name == null || data.password == null) return Future.value("Provide email and password");
+    return _authLogic.signUp(data.name!, data.password!);
   }
 
   Future<String?> _recoverPassword(String name) {
@@ -46,8 +45,8 @@ class LoginScreen extends StatelessWidget {
       logoTag: Constants.logoTag,
       titleTag: Constants.titleTag,
       navigateBackAfterRecovery: true,
-      onConfirmRecover: _signupConfirm,
-      onConfirmSignup: _signupConfirm,
+      // onConfirmRecover: _signupConfirm,
+      // onConfirmSignup: _signupConfirm,
       loginAfterSignUp: true,
       loginProviders: [
         LoginProvider(
@@ -69,27 +68,27 @@ class LoginScreen extends StatelessWidget {
             text: 'Term of services',
             linkUrl: 'https://github.com/NearHuscarl/flutter_login'),
       ],
-      additionalSignupFields: [
-        const UserFormField(
-            keyName: 'Username', icon: Icon(FontAwesomeIcons.userAlt)),
-        const UserFormField(keyName: 'Name'),
-        const UserFormField(keyName: 'Surname'),
-        UserFormField(
-          keyName: 'phone_number',
-          displayName: 'Phone Number',
-          userType: LoginUserType.phone,
-          fieldValidator: (value) {
-            var phoneRegExp = RegExp(
-                '^(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}\$');
-            if (value != null &&
-                value.length < 7 &&
-                !phoneRegExp.hasMatch(value)) {
-              return "This isn't a valid phone number";
-            }
-            return null;
-          },
-        ),
-      ],
+      // additionalSignupFields: [
+      //   const UserFormField(
+      //       keyName: 'Username', icon: Icon(FontAwesomeIcons.userAlt)),
+      //   const UserFormField(keyName: 'Name'),
+      //   const UserFormField(keyName: 'Surname'),
+      //   UserFormField(
+      //     keyName: 'phone_number',
+      //     displayName: 'Phone Number',
+      //     userType: LoginUserType.phone,
+      //     fieldValidator: (value) {
+      //       var phoneRegExp = RegExp(
+      //           '^(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}\$');
+      //       if (value != null &&
+      //           value.length < 7 &&
+      //           !phoneRegExp.hasMatch(value)) {
+      //         return "This isn't a valid phone number";
+      //       }
+      //       return null;
+      //     },
+      //   ),
+      // ],
       initialAuthMode: AuthMode.login,
       // scrollable: true,
       // hideProvidersTitle: false,
@@ -204,23 +203,23 @@ class LoginScreen extends StatelessWidget {
         return null;
       },
       onLogin: (loginData) {
-        debugPrint('Login info');
-        debugPrint('Name: ${loginData.name}');
-        debugPrint('Password: ${loginData.password}');
+        print('Login info');
+        print('Name: ${loginData.name}');
+        print('Password: ${loginData.password}');
         return _loginUser(loginData);
       },
       onSignup: (signupData) {
-        debugPrint('Signup info');
-        debugPrint('Name: ${signupData.name}');
-        debugPrint('Password: ${signupData.password}');
+        print('Signup info');
+        print('Name: ${signupData.name}');
+        print('Password: ${signupData.password}');
 
         signupData.additionalSignupData?.forEach((key, value) {
-          debugPrint('$key: $value');
+          print('$key: $value');
         });
         if (signupData.termsOfService.isNotEmpty) {
-          debugPrint('Terms of service: ');
+          print('Terms of service: ');
           for (var element in signupData.termsOfService) {
-            debugPrint(
+            print(
                 ' - ${element.term.id}: ${element.accepted == true ? 'accepted' : 'rejected'}');
           }
         }
@@ -232,8 +231,8 @@ class LoginScreen extends StatelessWidget {
         ));
       },
       onRecoverPassword: (name) {
-        debugPrint('Recover password info');
-        debugPrint('Name: $name');
+        print('Recover password info');
+        print('Name: $name');
         return _recoverPassword(name);
         // Show new password dialog
       },
