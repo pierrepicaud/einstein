@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_login/theme.dart';
 import 'package:flutter_login/widgets.dart';
-import 'transition_route_observer.dart';
+import '../logic/transitions/transition_route_observer.dart';
 import 'widgets/fade_in.dart';
-import 'constants.dart';
+import '../data/constants.dart';
 import 'widgets/animated_numeric_text.dart';
 import 'widgets/round_button.dart';
 
