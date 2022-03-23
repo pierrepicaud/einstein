@@ -5,7 +5,7 @@
 5    android:versionName="1.0.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="16"
+8        android:minSdkVersion="17"
 9        android:targetSdkVersion="31" />
 10    <!--
 11         Flutter needs it to communicate with the running application
@@ -15,67 +15,232 @@
 14-->/home/wat4er/Study/Flutter/einstein/android/app/src/debug/AndroidManifest.xml:6:5-66
 14-->/home/wat4er/Study/Flutter/einstein/android/app/src/debug/AndroidManifest.xml:6:22-64
 15
-16    <application
-17        android:name="android.app.Application"
-18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-18-->[androidx.core:core:1.6.0] /home/wat4er/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/AndroidManifest.xml:24:18-86
-19        android:debuggable="true"
-20        android:icon="@mipmap/ic_launcher"
-21        android:label="einstein" >
-22        <activity
-23            android:name="com.example.einstein.MainActivity"
-24            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-25            android:exported="true"
-26            android:hardwareAccelerated="true"
-27            android:launchMode="singleTop"
-28            android:theme="@style/LaunchTheme"
-29            android:windowSoftInputMode="adjustResize" >
-30
-31            <!--
-32                 Specifies an Android theme to apply to this Activity as soon as
-33                 the Android process has started. This theme is visible to the user
-34                 while the Flutter UI initializes. After that, this theme continues
-35                 to determine the Window background behind the Flutter UI.
-36            -->
-37            <meta-data
-38                android:name="io.flutter.embedding.android.NormalTheme"
-39                android:resource="@style/NormalTheme" />
-40
-41            <intent-filter>
-42                <action android:name="android.intent.action.MAIN" />
-43
-44                <category android:name="android.intent.category.LAUNCHER" />
-45            </intent-filter>
-46        </activity>
-47        <!--
-48             Don't delete the meta-data below.
-49             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-50        -->
-51        <meta-data
-52            android:name="flutterEmbedding"
-53            android:value="2" />
-54
-55        <activity
-55-->[:url_launcher_android] /home/wat4er/Study/Flutter/einstein/build/url_launcher_android/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:74
-56            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
-56-->[:url_launcher_android] /home/wat4er/Study/Flutter/einstein/build/url_launcher_android/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-74
-57            android:exported="false"
-57-->[:url_launcher_android] /home/wat4er/Study/Flutter/einstein/build/url_launcher_android/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-37
-58            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-58-->[:url_launcher_android] /home/wat4er/Study/Flutter/einstein/build/url_launcher_android/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-71
-59
-60        <uses-library
-60-->[androidx.window:window:1.0.0-beta04] /home/wat4er/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
-61            android:name="androidx.window.extensions"
-61-->[androidx.window:window:1.0.0-beta04] /home/wat4er/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
-62            android:required="false" />
-62-->[androidx.window:window:1.0.0-beta04] /home/wat4er/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
-63        <uses-library
-63-->[androidx.window:window:1.0.0-beta04] /home/wat4er/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
-64            android:name="androidx.window.sidecar"
-64-->[androidx.window:window:1.0.0-beta04] /home/wat4er/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
-65            android:required="false" />
-65-->[androidx.window:window:1.0.0-beta04] /home/wat4er/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
-66    </application>
-67
-68</manifest>
+16    <queries>
+16-->[:twitter_login] /home/wat4er/Study/Flutter/einstein/build/twitter_login/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-11:15
+17        <intent>
+17-->[:twitter_login] /home/wat4er/Study/Flutter/einstein/build/twitter_login/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-10:18
+18            <action android:name="android.support.customtabs.action.CustomTabsService" />
+18-->[:twitter_login] /home/wat4er/Study/Flutter/einstein/build/twitter_login/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-90
+18-->[:twitter_login] /home/wat4er/Study/Flutter/einstein/build/twitter_login/intermediates/library_manifest/debug/AndroidManifest.xml:9:21-87
+19        </intent>
+20    </queries>
+21
+22    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+22-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:24:5-79
+22-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:24:22-76
+23
+24    <application
+25        android:name="android.app.Application"
+26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+26-->[androidx.core:core:1.6.0] /home/wat4er/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/AndroidManifest.xml:24:18-86
+27        android:debuggable="true"
+28        android:icon="@mipmap/ic_launcher"
+29        android:label="einstein" >
+30        <activity
+31            android:name="com.example.einstein.MainActivity"
+32            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+33            android:exported="true"
+34            android:hardwareAccelerated="true"
+35            android:launchMode="singleTop"
+36            android:theme="@style/LaunchTheme"
+37            android:windowSoftInputMode="adjustResize" >
+38
+39            <!--
+40                 Specifies an Android theme to apply to this Activity as soon as
+41                 the Android process has started. This theme is visible to the user
+42                 while the Flutter UI initializes. After that, this theme continues
+43                 to determine the Window background behind the Flutter UI.
+44            -->
+45            <meta-data
+46                android:name="io.flutter.embedding.android.NormalTheme"
+47                android:resource="@style/NormalTheme" />
+48
+49            <intent-filter>
+50                <action android:name="android.intent.action.MAIN" />
+51
+52                <category android:name="android.intent.category.LAUNCHER" />
+53            </intent-filter>
+54        </activity>
+55        <!--
+56             Don't delete the meta-data below.
+57             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+58        -->
+59        <meta-data
+60            android:name="flutterEmbedding"
+61            android:value="2" />
+62
+63        <service
+63-->[:firebase_auth] /home/wat4er/Study/Flutter/einstein/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
+64            android:name="com.google.firebase.components.ComponentDiscoveryService"
+64-->[:firebase_auth] /home/wat4er/Study/Flutter/einstein/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:8:18-89
+65            android:directBootAware="true"
+65-->[com.google.firebase:firebase-common:20.0.0] /home/wat4er/.gradle/caches/transforms-2/files-2.1/3660c810531840b7362e70bfaa69e2c8/jetified-firebase-common-20.0.0/AndroidManifest.xml:35:13-43
+66            android:exported="false" >
+66-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:76:13-37
+67            <meta-data
+67-->[:firebase_auth] /home/wat4er/Study/Flutter/einstein/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+68                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
+68-->[:firebase_auth] /home/wat4er/Study/Flutter/einstein/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-124
+69                android:value="com.google.firebase.components.ComponentRegistrar" />
+69-->[:firebase_auth] /home/wat4er/Study/Flutter/einstein/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+70            <meta-data
+70-->[:firebase_core] /home/wat4er/Study/Flutter/einstein/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+71                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+71-->[:firebase_core] /home/wat4er/Study/Flutter/einstein/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-124
+72                android:value="com.google.firebase.components.ComponentRegistrar" />
+72-->[:firebase_core] /home/wat4er/Study/Flutter/einstein/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+73            <meta-data
+73-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:77:13-79:85
+74                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+74-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:78:17-109
+75                android:value="com.google.firebase.components.ComponentRegistrar" />
+75-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:79:17-82
+76        </service>
+77
+78        <activity android:name="com.maru.twitter_login.chrome_custom_tabs.ChromeCustomTabsActivity" />
+78-->[:twitter_login] /home/wat4er/Study/Flutter/einstein/build/twitter_login/intermediates/library_manifest/debug/AndroidManifest.xml:14:9-103
+78-->[:twitter_login] /home/wat4er/Study/Flutter/einstein/build/twitter_login/intermediates/library_manifest/debug/AndroidManifest.xml:14:19-100
+79        <activity
+79-->[:url_launcher_android] /home/wat4er/Study/Flutter/einstein/build/url_launcher_android/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:74
+80            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+80-->[:url_launcher_android] /home/wat4er/Study/Flutter/einstein/build/url_launcher_android/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-74
+81            android:exported="false"
+81-->[:url_launcher_android] /home/wat4er/Study/Flutter/einstein/build/url_launcher_android/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-37
+82            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+82-->[:url_launcher_android] /home/wat4er/Study/Flutter/einstein/build/url_launcher_android/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-71
+83
+84        <uses-library
+84-->[androidx.window:window:1.0.0-beta04] /home/wat4er/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+85            android:name="androidx.window.extensions"
+85-->[androidx.window:window:1.0.0-beta04] /home/wat4er/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+86            android:required="false" />
+86-->[androidx.window:window:1.0.0-beta04] /home/wat4er/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+87        <uses-library
+87-->[androidx.window:window:1.0.0-beta04] /home/wat4er/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+88            android:name="androidx.window.sidecar"
+88-->[androidx.window:window:1.0.0-beta04] /home/wat4er/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+89            android:required="false" />
+89-->[androidx.window:window:1.0.0-beta04] /home/wat4er/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+90
+91        <activity
+91-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:27:9-44:20
+92            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+92-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:28:13-80
+93            android:excludeFromRecents="true"
+93-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:29:13-46
+94            android:exported="true"
+94-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:30:13-36
+95            android:launchMode="singleTask"
+95-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:31:13-44
+96            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+96-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:32:13-72
+97            <intent-filter>
+97-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:33:13-43:29
+98                <action android:name="android.intent.action.VIEW" />
+98-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:34:17-69
+98-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:34:25-66
+99
+100                <category android:name="android.intent.category.DEFAULT" />
+100-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:17-76
+100-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:27-73
+101                <category android:name="android.intent.category.BROWSABLE" />
+101-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:17-78
+101-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:27-75
+102
+103                <data
+103-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:39:17-42:51
+104                    android:host="firebase.auth"
+104-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:40:21-49
+105                    android:path="/"
+105-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:41:21-37
+106                    android:scheme="genericidp" />
+106-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:42:21-48
+107            </intent-filter>
+108        </activity>
+109        <activity
+109-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:45:9-62:20
+110            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+110-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:46:13-79
+111            android:excludeFromRecents="true"
+111-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:47:13-46
+112            android:exported="true"
+112-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:48:13-36
+113            android:launchMode="singleTask"
+113-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:49:13-44
+114            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+114-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:50:13-72
+115            <intent-filter>
+115-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:51:13-61:29
+116                <action android:name="android.intent.action.VIEW" />
+116-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:34:17-69
+116-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:34:25-66
+117
+118                <category android:name="android.intent.category.DEFAULT" />
+118-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:17-76
+118-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:27-73
+119                <category android:name="android.intent.category.BROWSABLE" />
+119-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:17-78
+119-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:27-75
+120
+121                <data
+121-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:39:17-42:51
+122                    android:host="firebase.auth"
+122-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:40:21-49
+123                    android:path="/"
+123-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:41:21-37
+124                    android:scheme="recaptcha" />
+124-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:42:21-48
+125            </intent-filter>
+126        </activity>
+127
+128        <service
+128-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:64:9-73:19
+129            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
+129-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:65:13-101
+130            android:enabled="true"
+130-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:66:13-35
+131            android:exported="false" >
+131-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:67:13-37
+132            <intent-filter>
+132-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:68:13-72:29
+133                <action android:name="com.google.firebase.auth.api.gms.service.START" />
+133-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:69:17-89
+133-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:69:25-86
+134
+135                <category android:name="android.intent.category.DEFAULT" />
+135-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:17-76
+135-->[com.google.firebase:firebase-auth:21.0.1] /home/wat4er/.gradle/caches/transforms-2/files-2.1/0a00e3126b4a8a60c94c0ea395e2f96e/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:27-73
+136            </intent-filter>
+137        </service>
+138
+139        <activity
+139-->[com.google.android.gms:play-services-base:17.1.0] /home/wat4er/.gradle/caches/transforms-2/files-2.1/7dd77388cce3f359ce455eec9aaa3ec9/jetified-play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
+140            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+140-->[com.google.android.gms:play-services-base:17.1.0] /home/wat4er/.gradle/caches/transforms-2/files-2.1/7dd77388cce3f359ce455eec9aaa3ec9/jetified-play-services-base-17.1.0/AndroidManifest.xml:24:13-79
+141            android:exported="false"
+141-->[com.google.android.gms:play-services-base:17.1.0] /home/wat4er/.gradle/caches/transforms-2/files-2.1/7dd77388cce3f359ce455eec9aaa3ec9/jetified-play-services-base-17.1.0/AndroidManifest.xml:25:13-37
+142            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+142-->[com.google.android.gms:play-services-base:17.1.0] /home/wat4er/.gradle/caches/transforms-2/files-2.1/7dd77388cce3f359ce455eec9aaa3ec9/jetified-play-services-base-17.1.0/AndroidManifest.xml:26:13-72
+143
+144        <provider
+144-->[com.google.firebase:firebase-common:20.0.0] /home/wat4er/.gradle/caches/transforms-2/files-2.1/3660c810531840b7362e70bfaa69e2c8/jetified-firebase-common-20.0.0/AndroidManifest.xml:26:9-31:39
+145            android:name="com.google.firebase.provider.FirebaseInitProvider"
+145-->[com.google.firebase:firebase-common:20.0.0] /home/wat4er/.gradle/caches/transforms-2/files-2.1/3660c810531840b7362e70bfaa69e2c8/jetified-firebase-common-20.0.0/AndroidManifest.xml:27:13-77
+146            android:authorities="com.example.einstein.firebaseinitprovider"
+146-->[com.google.firebase:firebase-common:20.0.0] /home/wat4er/.gradle/caches/transforms-2/files-2.1/3660c810531840b7362e70bfaa69e2c8/jetified-firebase-common-20.0.0/AndroidManifest.xml:28:13-72
+147            android:directBootAware="true"
+147-->[com.google.firebase:firebase-common:20.0.0] /home/wat4er/.gradle/caches/transforms-2/files-2.1/3660c810531840b7362e70bfaa69e2c8/jetified-firebase-common-20.0.0/AndroidManifest.xml:29:13-43
+148            android:exported="false"
+148-->[com.google.firebase:firebase-common:20.0.0] /home/wat4er/.gradle/caches/transforms-2/files-2.1/3660c810531840b7362e70bfaa69e2c8/jetified-firebase-common-20.0.0/AndroidManifest.xml:30:13-37
+149            android:initOrder="100" />
+149-->[com.google.firebase:firebase-common:20.0.0] /home/wat4er/.gradle/caches/transforms-2/files-2.1/3660c810531840b7362e70bfaa69e2c8/jetified-firebase-common-20.0.0/AndroidManifest.xml:31:13-36
+150
+151        <meta-data
+151-->[com.google.android.gms:play-services-basement:17.1.0] /home/wat4er/.gradle/caches/transforms-2/files-2.1/fac72d06312fcb43068360ce90e568c9/jetified-play-services-basement-17.1.0/AndroidManifest.xml:23:9-25:69
+152            android:name="com.google.android.gms.version"
+152-->[com.google.android.gms:play-services-basement:17.1.0] /home/wat4er/.gradle/caches/transforms-2/files-2.1/fac72d06312fcb43068360ce90e568c9/jetified-play-services-basement-17.1.0/AndroidManifest.xml:24:13-58
+153            android:value="@integer/google_play_services_version" />
+153-->[com.google.android.gms:play-services-basement:17.1.0] /home/wat4er/.gradle/caches/transforms-2/files-2.1/fac72d06312fcb43068360ce90e568c9/jetified-play-services-basement-17.1.0/AndroidManifest.xml:25:13-66
+154    </application>
+155
+156</manifest>

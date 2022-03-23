@@ -1,4 +1,4 @@
-#Wed Mar 23 11:23:55 MSK 2022
+#Wed Mar 23 16:08:55 MSK 2022
 base.0=/home/wat4er/Study/Flutter/einstein/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
