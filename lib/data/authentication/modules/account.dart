@@ -1,16 +1,9 @@
-class Account{
-  final String login;
-  final String passhash;
+import 'package:firebase_auth/firebase_auth.dart';
 
-  const Account(
-    {
-      required this.login,
-      required this.passhash,
-    }
+class Account {
+  final UserCredential userCredential;
+
+  Account(
+    this.userCredential,
   );
-
-  @override
-  String toString() {
-    return 'Account(login: $login, passhash: $passhash)';
-  }
 }

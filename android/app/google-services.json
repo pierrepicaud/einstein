@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "685549556150",
+    "project_id": "einstein-cb7c2",
+    "storage_bucket": "einstein-cb7c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685549556150:android:4068f5bb944cdd356af117",
+        "android_client_info": {
+          "package_name": "com.example.einstein"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685549556150-e33ji9sfmn9sosbmev8ach4fs915mcpc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3a1eQ6EwkxHzdfAslllyyQ3FPk1IW2vU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685549556150-e33ji9sfmn9sosbmev8ach4fs915mcpc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
