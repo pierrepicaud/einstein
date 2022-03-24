@@ -14,11 +14,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
+        // ignore: sized_box_for_whitespace
         child: Container(
           height: 300,
           width: 200,
           child: Stack(
-            children: [
+            children: const [
               // tinder card stack
               TinderCard(color: Colors.deepOrange),
               TinderCard(color: Colors.deepPurple),

@@ -20,7 +20,9 @@ class LoginScreen extends StatelessWidget {
   }
 
   Future<String?> _signupUser(SignupData data) {
-    if(data.name == null || data.password == null) return Future.value("Provide email and password");
+    if (data.name == null || data.password == null) {
+      return Future.value("Provide email and password");
+    }
     return _authLogic.signUp(data.name!, data.password!);
   }
 
@@ -76,23 +78,23 @@ class LoginScreen extends StatelessWidget {
         return null;
       },
       onLogin: (loginData) {
-        print('Login info');
-        print('Name: ${loginData.name}');
-        print('Password: ${loginData.password}');
+        debugPrint('Login info');
+        debugPrint('Name: ${loginData.name}');
+        debugPrint('Password: ${loginData.password}');
         return _loginUser(loginData);
       },
       onSignup: (signupData) {
-        print('Signup info');
-        print('Name: ${signupData.name}');
-        print('Password: ${signupData.password}');
+        debugPrint('Signup info');
+        debugPrint('Name: ${signupData.name}');
+        debugPrint('Password: ${signupData.password}');
 
         signupData.additionalSignupData?.forEach((key, value) {
-          print('$key: $value');
+          debugPrint('$key: $value');
         });
         if (signupData.termsOfService.isNotEmpty) {
-          print('Terms of service: ');
+          debugPrint('Terms of service: ');
           for (var element in signupData.termsOfService) {
-            print(
+            debugPrint(
                 ' - ${element.term.id}: ${element.accepted == true ? 'accepted' : 'rejected'}');
           }
         }
@@ -104,8 +106,8 @@ class LoginScreen extends StatelessWidget {
         ));
       },
       onRecoverPassword: (name) {
-        print('Recover password info');
-        print('Name: $name');
+        debugPrint('Recover password info');
+        debugPrint('Name: $name');
         return _recoverPassword(name);
         // Show new password dialog
       },
