@@ -3,19 +3,14 @@
 ---------
 
 ~~A platform for exchanging ideas.~~
-Minimalistic Twitter
+Minimalistic Twitter (Tw)
 
 Link to [apk](./build/app/outputs/flutter-apk/app-release.apk)
-
-## Team
-
-- Danil Shalagin
-- Du Tham Lieu (Thomas)
-- Valentin Chernyshov
+- [ ] Add link to ios
 
 ## About einstein
 
-It's a minimalist Twitter where you can process each tweet like on Tinder  - Thomas
+It's a minimalist Twitter where you can process each tweet like how you interact with profiles on Tinder  - Thomas
 
 ## Features
 
@@ -23,11 +18,22 @@ It's a minimalist Twitter where you can process each tweet like on Tinder  - Tho
 - Users can post Tweets
 - Users can swipe Tweets
 
----------
+## How to build
+first run `flutter pub get`
+then run `flutter build apk` for android
+then run `?` for ios
+new builds can be found at `?`
 
-## Functionality
-- Swipe tweets
-- Interact with tweets by swiping
-- Login/logout
-- User info
-- Home
+## List of Screens
+- [ ] TODO Add screens
+
+## List of Features
+- [ ] Login using Tw
+- [ ] Log out
+- [ ] View feeds from Tw
+- [ ] Interact with Tweets by swipping
+
+## Team
+- Danil Shalagin
+- Du Tham Lieu (Thomas)
+- Valentin Chernyshov
