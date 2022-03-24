@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/erklarungsnot/Git/einstein/build/url_launcher_android/intermediates/res/merged/release/values-bn/values-bn.xml",
+            "outputFile": "/home/wat4er/Study/Flutter/einstein/build/url_launcher_android/intermediates/incremental/mergeReleaseResources/merged.dir/values-bn/values-bn.xml",
             "map": [
                 {
-                    "source": "/home/erklarungsnot/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/values-bn/values-bn.xml",
+                    "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/values-bn/values-bn.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "/home/erklarungsnot/Git/einstein/build/url_launcher_android/intermediates/incremental/mergeReleaseResources/merged.dir/values-bn/values-bn.xml",
+            "outputFile": "/home/wat4er/Study/Flutter/einstein/build/url_launcher_android/intermediates/res/merged/release/values-bn/values-bn.xml",
             "map": [
                 {
-                    "source": "/home/erklarungsnot/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/values-bn/values-bn.xml",
+                    "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/values-bn/values-bn.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/erklarungsnot/Git/einstein/build/firebase_core/intermediates/res/merged/release/values-hr/values-hr.xml",
+            "outputFile": "/home/wat4er/Study/Flutter/einstein/build/firebase_core/intermediates/res/merged/release/values-hr/values-hr.xml",
             "map": [
                 {
-                    "source": "/home/erklarungsnot/.gradle/caches/transforms-2/files-2.1/c9bccf6259c4b62074e15500165ac2cd/jetified-play-services-basement-17.0.0/res/values-hr/values.xml",
+                    "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/c9bccf6259c4b62074e15500165ac2cd/jetified-play-services-basement-17.0.0/res/values-hr/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/erklarungsnot/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/values-hr/values-hr.xml",
+                    "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/values-hr/values-hr.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -40,10 +40,10 @@
             ]
         },
         {
-            "outputFile": "/home/erklarungsnot/Git/einstein/build/firebase_core/intermediates/incremental/mergeReleaseResources/merged.dir/values-hr/values-hr.xml",
+            "outputFile": "/home/wat4er/Study/Flutter/einstein/build/firebase_core/intermediates/incremental/mergeReleaseResources/merged.dir/values-hr/values-hr.xml",
             "map": [
                 {
-                    "source": "/home/erklarungsnot/.gradle/caches/transforms-2/files-2.1/c9bccf6259c4b62074e15500165ac2cd/jetified-play-services-basement-17.0.0/res/values-hr/values.xml",
+                    "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/c9bccf6259c4b62074e15500165ac2cd/jetified-play-services-basement-17.0.0/res/values-hr/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -60,7 +60,7 @@
                     }
                 },
                 {
-                    "source": "/home/erklarungsnot/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/values-hr/values-hr.xml",
+                    "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/values-hr/values-hr.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

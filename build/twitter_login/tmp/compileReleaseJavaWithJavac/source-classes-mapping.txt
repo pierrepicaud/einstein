@@ -11,8 +11,8 @@ com/maru/twitter_login/customtabsclient/ServiceConnection.java
  com.maru.twitter_login.customtabsclient.ServiceConnection
 com/maru/twitter_login/chrome_custom_tabs/ChromeSafariBrowserManager.java
  com.maru.twitter_login.chrome_custom_tabs.ChromeSafariBrowserManager
-com/maru/twitter_login/customtabsclient/CustomTabsHelper.java
- com.maru.twitter_login.customtabsclient.CustomTabsHelper
 com/maru/twitter_login/chrome_custom_tabs/CustomTabActivityHelper.java
  com.maru.twitter_login.chrome_custom_tabs.CustomTabActivityHelper
  com.maru.twitter_login.chrome_custom_tabs.CustomTabActivityHelper$ConnectionCallback
+com/maru/twitter_login/customtabsclient/CustomTabsHelper.java
+ com.maru.twitter_login.customtabsclient.CustomTabsHelper

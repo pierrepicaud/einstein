@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/erklarungsnot/Git/einstein/build/firebase_auth/intermediates/res/merged/release/values-fr-rCA/values-fr-rCA.xml",
+            "outputFile": "/home/wat4er/Study/Flutter/einstein/build/firebase_auth/intermediates/incremental/mergeReleaseResources/merged.dir/values-fr-rCA/values-fr-rCA.xml",
             "map": [
                 {
-                    "source": "/home/erklarungsnot/.gradle/caches/transforms-2/files-2.1/f849fbc2f3558608220e6a8128cc2d69/jetified-play-services-basement-17.1.0/res/values-fr-rCA/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "251",
-                        "endColumns": "219",
-                        "endOffsets": "470"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1326",
-                        "endColumns": "219",
-                        "endOffsets": "1541"
-                    }
-                },
-                {
-                    "source": "/home/erklarungsnot/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/values-fr-rCA/values-fr-rCA.xml",
+                    "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/values-fr-rCA/values-fr-rCA.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -38,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "/home/erklarungsnot/.gradle/caches/transforms-2/files-2.1/bf0b65c331b116fb5eb73feb7e866481/jetified-play-services-base-17.1.0/res/values-fr-rCA/values.xml",
+                    "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/f849fbc2f3558608220e6a8128cc2d69/jetified-play-services-basement-17.1.0/res/values-fr-rCA/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "251",
+                        "endColumns": "219",
+                        "endOffsets": "470"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1326",
+                        "endColumns": "219",
+                        "endOffsets": "1541"
+                    }
+                },
+                {
+                    "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/bf0b65c331b116fb5eb73feb7e866481/jetified-play-services-base-17.1.0/res/values-fr-rCA/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -57,27 +57,10 @@
             ]
         },
         {
-            "outputFile": "/home/erklarungsnot/Git/einstein/build/firebase_auth/intermediates/incremental/mergeReleaseResources/merged.dir/values-fr-rCA/values-fr-rCA.xml",
+            "outputFile": "/home/wat4er/Study/Flutter/einstein/build/firebase_auth/intermediates/res/merged/release/values-fr-rCA/values-fr-rCA.xml",
             "map": [
                 {
-                    "source": "/home/erklarungsnot/.gradle/caches/transforms-2/files-2.1/f849fbc2f3558608220e6a8128cc2d69/jetified-play-services-basement-17.1.0/res/values-fr-rCA/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "251",
-                        "endColumns": "219",
-                        "endOffsets": "470"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1326",
-                        "endColumns": "219",
-                        "endOffsets": "1541"
-                    }
-                },
-                {
-                    "source": "/home/erklarungsnot/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/values-fr-rCA/values-fr-rCA.xml",
+                    "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/values-fr-rCA/values-fr-rCA.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -94,7 +77,24 @@
                     }
                 },
                 {
-                    "source": "/home/erklarungsnot/.gradle/caches/transforms-2/files-2.1/bf0b65c331b116fb5eb73feb7e866481/jetified-play-services-base-17.1.0/res/values-fr-rCA/values.xml",
+                    "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/f849fbc2f3558608220e6a8128cc2d69/jetified-play-services-basement-17.1.0/res/values-fr-rCA/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "251",
+                        "endColumns": "219",
+                        "endOffsets": "470"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1326",
+                        "endColumns": "219",
+                        "endOffsets": "1541"
+                    }
+                },
+                {
+                    "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/bf0b65c331b116fb5eb73feb7e866481/jetified-play-services-base-17.1.0/res/values-fr-rCA/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",

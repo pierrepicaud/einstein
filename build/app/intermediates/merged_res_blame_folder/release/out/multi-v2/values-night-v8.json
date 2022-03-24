@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/erklarungsnot/Git/einstein/build/app/intermediates/incremental/mergeReleaseResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/home/wat4er/Study/Flutter/einstein/build/app/intermediates/incremental/mergeReleaseResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/home/erklarungsnot/Git/einstein/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/home/wat4er/Study/Flutter/einstein/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

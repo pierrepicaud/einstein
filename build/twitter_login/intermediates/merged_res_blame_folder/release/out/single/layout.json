@@ -1,38 +1,38 @@
 [
     {
-        "merged": "/home/erklarungsnot/Git/einstein/build/twitter_login/intermediates/res/merged/release/layout/notification_template_icon_group.xml",
-        "source": "/home/erklarungsnot/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/layout/notification_template_icon_group.xml"
+        "merged": "/home/wat4er/Study/Flutter/einstein/build/twitter_login/intermediates/res/merged/release/layout/chrome_custom_tab.xml",
+        "source": "/home/wat4er/.pub-cache/hosted/pub.dartlang.org/twitter_login-4.0.1/android/src/main/res/layout/chrome_custom_tab.xml"
     },
     {
-        "merged": "/home/erklarungsnot/Git/einstein/build/twitter_login/intermediates/res/merged/release/layout/browser_actions_context_menu_page.xml",
-        "source": "/home/erklarungsnot/.gradle/caches/transforms-2/files-2.1/4af9ffe5ecd0677310b3d551e5d1c1d0/browser-1.3.0/res/layout/browser_actions_context_menu_page.xml"
+        "merged": "/home/wat4er/Study/Flutter/einstein/build/twitter_login/intermediates/res/merged/release/layout/browser_actions_context_menu_row.xml",
+        "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/4af9ffe5ecd0677310b3d551e5d1c1d0/browser-1.3.0/res/layout/browser_actions_context_menu_row.xml"
     },
     {
-        "merged": "/home/erklarungsnot/Git/einstein/build/twitter_login/intermediates/res/merged/release/layout/notification_template_part_time.xml",
-        "source": "/home/erklarungsnot/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/layout/notification_template_part_time.xml"
+        "merged": "/home/wat4er/Study/Flutter/einstein/build/twitter_login/intermediates/res/merged/release/layout/custom_dialog.xml",
+        "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/layout/custom_dialog.xml"
     },
     {
-        "merged": "/home/erklarungsnot/Git/einstein/build/twitter_login/intermediates/res/merged/release/layout/notification_action_tombstone.xml",
-        "source": "/home/erklarungsnot/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/layout/notification_action_tombstone.xml"
+        "merged": "/home/wat4er/Study/Flutter/einstein/build/twitter_login/intermediates/res/merged/release/layout/notification_template_part_time.xml",
+        "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/layout/notification_template_part_time.xml"
     },
     {
-        "merged": "/home/erklarungsnot/Git/einstein/build/twitter_login/intermediates/res/merged/release/layout/chrome_custom_tab.xml",
-        "source": "/home/erklarungsnot/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/twitter_login-4.0.1/android/src/main/res/layout/chrome_custom_tab.xml"
+        "merged": "/home/wat4er/Study/Flutter/einstein/build/twitter_login/intermediates/res/merged/release/layout/notification_template_icon_group.xml",
+        "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/layout/notification_template_icon_group.xml"
     },
     {
-        "merged": "/home/erklarungsnot/Git/einstein/build/twitter_login/intermediates/res/merged/release/layout/browser_actions_context_menu_row.xml",
-        "source": "/home/erklarungsnot/.gradle/caches/transforms-2/files-2.1/4af9ffe5ecd0677310b3d551e5d1c1d0/browser-1.3.0/res/layout/browser_actions_context_menu_row.xml"
+        "merged": "/home/wat4er/Study/Flutter/einstein/build/twitter_login/intermediates/res/merged/release/layout/notification_action.xml",
+        "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/layout/notification_action.xml"
     },
     {
-        "merged": "/home/erklarungsnot/Git/einstein/build/twitter_login/intermediates/res/merged/release/layout/custom_dialog.xml",
-        "source": "/home/erklarungsnot/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/layout/custom_dialog.xml"
+        "merged": "/home/wat4er/Study/Flutter/einstein/build/twitter_login/intermediates/res/merged/release/layout/notification_template_part_chronometer.xml",
+        "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/layout/notification_template_part_chronometer.xml"
     },
     {
-        "merged": "/home/erklarungsnot/Git/einstein/build/twitter_login/intermediates/res/merged/release/layout/notification_action.xml",
-        "source": "/home/erklarungsnot/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/layout/notification_action.xml"
+        "merged": "/home/wat4er/Study/Flutter/einstein/build/twitter_login/intermediates/res/merged/release/layout/browser_actions_context_menu_page.xml",
+        "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/4af9ffe5ecd0677310b3d551e5d1c1d0/browser-1.3.0/res/layout/browser_actions_context_menu_page.xml"
     },
     {
-        "merged": "/home/erklarungsnot/Git/einstein/build/twitter_login/intermediates/res/merged/release/layout/notification_template_part_chronometer.xml",
-        "source": "/home/erklarungsnot/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/layout/notification_template_part_chronometer.xml"
+        "merged": "/home/wat4er/Study/Flutter/einstein/build/twitter_login/intermediates/res/merged/release/layout/notification_action_tombstone.xml",
+        "source": "/home/wat4er/.gradle/caches/transforms-2/files-2.1/24c6f93e7d4612fa3bbdc1cd16f39de2/core-1.6.0/res/layout/notification_action_tombstone.xml"
     }
 ]

@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 2.1.62
 # min_api: 17
-# pg_map_id: bc5fd4a
+# pg_map_id: f0733e3
 # common_typos_disable
 $$ServiceLoaderMethods -> a:
     java.util.Iterator $load$9621() -> a
@@ -11270,15 +11270,15 @@ io.flutter.plugins.firebase.auth.-$$Lambda$FlutterFirebaseAuthPlugin$PheNKkKsnD1
 io.flutter.plugins.firebase.auth.-$$Lambda$FlutterFirebaseAuthPlugin$QfEZxd3jVs5rk1ed4uXQbXlgCI8 -> io.flutter.plugins.firebase.auth.s:
     java.util.Map f$1 -> b
     io.flutter.plugins.firebase.auth.FlutterFirebaseAuthPlugin f$0 -> a
-io.flutter.plugins.firebase.auth.-$$Lambda$FlutterFirebaseAuthPlugin$V_CvF1BERs4BokurKfz5O5h8le0 -> io.flutter.plugins.firebase.auth.t:
-    java.util.Map f$1 -> b
-    io.flutter.plugins.firebase.auth.FlutterFirebaseAuthPlugin f$0 -> a
-io.flutter.plugins.firebase.auth.-$$Lambda$FlutterFirebaseAuthPlugin$Y3LpuODmH-SFqXIn_cfWoko7Nlk -> io.flutter.plugins.firebase.auth.u:
-    java.util.Map f$1 -> b
-    io.flutter.plugins.firebase.auth.FlutterFirebaseAuthPlugin f$0 -> a
-io.flutter.plugins.firebase.auth.-$$Lambda$FlutterFirebaseAuthPlugin$Ytixa6jBajBBvdwrPZ5TeazRF9g -> io.flutter.plugins.firebase.auth.v:
-    io.flutter.plugins.firebase.auth.-$$Lambda$FlutterFirebaseAuthPlugin$Ytixa6jBajBBvdwrPZ5TeazRF9g INSTANCE -> a
+io.flutter.plugins.firebase.auth.-$$Lambda$FlutterFirebaseAuthPlugin$VI2XcAA016aqGT7Mq1ywuSaGxkw -> io.flutter.plugins.firebase.auth.t:
+    io.flutter.plugins.firebase.auth.-$$Lambda$FlutterFirebaseAuthPlugin$VI2XcAA016aqGT7Mq1ywuSaGxkw INSTANCE -> a
     void onCredentialsReceived(com.google.firebase.auth.PhoneAuthCredential) -> a
+io.flutter.plugins.firebase.auth.-$$Lambda$FlutterFirebaseAuthPlugin$V_CvF1BERs4BokurKfz5O5h8le0 -> io.flutter.plugins.firebase.auth.u:
+    java.util.Map f$1 -> b
+    io.flutter.plugins.firebase.auth.FlutterFirebaseAuthPlugin f$0 -> a
+io.flutter.plugins.firebase.auth.-$$Lambda$FlutterFirebaseAuthPlugin$Y3LpuODmH-SFqXIn_cfWoko7Nlk -> io.flutter.plugins.firebase.auth.v:
+    java.util.Map f$1 -> b
+    io.flutter.plugins.firebase.auth.FlutterFirebaseAuthPlugin f$0 -> a
 io.flutter.plugins.firebase.auth.-$$Lambda$FlutterFirebaseAuthPlugin$a7muJCOGSpnLAryvvlOD3A9S5jk -> io.flutter.plugins.firebase.auth.w:
     java.util.Map f$0 -> a
 io.flutter.plugins.firebase.auth.-$$Lambda$FlutterFirebaseAuthPlugin$afBP0I0RGy6Unzu_I-3CBmKIp3s -> io.flutter.plugins.firebase.auth.x:
@@ -11338,11 +11338,11 @@ io.flutter.plugins.firebase.auth.FlutterFirebaseAuthPlugin -> io.flutter.plugins
     io.flutter.plugin.common.BinaryMessenger messenger -> e
     java.util.Map streamHandlers -> h
     void onReattachedToActivityForConfigChanges(io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding) -> A
-    java.lang.Void lambda$verifyBeforeUpdateEmail$32$FlutterFirebaseAuthPlugin(java.util.Map) -> A0
+    java.lang.Void lambda$verifyBeforeUpdateEmail$32(java.util.Map) -> A0
     java.lang.Void lambda$didReinitializeFirebaseCore$35$FlutterFirebaseAuthPlugin() -> B
-    java.util.Map lambda$verifyPasswordResetCode$18(java.util.Map) -> B0
+    java.lang.Void lambda$verifyBeforeUpdateEmail$32$FlutterFirebaseAuthPlugin(java.util.Map) -> B0
     java.util.Map lambda$fetchSignInMethodsForEmail$6(java.util.Map) -> C
-    void lambda$verifyPhoneNumber$19(com.google.firebase.auth.PhoneAuthCredential) -> C0
+    java.util.Map lambda$verifyPasswordResetCode$18(java.util.Map) -> C0
     void onDetachedFromEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> D
     java.lang.String lambda$verifyPhoneNumber$20(java.util.Map) -> D0
     java.util.Map lambda$getIdToken$22(java.util.Map) -> E
@@ -11359,102 +11359,102 @@ io.flutter.plugins.firebase.auth.FlutterFirebaseAuthPlugin -> io.flutter.plugins
     java.util.Map parseAuthResult(com.google.firebase.auth.AuthResult) -> J0
     java.util.Map lambda$linkUserWithCredential$23$FlutterFirebaseAuthPlugin(java.util.Map) -> K
     java.util.Map parseFirebaseUser(com.google.firebase.auth.FirebaseUser) -> K0
-    void lambda$onMethodCall$33(io.flutter.plugin.common.MethodChannel$Result,com.google.android.gms.tasks.Task) -> L
+    void lambda$null$19(com.google.firebase.auth.PhoneAuthCredential) -> L
     java.lang.String parsePhotoUrl(android.net.Uri) -> L0
-    java.util.Map lambda$reauthenticateUserWithCredential$24(java.util.Map) -> M
+    void lambda$onMethodCall$33(io.flutter.plugin.common.MethodChannel$Result,com.google.android.gms.tasks.Task) -> M
     java.util.Map parseTokenResult(com.google.firebase.auth.GetTokenResult) -> M0
-    java.util.Map lambda$reauthenticateUserWithCredential$24$FlutterFirebaseAuthPlugin(java.util.Map) -> N
+    java.util.Map lambda$reauthenticateUserWithCredential$24(java.util.Map) -> N
     java.util.Map parseUserInfo(com.google.firebase.auth.UserInfo) -> N0
-    java.lang.String lambda$registerAuthStateListener$1(java.util.Map) -> O
+    java.util.Map lambda$reauthenticateUserWithCredential$24$FlutterFirebaseAuthPlugin(java.util.Map) -> O
     java.util.List parseUserInfoList(java.util.List) -> O0
-    java.lang.String lambda$registerAuthStateListener$1$FlutterFirebaseAuthPlugin(java.util.Map) -> P
+    java.lang.String lambda$registerAuthStateListener$1(java.util.Map) -> P
     com.google.android.gms.tasks.Task reauthenticateUserWithCredential(java.util.Map) -> P0
-    java.lang.String lambda$registerIdTokenListener$0(java.util.Map) -> Q
+    java.lang.String lambda$registerAuthStateListener$1$FlutterFirebaseAuthPlugin(java.util.Map) -> Q
     com.google.android.gms.tasks.Task registerAuthStateListener(java.util.Map) -> Q0
-    java.lang.String lambda$registerIdTokenListener$0$FlutterFirebaseAuthPlugin(java.util.Map) -> R
+    java.lang.String lambda$registerIdTokenListener$0(java.util.Map) -> R
     com.google.android.gms.tasks.Task registerIdTokenListener(java.util.Map) -> R0
-    java.util.Map lambda$reloadUser$25(java.util.Map) -> S
+    java.lang.String lambda$registerIdTokenListener$0$FlutterFirebaseAuthPlugin(java.util.Map) -> S
     com.google.android.gms.tasks.Task reloadUser(java.util.Map) -> S0
-    java.util.Map lambda$reloadUser$25$FlutterFirebaseAuthPlugin(java.util.Map) -> T
+    java.util.Map lambda$reloadUser$25(java.util.Map) -> T
     void removeEventListeners() -> T0
-    java.lang.Void lambda$sendEmailVerification$26(java.util.Map) -> U
+    java.util.Map lambda$reloadUser$25$FlutterFirebaseAuthPlugin(java.util.Map) -> U
     com.google.android.gms.tasks.Task sendEmailVerification(java.util.Map) -> U0
-    java.lang.Void lambda$sendEmailVerification$26$FlutterFirebaseAuthPlugin(java.util.Map) -> V
+    java.lang.Void lambda$sendEmailVerification$26(java.util.Map) -> V
     com.google.android.gms.tasks.Task sendPasswordResetEmail(java.util.Map) -> V0
-    java.lang.Void lambda$sendPasswordResetEmail$7(java.util.Map) -> W
+    java.lang.Void lambda$sendEmailVerification$26$FlutterFirebaseAuthPlugin(java.util.Map) -> W
     com.google.android.gms.tasks.Task sendSignInLinkToEmail(java.util.Map) -> W0
-    java.lang.Void lambda$sendPasswordResetEmail$7$FlutterFirebaseAuthPlugin(java.util.Map) -> X
+    java.lang.Void lambda$sendPasswordResetEmail$7(java.util.Map) -> X
     com.google.android.gms.tasks.Task setLanguageCode(java.util.Map) -> X0
-    java.lang.Void lambda$sendSignInLinkToEmail$8(java.util.Map) -> Y
+    java.lang.Void lambda$sendPasswordResetEmail$7$FlutterFirebaseAuthPlugin(java.util.Map) -> Y
     com.google.android.gms.tasks.Task setSettings(java.util.Map) -> Y0
-    java.lang.Void lambda$sendSignInLinkToEmail$8$FlutterFirebaseAuthPlugin(java.util.Map) -> Z
+    java.lang.Void lambda$sendSignInLinkToEmail$8(java.util.Map) -> Z
     com.google.android.gms.tasks.Task signInAnonymously(java.util.Map) -> Z0
     com.google.android.gms.tasks.Task applyActionCode(java.util.Map) -> a
-    java.util.Map lambda$setLanguageCode$9(java.util.Map) -> a0
+    java.lang.Void lambda$sendSignInLinkToEmail$8$FlutterFirebaseAuthPlugin(java.util.Map) -> a0
     com.google.android.gms.tasks.Task signInWithCredential(java.util.Map) -> a1
     com.google.android.gms.tasks.Task checkActionCode(java.util.Map) -> b
-    java.util.Map lambda$setLanguageCode$9$FlutterFirebaseAuthPlugin(java.util.Map) -> b0
+    java.util.Map lambda$setLanguageCode$9(java.util.Map) -> b0
     com.google.android.gms.tasks.Task signInWithCustomToken(java.util.Map) -> b1
     com.google.android.gms.tasks.Task confirmPasswordReset(java.util.Map) -> c
-    java.lang.Void lambda$setSettings$10(java.util.Map) -> c0
+    java.util.Map lambda$setLanguageCode$9$FlutterFirebaseAuthPlugin(java.util.Map) -> c0
     com.google.android.gms.tasks.Task signInWithEmailAndPassword(java.util.Map) -> c1
     com.google.android.gms.tasks.Task createUserWithEmailAndPassword(java.util.Map) -> d
-    java.util.Map lambda$signInAnonymously$11(java.util.Map) -> d0
+    java.lang.Void lambda$setSettings$10(java.util.Map) -> d0
     com.google.android.gms.tasks.Task signInWithEmailLink(java.util.Map) -> d1
     com.google.android.gms.tasks.Task deleteUser(java.util.Map) -> e
-    java.util.Map lambda$signInAnonymously$11$FlutterFirebaseAuthPlugin(java.util.Map) -> e0
+    java.util.Map lambda$signInAnonymously$11(java.util.Map) -> e0
     com.google.android.gms.tasks.Task signOut(java.util.Map) -> e1
     com.google.android.gms.tasks.Task fetchSignInMethodsForEmail(java.util.Map) -> f
-    java.util.Map lambda$signInWithCredential$12(java.util.Map) -> f0
+    java.util.Map lambda$signInAnonymously$11$FlutterFirebaseAuthPlugin(java.util.Map) -> f0
     com.google.android.gms.tasks.Task unlinkUserProvider(java.util.Map) -> f1
     com.google.firebase.auth.ActionCodeSettings getActionCodeSettings(java.util.Map) -> g
-    java.util.Map lambda$signInWithCredential$12$FlutterFirebaseAuthPlugin(java.util.Map) -> g0
+    java.util.Map lambda$signInWithCredential$12(java.util.Map) -> g0
     com.google.android.gms.tasks.Task updateEmail(java.util.Map) -> g1
     android.app.Activity getActivity() -> h
-    java.util.Map lambda$signInWithCustomToken$13(java.util.Map) -> h0
+    java.util.Map lambda$signInWithCredential$12$FlutterFirebaseAuthPlugin(java.util.Map) -> h0
     com.google.android.gms.tasks.Task updatePassword(java.util.Map) -> h1
     com.google.firebase.auth.FirebaseAuth getAuth(java.util.Map) -> i
-    java.util.Map lambda$signInWithCustomToken$13$FlutterFirebaseAuthPlugin(java.util.Map) -> i0
+    java.util.Map lambda$signInWithCustomToken$13(java.util.Map) -> i0
     com.google.android.gms.tasks.Task updatePhoneNumber(java.util.Map) -> i1
     com.google.firebase.auth.AuthCredential getCredential(java.util.Map) -> j
-    java.util.Map lambda$signInWithEmailAndPassword$14(java.util.Map) -> j0
+    java.util.Map lambda$signInWithCustomToken$13$FlutterFirebaseAuthPlugin(java.util.Map) -> j0
     com.google.android.gms.tasks.Task updateProfile(java.util.Map) -> j1
     com.google.firebase.auth.FirebaseUser getCurrentUser(java.util.Map) -> k
-    java.util.Map lambda$signInWithEmailAndPassword$14$FlutterFirebaseAuthPlugin(java.util.Map) -> k0
+    java.util.Map lambda$signInWithEmailAndPassword$14(java.util.Map) -> k0
     com.google.android.gms.tasks.Task useEmulator(java.util.Map) -> k1
     void onAttachedToActivity(io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding) -> l
-    java.util.Map lambda$signInWithEmailLink$15(java.util.Map) -> l0
+    java.util.Map lambda$signInWithEmailAndPassword$14$FlutterFirebaseAuthPlugin(java.util.Map) -> l0
     com.google.android.gms.tasks.Task verifyBeforeUpdateEmail(java.util.Map) -> l1
     java.util.Map getExceptionDetails(java.lang.Exception) -> m
-    java.util.Map lambda$signInWithEmailLink$15$FlutterFirebaseAuthPlugin(java.util.Map) -> m0
+    java.util.Map lambda$signInWithEmailLink$15(java.util.Map) -> m0
     com.google.android.gms.tasks.Task verifyPasswordResetCode(java.util.Map) -> m1
     com.google.android.gms.tasks.Task getIdToken(java.util.Map) -> n
-    java.lang.Void lambda$signOut$16(java.util.Map) -> n0
+    java.util.Map lambda$signInWithEmailLink$15$FlutterFirebaseAuthPlugin(java.util.Map) -> n0
     com.google.android.gms.tasks.Task verifyPhoneNumber(java.util.Map) -> n1
     void initInstance(io.flutter.plugin.common.BinaryMessenger) -> o
-    java.util.Map lambda$unlinkUserProvider$27(java.util.Map) -> o0
+    java.lang.Void lambda$signOut$16(java.util.Map) -> o0
     java.lang.Void lambda$applyActionCode$2(java.util.Map) -> p
-    java.util.Map lambda$unlinkUserProvider$27$FlutterFirebaseAuthPlugin(java.util.Map) -> p0
+    java.util.Map lambda$unlinkUserProvider$27(java.util.Map) -> p0
     java.util.Map lambda$checkActionCode$3(java.util.Map) -> q
-    java.util.Map lambda$updateEmail$28(java.util.Map) -> q0
+    java.util.Map lambda$unlinkUserProvider$27$FlutterFirebaseAuthPlugin(java.util.Map) -> q0
     java.util.Map lambda$checkActionCode$3$FlutterFirebaseAuthPlugin(java.util.Map) -> r
-    java.util.Map lambda$updateEmail$28$FlutterFirebaseAuthPlugin(java.util.Map) -> r0
+    java.util.Map lambda$updateEmail$28(java.util.Map) -> r0
     java.lang.Void lambda$confirmPasswordReset$4(java.util.Map) -> s
-    java.util.Map lambda$updatePassword$29(java.util.Map) -> s0
+    java.util.Map lambda$updateEmail$28$FlutterFirebaseAuthPlugin(java.util.Map) -> s0
     java.util.Map lambda$createUserWithEmailAndPassword$5(java.util.Map) -> t
-    java.util.Map lambda$updatePassword$29$FlutterFirebaseAuthPlugin(java.util.Map) -> t0
+    java.util.Map lambda$updatePassword$29(java.util.Map) -> t0
     java.util.Map lambda$createUserWithEmailAndPassword$5$FlutterFirebaseAuthPlugin(java.util.Map) -> u
-    java.util.Map lambda$updatePhoneNumber$30(java.util.Map) -> u0
+    java.util.Map lambda$updatePassword$29$FlutterFirebaseAuthPlugin(java.util.Map) -> u0
     void onAttachedToEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> v
-    java.util.Map lambda$updatePhoneNumber$30$FlutterFirebaseAuthPlugin(java.util.Map) -> v0
+    java.util.Map lambda$updatePhoneNumber$30(java.util.Map) -> v0
     java.lang.Void lambda$deleteUser$21(java.util.Map) -> w
-    java.util.Map lambda$updateProfile$31(java.util.Map) -> w0
+    java.util.Map lambda$updatePhoneNumber$30$FlutterFirebaseAuthPlugin(java.util.Map) -> w0
     void onDetachedFromActivity() -> x
-    java.util.Map lambda$updateProfile$31$FlutterFirebaseAuthPlugin(java.util.Map) -> x0
+    java.util.Map lambda$updateProfile$31(java.util.Map) -> x0
     java.lang.Void lambda$deleteUser$21$FlutterFirebaseAuthPlugin(java.util.Map) -> y
-    java.lang.Void lambda$useEmulator$17(java.util.Map) -> y0
+    java.util.Map lambda$updateProfile$31$FlutterFirebaseAuthPlugin(java.util.Map) -> y0
     java.lang.Void lambda$didReinitializeFirebaseCore$35() -> z
-    java.lang.Void lambda$verifyBeforeUpdateEmail$32(java.util.Map) -> z0
+    java.lang.Void lambda$useEmulator$17(java.util.Map) -> z0
 io.flutter.plugins.firebase.auth.FlutterFirebaseAuthPlugin$1 -> io.flutter.plugins.firebase.auth.n0$a:
     com.google.firebase.auth.FirebaseAuth val$firebaseAuth -> e
 io.flutter.plugins.firebase.auth.FlutterFirebaseAuthPluginException -> io.flutter.plugins.firebase.auth.o0:
