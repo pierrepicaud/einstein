@@ -4,11 +4,9 @@ import 'package:einstein/logic/transitions/custom_route.dart';
 import 'package:einstein/ui/account/account.dart';
 import 'package:einstein/ui/home/homepage.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 
+// ignore: todo
 //TODO: seporate logic from UI
-=======
->>>>>>> 5a1c02b2a3b31a6d3aba12acf5efa76ce7cbb1e3
 
 class MainPage extends StatefulWidget {
   static const routeName = "/home";
