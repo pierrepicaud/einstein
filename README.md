@@ -7,7 +7,17 @@
 Link to [apk](./build/app/outputs/flutter-apk/app-release.apk)
 
 ## About einstein
-It's basically a minimalist Twitter with Tinder like cards intead of the tweets  
+It's basically a minimalist Twitter with Tinder like cards intead of the tweets
+
+## Build
+First download the repo
+`git clone git@github.com:pierrepicaud/einstein.git`
+
+Then get the dependencies
+`flutter pub get`
+
+Finally build
+`flutter build apk`
 
 ## Features
 
