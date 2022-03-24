@@ -16,7 +16,7 @@ First download the repo
 Then get the dependencies
 `flutter pub get`
 
-Finally build
+Finally build for android
 `flutter build apk`
 
 ## Features
