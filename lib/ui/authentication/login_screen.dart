@@ -40,8 +40,8 @@ class LoginScreen extends StatelessWidget {
       logoTag: Constants.logoTag,
       titleTag: Constants.titleTag,
       navigateBackAfterRecovery: true,
-      // onConfirmRecover: _signupConfirm,
-      // onConfirmSignup: _signupConfirm, 
+      // onConfirmRecover: _signupConfirm, -- email address aprovement
+      // onConfirmSignup: _signupConfirm, -- email address aprovement
       loginAfterSignUp: true,
       loginProviders: [
         LoginProvider(

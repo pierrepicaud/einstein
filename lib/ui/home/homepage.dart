@@ -14,8 +14,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        // ignore: sized_box_for_whitespace
-        child: Container(
+        //Container with widget
+        child: SizedBox(
           height: 300,
           width: 200,
           child: Stack(

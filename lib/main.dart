@@ -52,12 +52,10 @@ class AppUI extends MaterialApp {
           theme: ThemeData(
             textSelectionTheme:
                 const TextSelectionThemeData(cursorColor: Colors.orange),
-            // fontFamily: 'SourceSansPro',
             textTheme: TextTheme(
               headline3: const TextStyle(
                 fontFamily: 'OpenSans',
                 fontSize: 45.0,
-                // fontWeight: FontWeight.w400,
                 color: Colors.orange,
               ),
               button: const TextStyle(
