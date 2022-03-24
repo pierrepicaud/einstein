@@ -55,15 +55,13 @@ class _MainPageState extends State<MainPage> {
                     Icons.account_circle,
                     size: 40,
                   ))),
-          //const CustTextField(title: '# search', isPass: false),
+          //const CustTextField(title: '# search', isPass: false), -- textField
           const SizedBox(height: 500, width: 500, child: HomePage()),
           Text(post.text),
           Container(
               alignment: Alignment.topCenter,
-              //padding: const EdgeInsets.only(left: 100),
               child: Row(
                 children: <Widget>[
-                  //Spacer(flex: 1),
                   TextButton(
                     child: const Icon(Icons.favorite_outline_sharp),
                     onPressed: () {
