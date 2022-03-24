@@ -1,8 +1,11 @@
+import 'package:einstein/data/main_screen/modules/post.dart';
+import 'package:einstein/logic/main_screen/post_hendler.dart';
 import 'package:einstein/logic/transitions/custom_route.dart';
 import 'package:einstein/ui/account/account.dart';
 import 'package:einstein/ui/home/homepage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
+//TODO: seporate logic from UI
 
 class MainPage extends StatefulWidget {
   static const routeName = "/home";
@@ -13,31 +16,28 @@ class MainPage extends StatefulWidget {
   State<MainPage> createState() => _MainPageState();
 }
 
-class Post {
-  String text = "Example text";
-  int likes = 0;
-  int share = 0;
-  int coments = 0;
-  Post(this.text);
-}
-
 class _MainPageState extends State<MainPage> {
-
-  final List list = <Post>[
-    Post("Example text 1"),
-    Post("Example text 2"),
-    Post("Example text 3")
-  ];
+  final postHandler = PostHandler();
+  
   Post post = Post("Welcome");
   int i = 0;
 
+  @override
+  void initState() {
+    super.initState();
+    
+    postHandler.addListener(() => setState(() {}));
+  }
+
   void setNextPost() {
-    post = list[i % 3];
+    post = postHandler.posts[i % 3];
     i += 1;
   }
 
   @override
   Widget build(BuildContext context) {
+    post = postHandler.getCurrentPost();
+
     return Scaffold(
       floatingActionButton: FloatingActionButton(
           onPressed: () {},

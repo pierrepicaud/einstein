@@ -1,78 +1,49 @@
 # einstein
-
----------
-
-~~A platform for exchanging ideas.~~
-
-Link to [apk](./build/app/outputs/flutter-apk/app-release.apk)
-
-## Team
-
 - Danil Shalagin
 - Du Tham Lieu (Thomas)
 - Valentin Chernyshov
+---------
+
+Link to [apk](./build/app/outputs/flutter-apk/app-release.apk)
 
 ## About einstein
-
-~~"It's like twitter for programmers but you can exchange your tweets" - Thomas~~
-
-~~Frequently programmer or team of professionals may meet the problem that they don't have idea for their next project. On the other side, creative guys may have idea for project or know how to solve most common problem but they doesn't have developers team who will help them. This application will allow to creators earn money just for their ideas and to developers simplify communication with customers and always have ideas for projects.  
-The app is the first prototypr for a text based NFT market place for posting, and selling ideas.
-The first version of a this app will simulate the actuall app. In other words, this app is just a prototype of the full app.
+It's basically a minimalist Twitter with Tinder like cards intead of the tweets  
 
 ## Features
 
-- Users can login/create.
-- Users can post text, which will be converted into images.
-- Text image containts imformation about the time and location of the user when posted.
-- ...
-
-## Q&A
-
-- **Q:** What makes the idea belongs to someone for example Alex from Target?
-  **A:** If enough people believe that idea belongs to Alex from Target.
-- **Q:** What if someone tries to sell ideas that are not theirs?
-  **A:**: Then no one will buy it. Users agreement will state that such behaviors will lead to account termination
-
----------
+- [ ] Users can login/logout using Twitter
+- [ ] Users can post tweets
+- [ ] Users can interact with Tweets via actions on cards
+- [x] Firebase login for testing purposes
 
 ## Functionality
+- [ ] Add functionality
 
 ### Pages
+- [ ] Add pages
 
-- Login/logout
-- Sign up
-- User info
-- Sending verification screen
-- Edit user info
-- Home
+### Basic (12%)
+- [ ] Readme (+1)
+    - [ ] Description of a project
+    - [ ] How to build
+    - [ ] List of screens
+    - [ ] List of features
+- [ ] Application builds successfully for Android: APK (or link to it) is attached to readme (+1)
+- [ ] Main screen somehow ready (at least some features) (+1)
+- [ ] One more screen exists except main screen (+1)
+- [ ] Custom stateless and Stateful widgets (+1)
+- [ ] App has at least one ListView on any screen (+1)
+- [x] Any networking (REST API, Firebase, etc) (+1)
+- [x] Each team member is involved in development. Each member has commits and additions/deletions in Github Insights. (+3)
+- [ ] Application is reasonable (+2)
 
-### Data
-
-- Name + Last Name
-- Unique User Id generated automatically
-- Wallet id
-- ...
-
-### Basic functions
-
-- Users beable to login/logout
-- Users able to post ideas
-- ...
-
-### Security Functions
-
-- Forgot password
-- 2 FMA
-- ...
-
----------
-
-## Ideas that could be implemented
-
-### Twitter intergration
-
-1. Sign in using Twitter
-2. Accept offers from other users
-3. Buyer can request buying tweets from Verified Twitter user
-4. Intergration with platform/market
+### Advanced (8%)
+- [ ] Github release is created with description of features that are already implemented (+1)
+- [ ] Use some advanced widgets from lecture (+1)
+- [ ] Builds successfully for iOS (+1)
+- [ ] flutter_lints rules are enabled (+1), and no errors and warnings (+2)
+- [ ] Use async functions and await keyword (+2)
+- [ ] Decomposition of widgets is used. Screens decomposed into a few widgets with isolated responsibilities (+2)
+- [ ] UI files separated from logic files (+2)
+- [ ] Some approach for creating data-classes is used (freezed/built_value/code template) (+2)
+- [ ] 3+ screens with some reasonable content (+2)
