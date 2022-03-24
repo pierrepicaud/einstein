@@ -1,12 +1,11 @@
 import 'package:einstein/logic/authentication/authentication_logic.dart';
+import 'package:einstein/ui/home/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 import 'package:flutter_login/flutter_login.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../data/constants.dart';
 import '../../logic/transitions/custom_route.dart';
-import '../dashboard_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   static const routeName = '/auth';
@@ -227,7 +226,7 @@ class LoginScreen extends StatelessWidget {
       },
       onSubmitAnimationCompleted: () {
         Navigator.of(context).pushReplacement(FadePageRoute(
-          builder: (context) => const DashboardScreen(),
+          builder: (context) => const HomePage(),
         ));
       },
       onRecoverPassword: (name) {

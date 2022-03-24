@@ -2,7 +2,8 @@ import 'package:einstein/ui/widgets/tinder_card.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  static const String routeName = "/home";
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();

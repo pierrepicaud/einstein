@@ -1,1 +1,0 @@
-/home/erklarungsnot/Git/flutter_apps/tinder_clone/lib/util/tinder_card.dart
