@@ -39,6 +39,8 @@ Finally build for android
 ### Pages
 ![image text](./images/images.jpeg)
 
+## Checkpoints
+
 ### Basic (12%)
 - [x] Readme (+1)
     - [x] Description of a project
