@@ -1,5 +1,4 @@
 import 'package:einstein/ui/account/account.dart';
-import 'package:einstein/ui/home/homepage.dart';
 import 'package:einstein/ui/mainpage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';

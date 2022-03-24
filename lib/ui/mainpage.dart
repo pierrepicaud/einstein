@@ -2,7 +2,6 @@ import 'package:einstein/logic/transitions/custom_route.dart';
 import 'package:einstein/ui/account/account.dart';
 import 'package:einstein/ui/home/homepage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class MainPage extends StatefulWidget {
   static const routeName = "/home";
@@ -22,7 +21,6 @@ class Post {
 }
 
 class _MainPageState extends State<MainPage> {
-
   final List list = <Post>[
     Post("Example text 1"),
     Post("Example text 2"),

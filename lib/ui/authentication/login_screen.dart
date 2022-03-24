@@ -1,5 +1,4 @@
 import 'package:einstein/logic/authentication/authentication_logic.dart';
-import 'package:einstein/ui/home/homepage.dart';
 import 'package:einstein/ui/mainpage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
@@ -21,17 +20,13 @@ class LoginScreen extends StatelessWidget {
   }
 
   Future<String?> _signupUser(SignupData data) {
-    if(data.name == null || data.password == null) return Future.value("Provide email and password");
+    if (data.name == null || data.password == null) {
+      return Future.value("Provide email and password");
+    }
     return _authLogic.signUp(data.name!, data.password!);
   }
 
   Future<String?> _recoverPassword(String name) {
-    return Future.delayed(loginTime).then((_) {
-      return null;
-    });
-  }
-
-  Future<String?> _signupConfirm(String error, LoginData data) {
     return Future.delayed(loginTime).then((_) {
       return null;
     });
