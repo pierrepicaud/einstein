@@ -1,14 +1,11 @@
-import 'package:einstein/data/main_screen/modules/post.dart';
 import 'package:einstein/logic/main_screen/post_hendler.dart';
 import 'package:einstein/logic/transitions/custom_route.dart';
 import 'package:einstein/ui/account/account.dart';
 import 'package:einstein/ui/home/homepage.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 
+// ignore: todo
 //TODO: seporate logic from UI
-=======
->>>>>>> 5a1c02b2a3b31a6d3aba12acf5efa76ce7cbb1e3
 
 class MainPage extends StatefulWidget {
   static const routeName = "/home";
@@ -21,9 +18,6 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   final postHandler = PostHandler();
-  
-  Post post = Post("Welcome");
-  int i = 0;
 
   @override
   void initState() {
@@ -32,14 +26,9 @@ class _MainPageState extends State<MainPage> {
     postHandler.addListener(() => setState(() {}));
   }
 
-  void setNextPost() {
-    post = postHandler.posts[i % 3];
-    i += 1;
-  }
-
   @override
   Widget build(BuildContext context) {
-    post = postHandler.getCurrentPost();
+    final post = postHandler.getCurrentPost();
 
     return Scaffold(
       floatingActionButton: FloatingActionButton(
@@ -72,27 +61,21 @@ class _MainPageState extends State<MainPage> {
                   TextButton(
                     child: const Icon(Icons.favorite_outline_sharp),
                     onPressed: () {
-                      setState(() {
-                        post.likes += 1;
-                      });
+                      postHandler.addLike();
                     },
                   ),
                   Text("${post.likes}"),
                   TextButton(
                     child: const Icon(Icons.share_sharp),
                     onPressed: () {
-                      setState(() {
-                        post.share += 1;
-                      });
+                      postHandler.addShare();
                     },
                   ),
                   Text("${post.share}"),
                   TextButton(
                     child: const Icon(Icons.mode_comment_outlined),
                     onPressed: () {
-                      setState(() {
-                        setNextPost();
-                      });
+                      postHandler.setNextPost();
                     },
                   ),
                   Text("${post.coments}"),
