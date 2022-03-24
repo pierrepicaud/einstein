@@ -5,6 +5,7 @@
 ---------
 
 Link to [apk](./build/app/outputs/flutter-apk/app-release.apk)
+Test successful for: Samsung Galaxy A8, Realme x5, Honor 8 lite, and Smart Pixel 4 API 30
 
 ## About einstein
 It's basically a minimalist Twitter with Tinder like cards intead of the tweets
@@ -19,18 +20,24 @@ Then get the dependencies
 Finally build for android
 `flutter build apk`
 
-## Features
-
+## Functionality
 - [ ] Users can login/logout using Twitter
+    - [x] UI
+    - [ ] Back end
 - [ ] Users can post tweets
+- [x] Can move cards around
+- [ ] User can access their profile
+    - [x] UI
+    - [ ] Back end
 - [ ] Users can interact with Tweets via actions on cards
 - [x] Firebase login for testing purposes
-
-## Functionality
-- [ ] Add functionality
+- [x] Login with firebase
+    email: test@test.com
+    password: asdfgh
+- Click signin with Twitter to skip
 
 ### Pages
-- [ ] Add pages
+![image text](./images/images.jpeg)
 
 ### Basic (12%)
 - [ ] Readme (+1)
