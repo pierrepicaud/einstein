@@ -1,10 +1,12 @@
-import 'dart:html';
-
+import 'package:einstein/logic/transitions/custom_route.dart';
+import 'package:einstein/ui/account/account.dart';
+import 'package:einstein/ui/home/homepage.dart';
 import 'package:flutter/material.dart';
-import 'homepage.dart';
-import 'widgets/tinder_card.dart';
+import 'package:flutter/widgets.dart';
 
 class MainPage extends StatefulWidget {
+  static const routeName = "/home";
+
   const MainPage({Key? key}) : super(key: key);
 
   @override
@@ -20,6 +22,7 @@ class Post {
 }
 
 class _MainPageState extends State<MainPage> {
+
   final List list = <Post>[
     Post("Example text 1"),
     Post("Example text 2"),
@@ -36,21 +39,26 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        floatingActionButton: FloatingActionButton(
-            onPressed: () {},
-            tooltip: 'Increment Counter',
-            child: const Icon(Icons.add)),
-        body: Column(children: [
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          tooltip: 'Increment Counter',
+          child: const Icon(Icons.add)),
+      body: SafeArea(
+        child: Column(children: [
           Align(
               alignment: Alignment.topLeft,
               child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(FadePageRoute(
+                      builder: (context) => const Account(),
+                    ));
+                  },
                   icon: const Icon(
                     Icons.account_circle,
                     size: 40,
                   ))),
-          const CustTextField(title: '# search', isPass: false),
-          SizedBox(height: 500, width: 500, child: HomePage()),
+          //const CustTextField(title: '# search', isPass: false),
+          const SizedBox(height: 500, width: 500, child: HomePage()),
           Text(post.text),
           Container(
               alignment: Alignment.topCenter,
@@ -87,7 +95,9 @@ class _MainPageState extends State<MainPage> {
                   Text("${post.coments}"),
                 ],
               ))
-        ]));
+        ]),
+      ),
+    );
   }
 }
 

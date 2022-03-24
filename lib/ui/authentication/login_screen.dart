@@ -1,5 +1,6 @@
 import 'package:einstein/logic/authentication/authentication_logic.dart';
 import 'package:einstein/ui/home/homepage.dart';
+import 'package:einstein/ui/mainpage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 import 'package:flutter_login/flutter_login.dart';
@@ -226,7 +227,7 @@ class LoginScreen extends StatelessWidget {
       },
       onSubmitAnimationCompleted: () {
         Navigator.of(context).pushReplacement(FadePageRoute(
-          builder: (context) => const HomePage(),
+          builder: (context) => const MainPage(),
         ));
       },
       onRecoverPassword: (name) {

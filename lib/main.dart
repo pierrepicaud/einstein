@@ -1,4 +1,6 @@
+import 'package:einstein/ui/account/account.dart';
 import 'package:einstein/ui/home/homepage.dart';
+import 'package:einstein/ui/mainpage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
@@ -88,7 +90,8 @@ class AppUI extends MaterialApp {
           initialRoute: LoginScreen.routeName,
           routes: {
             LoginScreen.routeName: (context) => LoginScreen(),
-            HomePage.routeName: (context) => const HomePage(),
+            MainPage.routeName: (context) => const MainPage(),
+            Account.routeName: (context) => const Account(),
           },
         );
 }

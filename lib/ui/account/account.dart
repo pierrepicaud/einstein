@@ -3,11 +3,15 @@ import 'package:einstein/ui/widgets/profile_widget.dart';
 import 'package:flutter/material.dart';
 
 class Account extends StatelessWidget {
+  
+  static const routeName = "/home/profile";
+  
   const Account({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: ListView(
         children: <Widget>[
           const ProfileWidget(),
