@@ -102,7 +102,7 @@ class LoginScreen extends StatelessWidget {
       //   goBackButton: 'GO BACK',
       //   confirmPasswordError: 'Not match!',
       //   recoverPasswordIntro: 'Don\'t feel bad. Happens all the time.',
-      //   recoverPasswordDescription: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+      //   recoverPasswordDescription: 'Lorem Ipsum is simply dummy text of the debugPrinting and typesetting industry',
       //   recoverPasswordSuccess: 'Password rescued successfully',
       //   flushbarTitleError: 'Oh no!',
       //   flushbarTitleSuccess: 'Succes!',
@@ -198,23 +198,23 @@ class LoginScreen extends StatelessWidget {
         return null;
       },
       onLogin: (loginData) {
-        print('Login info');
-        print('Name: ${loginData.name}');
-        print('Password: ${loginData.password}');
+        debugPrint('Login info');
+        debugPrint('Name: ${loginData.name}');
+        debugPrint('Password: ${loginData.password}');
         return _loginUser(loginData);
       },
       onSignup: (signupData) {
-        print('Signup info');
-        print('Name: ${signupData.name}');
-        print('Password: ${signupData.password}');
+        debugPrint('Signup info');
+        debugPrint('Name: ${signupData.name}');
+        debugPrint('Password: ${signupData.password}');
 
         signupData.additionalSignupData?.forEach((key, value) {
-          print('$key: $value');
+          debugPrint('$key: $value');
         });
         if (signupData.termsOfService.isNotEmpty) {
-          print('Terms of service: ');
+          debugPrint('Terms of service: ');
           for (var element in signupData.termsOfService) {
-            print(
+            debugPrint(
                 ' - ${element.term.id}: ${element.accepted == true ? 'accepted' : 'rejected'}');
           }
         }
@@ -226,8 +226,8 @@ class LoginScreen extends StatelessWidget {
         ));
       },
       onRecoverPassword: (name) {
-        print('Recover password info');
-        print('Name: $name');
+        debugPrint('Recover password info');
+        debugPrint('Name: $name');
         return _recoverPassword(name);
         // Show new password dialog
       },
