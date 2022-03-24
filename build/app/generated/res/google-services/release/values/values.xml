@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">685549556150-e33ji9sfmn9sosbmev8ach4fs915mcpc.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">685549556150</string>
+    <string name="google_api_key" translatable="false">AIzaSyC3a1eQ6EwkxHzdfAslllyyQ3FPk1IW2vU</string>
+    <string name="google_app_id" translatable="false">1:685549556150:android:4068f5bb944cdd356af117</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC3a1eQ6EwkxHzdfAslllyyQ3FPk1IW2vU</string>
+    <string name="google_storage_bucket" translatable="false">einstein-cb7c2.appspot.com</string>
+    <string name="project_id" translatable="false">einstein-cb7c2</string>
+</resources>
