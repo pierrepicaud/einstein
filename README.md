@@ -5,6 +5,7 @@
 ---------
 
 Link to [apk](./build/app/outputs/flutter-apk/app-release.apk)
+Test successful for: Samsung Galaxy A8, Realme x5, Honor 8 lite, and Smart Pixel 4 API 30
 
 ## About einstein
 It's basically a minimalist Twitter with Tinder like cards intead of the tweets
@@ -16,44 +17,52 @@ First download the repo
 Then get the dependencies
 `flutter pub get`
 
-Finally build
+Finally build for android
 `flutter build apk`
 
-## Features
-
+## Functionality
 - [ ] Users can login/logout using Twitter
+    - [x] UI
+    - [ ] Back end
 - [ ] Users can post tweets
+- [x] Can move cards around
+- [ ] User can access their profile
+    - [x] UI
+    - [ ] Back end
 - [ ] Users can interact with Tweets via actions on cards
 - [x] Firebase login for testing purposes
-
-## Functionality
-- [ ] Add functionality
+- [x] Login with firebase
+    email: test@test.com
+    password: asdfgh
+- Click signin with Twitter to skip
 
 ### Pages
-- [ ] Add pages
+![image text](./images/images.jpeg)
+
+## Checkpoints
 
 ### Basic (12%)
-- [ ] Readme (+1)
-    - [ ] Description of a project
-    - [ ] How to build
-    - [ ] List of screens
-    - [ ] List of features
-- [ ] Application builds successfully for Android: APK (or link to it) is attached to readme (+1)
-- [ ] Main screen somehow ready (at least some features) (+1)
-- [ ] One more screen exists except main screen (+1)
-- [ ] Custom stateless and Stateful widgets (+1)
-- [ ] App has at least one ListView on any screen (+1)
+- [x] Readme (+1)
+    - [x] Description of a project
+    - [x] How to build
+    - [x] List of screens
+    - [x] List of features
+- [x] Application builds successfully for Android: APK (or link to it) is attached to readme (+1)
+- [x] Main screen somehow ready (at least some features) (+1)
+- [x] One more screen exists except main screen (+1)
+- [x] Custom stateless and Stateful widgets (+1)
+- [x] App has at least one ListView on any screen (+1)
 - [x] Any networking (REST API, Firebase, etc) (+1)
 - [x] Each team member is involved in development. Each member has commits and additions/deletions in Github Insights. (+3)
-- [ ] Application is reasonable (+2)
+- [x] Application is reasonable (+2)
 
 ### Advanced (8%)
 - [ ] Github release is created with description of features that are already implemented (+1)
 - [ ] Use some advanced widgets from lecture (+1)
 - [ ] Builds successfully for iOS (+1)
-- [ ] flutter_lints rules are enabled (+1), and no errors and warnings (+2)
-- [ ] Use async functions and await keyword (+2)
-- [ ] Decomposition of widgets is used. Screens decomposed into a few widgets with isolated responsibilities (+2)
-- [ ] UI files separated from logic files (+2)
+- [x] flutter_lints rules are enabled (+1), and no errors and warnings (+2)
+- [x] Use async functions and await keyword (+2)
+- [x] Decomposition of widgets is used. Screens decomposed into a few widgets with isolated responsibilities (+2)
+- [x] UI files separated from logic files (+2)
 - [ ] Some approach for creating data-classes is used (freezed/built_value/code template) (+2)
 - [ ] 3+ screens with some reasonable content (+2)
