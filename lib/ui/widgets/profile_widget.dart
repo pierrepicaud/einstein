@@ -7,7 +7,8 @@ class ProfileWidget extends StatelessWidget {
   const ProfileWidget({Key? key}) : super(key: key);
 
   @override
-Widget build(BuildContext context) {
+@override
+  Widget build(BuildContext context) {
     return Container(
         decoration: BoxDecoration(
           border: Border.all(
@@ -18,17 +19,26 @@ Widget build(BuildContext context) {
         child: Row(children: [
           IconButton(
             icon: Image.network(_testIconLink),
-            iconSize: 70, //Constants.profilePictureSize,
+            iconSize: Constants.profilePictureSize,
             onPressed: () {},
           ),
           Spacer(flex: 10),
           Column(
             children: [
               const Text('Name'),
-              TextButton(onPressed: () {}, child: const Text("follow"))
+              //const Spacer(flex: 1),
+              TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    padding: const EdgeInsets.all(16.0),
+                    primary: Colors.white,
+                    textStyle: const TextStyle(fontSize: 14),
+                  ),
+                  onPressed: () {},
+                  child: const Text("follow"))
             ],
           ),
-          Spacer(flex: 1),
+          Spacer(flex: 2),
         ]));
   }
 }
