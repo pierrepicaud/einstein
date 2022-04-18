@@ -20,7 +20,7 @@ dependencies:
 
   firebase_core: ^1.13.1
   firebase_auth: ^3.3.11
-  twitter_login: ^4.0.1
+  firebase_database: ^9.0.10
 
   flutter_swipable: ^1.2.1
 

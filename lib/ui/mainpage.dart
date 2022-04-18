@@ -28,11 +28,11 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    final post = postHandler.getCurrentPost();
+    final post = postHandler.post;
 
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () => postHandler.addPost(),
           tooltip: 'Increment Counter',
           child: const Icon(Icons.add)),
       body: SafeArea(
@@ -51,7 +51,7 @@ class _MainPageState extends State<MainPage> {
                   ))),
           //const CustTextField(title: '# search', isPass: false), -- textField
           const SizedBox(height: 500, width: 500, child: HomePage()),
-          Text(post.text),
+          Text(post?.text ?? ''),
           Container(
               alignment: Alignment.topCenter,
               child: Row(
@@ -59,24 +59,24 @@ class _MainPageState extends State<MainPage> {
                   TextButton(
                     child: const Icon(Icons.favorite_outline_sharp),
                     onPressed: () {
-                      postHandler.addLike();
+                      postHandler.likePressed();
                     },
                   ),
-                  Text("${post.likes}"),
+                  Text("${post?.likeCount}"),
                   TextButton(
                     child: const Icon(Icons.share_sharp),
                     onPressed: () {
-                      postHandler.addShare();
+                      postHandler.sharePressed();
                     },
                   ),
-                  Text("${post.share}"),
+                  Text("${post?.sharedCount}"),
                   TextButton(
                     child: const Icon(Icons.mode_comment_outlined),
                     onPressed: () {
-                      postHandler.setNextPost();
+                      postHandler.nextPost();
                     },
                   ),
-                  Text("${post.coments}"),
+                  Text("${post?.commentCount}"),
                 ],
               ))
         ]),

@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:twitter_login/twitter_login.dart';
 import 'package:flutter/foundation.dart';
 
-class AccountDatabase {
+class AccountData {
   final _auth = FirebaseAuth.instance;
 
   FirebaseAuth get auth => _auth;
+  User? get user => auth.currentUser;
 
   Future<UserCredential?> signInWithPassword(
       String email, String password) async {
@@ -39,27 +39,5 @@ class AccountDatabase {
       debugPrint(e.toString());
     }
     return null;
-  }
-
-  Future<UserCredential?> signINWithTwitter() async {
-    // Create a TwitterLogin instance
-    // ignore: todo
-    // TODO: Connect firebase API to this
-    final twitterLogin = TwitterLogin(
-        apiKey: '<your consumer key>',
-        apiSecretKey: ' <your consumer secret>',
-        redirectURI: '<your_scheme>://');
-
-    // Trigger the sign-in flow
-    final authResult = await twitterLogin.login();
-
-    // Create a credential from the access token
-    final twitterAuthCredential = TwitterAuthProvider.credential(
-      accessToken: authResult.authToken!,
-      secret: authResult.authTokenSecret!,
-    );
-
-    // Once signed in, return the UserCredential
-    return await _auth.signInWithCredential(twitterAuthCredential);
   }
 }

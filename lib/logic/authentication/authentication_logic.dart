@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 
 class Authentication {
-  final AccountDatabase db = AccountDatabase();
+  final AccountData db = AccountData();
 
   void _setListener() {
     db.auth.authStateChanges().listen((User? user) {
@@ -27,11 +27,5 @@ class Authentication {
     _setListener();
     final userCred = await db.signUpWithPassword(login, password);
     return userCred != null ? null : "Cannot create such user";
-  }
-
-  Future<bool> signInWithTwitter() async {
-    _setListener();
-    final userCred = await db.signINWithTwitter();
-    return userCred != null;
   }
 }
