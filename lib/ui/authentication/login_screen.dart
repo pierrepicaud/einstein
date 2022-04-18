@@ -8,122 +8,8 @@ import '../../data/constants.dart';
 import '../../logic/transitions/custom_route.dart';
 
 
+
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
-  static const routeName = '/auth';
-  @override
-  Widget build(BuildContext context) {
-    // final ImageProvider _imageProvider;
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Stack(
-            children: [
-              Center(
-                child: Stack(
-                  alignment: Alignment.bottomCenter,
-                  children: [
-                    //Gradiente
-
-                    Container(
-                      // margin: const EdgeInsets.all(10),
-                      // padding: const EdgeInsets.all(10),
-                      width: MediaQuery.of(context).size.width,
-                      // height: 1024,
-                      height: MediaQuery.of(context).size.height,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            Colors.blue.shade400,
-                            Colors.blue,
-                            Colors.blueAccent.shade400,
-                          ],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                        ),
-                      ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(bottom: 520),
-                      child: Text(
-                        'einstein',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 40,
-                        ),
-                      ),
-                      /*Image.asset(
-                        'assets/images/tinder_logo.png',
-                        fit: BoxFit.cover,
-                        alignment: Alignment.topCenter,
-                        color: Colors.white,
-                        scale: 1.3,
-                      )*/
-                    ),
-
-                    Container(
-                      //padding: const EdgeInsets.all(20.0),
-                      width: 500.0,
-                      height: 200.0,
-                      decoration: BoxDecoration(
-                          color: Color.fromRGBO(201, 236, 245, 0.922),
-                          border: Border.all(
-                            color: const Color.fromARGB(255, 5, 4, 82),
-                          ),
-                          borderRadius: BorderRadius.circular(
-                              20) // use instead of BorderRadius.all(Radius.circular(20))
-                          ),
-                      margin: const EdgeInsets.all(30.0),
-                      alignment: Alignment.center,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            'By clicking Log in, you agree with our Terms. Learn how we process your data in our Privacy Policy and Cookies Policy.',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          SignInButton(
-                            Buttons.Twitter,
-                            onPressed: () {},
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          const Text(
-                            'Trouble logging in?',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-/*class LoginScreen extends StatelessWidget {
   static const routeName = '/auth';
   final _authLogic = Authentication();
 
@@ -229,4 +115,4 @@ class LoginScreen extends StatelessWidget {
       },
     );
   }
-}*/
+}
