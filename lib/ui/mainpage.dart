@@ -19,11 +19,19 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   final postHandler = PostHandler();
 
+  void listener() => setState(() {});
+
   @override
   void initState() {
     super.initState();
     
-    postHandler.addListener(() => setState(() {}));
+    postHandler.addListener(listener);
+  }
+
+  @override
+  void dispose() {
+    postHandler.removeListener(listener);
+    super.dispose();
   }
 
   @override

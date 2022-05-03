@@ -1,31 +1,21 @@
+import 'package:einstein/data/authentication/modules/account.dart';
 import 'package:einstein/data/authentication/repos/account_database.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 
 class Authentication {
   final AccountData db = AccountData();
 
-  void _setListener() {
-    db.auth.authStateChanges().listen((User? user) {
-      // ignore: todo
-      //TODO: change app state on this callback
-      if (user == null) {
-        debugPrint("there is no user");
-      } else {
-        debugPrint("there is a user");
-      }
-    });
-  }
-
   Future<String?> signIn(String login, String password) async {
-    _setListener();
     final userCred = await db.signInWithPassword(login, password);
     return userCred != null ? null : "User not found";
   }
 
-  Future<String?> signUp(String login, String password) async {
-    _setListener();
+  Future<String?> signUp(String login, String password, Map<String, String> additanalData) async {
+    //TODO: make a safisient username check
+    if(!additanalData.containsKey('username') || additanalData['username']!.isEmpty) return "Username was not provided";
     final userCred = await db.signUpWithPassword(login, password);
-    return userCred != null ? null : "Cannot create such user";
+    if(userCred == null) return "Cannot create such user";
+    final acc = Account(userName: additanalData['username']!);
+    db.addAccount(userCred.user!.uid, acc);
+    return null;
   }
 }

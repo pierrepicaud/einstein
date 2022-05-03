@@ -7,8 +7,6 @@ import 'package:flutter_login/flutter_login.dart';
 import '../../data/constants.dart';
 import '../../logic/transitions/custom_route.dart';
 
-
-
 class LoginScreen extends StatelessWidget {
   static const routeName = '/auth';
   final _authLogic = Authentication();
@@ -21,11 +19,14 @@ class LoginScreen extends StatelessWidget {
     return _authLogic.signIn(data.name, data.password);
   }
 
-  Future<String?> _signupUser(SignupData data) {
+  Future<String?> _signupUser(SignupData data) async{
     if (data.name == null || data.password == null) {
       return Future.value("Provide email and password");
     }
-    return _authLogic.signUp(data.name!, data.password!);
+    else if (data.additionalSignupData == null || !data.additionalSignupData!.containsKey('username')){
+      return Future.value('Provide username');
+    }
+    return _authLogic.signUp(data.name!, data.password!, data.additionalSignupData!);
   }
 
   Future<String?> _recoverPassword(String name) {
@@ -65,15 +66,19 @@ class LoginScreen extends StatelessWidget {
             text: 'Term of services',
             linkUrl: 'https://github.com/NearHuscarl/flutter_login'),
       ],
-      // additionalSignupFields: 
+      additionalSignupFields: const <UserFormField>[
+        UserFormField(keyName: 'username'),
+      ],
       initialAuthMode: AuthMode.login,
       userValidator: (value) {
+        //TODO: make suffisient email check
         if (!value!.contains('@') || !value.endsWith('.com')) {
           return "Email must contain '@' and end with '.com'";
         }
         return null;
       },
       passwordValidator: (value) {
+        //TODO: make suffisient password check
         if (value!.isEmpty) {
           return 'Password is empty';
         }

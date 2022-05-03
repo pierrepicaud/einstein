@@ -1,11 +1,43 @@
+import 'package:einstein/data/authentication/modules/account.dart';
+import 'package:einstein/data/db_routs.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/foundation.dart';
 
-class AccountData {
+class AccountData extends ChangeNotifier {
   final _auth = FirebaseAuth.instance;
+  final _db = FirebaseDatabase.instance.ref();
 
   FirebaseAuth get auth => _auth;
   User? get user => auth.currentUser;
+
+  void _updateData(Map<String, Map?> updates) async =>
+      _db.update(updates).then((_) => notifyListeners());
+
+  Future<Account> fetchAccountData(String? accountID) async {
+    String accID = accountID ?? user!.uid;
+    final snapshot = await _db.child(DbRoutes.userData(accID)).get();
+    return Account.fromMap(
+        Map<String, dynamic>.from(snapshot.value as Map<dynamic, dynamic>));
+  }
+
+  void addAccount(String accountID, Account account) async{
+    Map<String, Map> updates = {};
+    updates[DbRoutes.userData(accountID)] = account.toMap();
+    return _updateData(updates);
+  }
+
+  void deleteAccount(String accountID) async {
+    Map<String, Map?> updates = {};
+    updates[DbRoutes.userData(accountID)] = null;
+    return _updateData(updates);
+  }
+
+  void updateAccount(String accountID, Account account) async {
+    Map<String, Map> updates = {};
+    updates[DbRoutes.userData(accountID)] = account.toMap();
+    return _updateData(updates);
+  }
 
   Future<UserCredential?> signInWithPassword(
       String email, String password) async {
