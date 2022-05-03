@@ -100,5 +100,33 @@
       loadMainDartJs();
     }
   </script>
+
+  <!-- Firebase configuration -->
+  <!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script> -->
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCFY2OhTrrfx85jneErxZn4MFpxGNX_iP0",
+      authDomain: "einstein-cb7c2.firebaseapp.com",
+      databaseURL: "https://einstein-cb7c2-default-rtdb.firebaseio.com",
+      projectId: "einstein-cb7c2",
+      storageBucket: "einstein-cb7c2.appspot.com",
+      messagingSenderId: "685549556150",
+      appId: "1:685549556150:web:8182d5df5ea666966af117",
+      measurementId: "G-YZ7CGMDEP2"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const database = getDatabase(app);
+  </script>
 </body>
 </html>
