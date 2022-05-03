@@ -18,7 +18,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   final postHandler = PostHandler();
-
+  int currentIndex = 0;
   @override
   void initState() {
     super.initState();
@@ -78,8 +78,34 @@ class _MainPageState extends State<MainPage> {
                   ),
                   Text("${post.coments}"),
                 ],
-              ))
+              )),
         ]),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentIndex,
+        onTap: (index) => setState(() => currentIndex = index) ,
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "Home",
+              backgroundColor: Colors.blue
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label: "Search",
+              backgroundColor: Colors.blue
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.circle_notifications_rounded),
+              label: "Notifications",
+              backgroundColor: Colors.blue
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person_outline_rounded),
+              label: "Profile Page",
+              backgroundColor: Colors.blue
+          ),
+        ],
       ),
     );
   }

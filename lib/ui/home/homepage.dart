@@ -16,8 +16,8 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         //Container with widget
         child: SizedBox(
-          height: 300,
-          width: 200,
+          height: 450,
+          width: 350,
           child: Stack(
             children: const [
               // tinder card stack

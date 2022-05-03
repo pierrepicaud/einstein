@@ -42,4 +42,4 @@ class ProfileWidget extends StatelessWidget {
         ]));
   }
 }
-}
+
