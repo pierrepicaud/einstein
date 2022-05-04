@@ -24,6 +24,7 @@ dependencies:
   firebase_database: ^9.0.10
 
   flutter_swipable: ^1.2.1
+  comment_box: ^0.0.17
 
 dev_dependencies:
   flutter_test:
