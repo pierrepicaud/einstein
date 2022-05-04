@@ -42,7 +42,3 @@ class ProfileWidget extends StatelessWidget {
         ]));
   }
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> login_page_dev2

@@ -18,10 +18,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   final postHandler = PostHandler();
-<<<<<<< HEAD
   void listener() => setState(() {});
-=======
->>>>>>> login_page_dev2
   int currentIndex = 0;
   @override
   void initState() {
@@ -94,11 +91,7 @@ class _MainPageState extends State<MainPage> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (index) => setState(() => currentIndex = index) ,
-<<<<<<< HEAD
         items: const [
-=======
-        items: [
->>>>>>> login_page_dev2
           BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: "Home",
