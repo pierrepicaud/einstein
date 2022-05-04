@@ -1,4 +1,3 @@
-
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:einstein/data/constants.dart';
 import 'package:einstein/firebase_options.dart';
@@ -10,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'ui/authentication/login_screen.dart';
 import 'logic/transitions/transition_route_observer.dart';
 
-void main() async{
+void main() async {
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
       systemNavigationBarColor:
@@ -19,7 +18,7 @@ void main() async{
   );
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    name: kIsWeb? null : Constants.appName,
+    name: kIsWeb ? null : Constants.appName,
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
@@ -41,6 +40,8 @@ class AppUI extends MaterialApp {
           key: key,
           title: 'Login Demo',
           theme: ThemeData(
+            primaryColor: Colors.blue.shade400,
+            dividerColor: Colors.black,
             textSelectionTheme:
                 const TextSelectionThemeData(cursorColor: Colors.orange),
             textTheme: TextTheme(
