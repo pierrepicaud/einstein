@@ -39,8 +39,10 @@ class AppUI extends MaterialApp {
       : super(
           key: key,
           title: 'Login Demo',
+          debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            primaryColor: Colors.blue.shade400,
+            primaryColor: Colors.blue.shade300,
+            // primaryColor: Colors.black,
             dividerColor: Colors.black,
             textSelectionTheme:
                 const TextSelectionThemeData(cursorColor: Colors.orange),

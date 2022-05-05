@@ -5,9 +5,10 @@ AppBar buildAppBar(BuildContext context) {
   final icon = CupertinoIcons.moon_stars;
 
   return AppBar(
-    leading: BackButton(),
+
+    leading: BackButton(color: Colors.black,),
     backgroundColor: Colors.transparent,
     elevation: 0,
-    actions: [IconButton(onPressed: () {}, icon: Icon(icon))],
+    actions: [IconButton(onPressed: () {}, icon: Icon(icon, color: Colors.black,))],
   );
 }

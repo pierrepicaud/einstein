@@ -175,7 +175,7 @@ class CustTextField extends StatelessWidget {
         //color: Color.fromARGB(255, 152, 197, 219),
         margin: const EdgeInsets.symmetric(horizontal: 80),
         decoration: BoxDecoration(
-          color: Colors.grey.shade200,
+          color: Colors.blue.shade300,
           borderRadius: BorderRadius.circular(10),
         ),
         //padding: const EdgeInsets.symmetric(),
