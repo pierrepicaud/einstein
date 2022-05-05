@@ -1,3 +1,4 @@
+import 'package:einstein/ui/account/profile_page.dart';
 import 'package:einstein/ui/widgets/profile_settings_tile.dart';
 import 'package:einstein/ui/widgets/profile_widget.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +11,8 @@ class Account extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ProfileWidget(
-        onClicked: () {}, imagePath: '',
+      body: ProfilePage(
+        // onClicked: () {}, imagePath: '',
       ),
     );
   }
