@@ -18,7 +18,7 @@ class Account {
       this.accPicId,
       required this.userName,
       this.about,
-      this.isDarkMode = true});
+      this.isDarkMode = false});
 
   Account copyWith({
     List<String>? follows,
@@ -27,6 +27,8 @@ class Account {
     int? followersCount,
     String? accPicId,
     String? userName,
+    String? about,
+    bool? isDarkMode,
   }) {
     return Account(
       follows: follows ?? this.follows,
@@ -35,6 +37,8 @@ class Account {
       followersCount: followersCount ?? this.followersCount,
       accPicId: accPicId ?? this.accPicId,
       userName: userName ?? this.userName,
+      isDarkMode: isDarkMode ?? this.isDarkMode,
+      about: about ?? this.about,
     );
   }
 
@@ -55,7 +59,10 @@ class Account {
       result.addAll({'accPicId': accPicId});
     }
     result.addAll({'userName': userName});
-
+    if (about != null) {
+      result.addAll({'about': about});
+    }
+    result.addAll({'isDarkMode': isDarkMode});
     return result;
   }
 
@@ -70,6 +77,8 @@ class Account {
       followersCount: map['followersCount']?.toInt() ?? 0,
       accPicId: map['accPicId'],
       userName: map['userName'] ?? '',
+      isDarkMode: map['isDarkMode'] ?? false,
+      about: map['about'],
     );
   }
 
