@@ -1,22 +1,24 @@
 import 'dart:convert';
 
-
-class Account{
+class Account {
   final List<String>? follows;
   final List<String>? posts;
   final List<String>? comments;
   final int followersCount;
   final String? accPicId;
   final String userName;
+  final String? about;
+  final bool isDarkMode;
 
-  Account({
-    this.follows,
-    this.posts,
-    this.comments,
-    this.followersCount = 0,
-    this.accPicId,
-    required this.userName,
-  });
+  const Account(
+      {this.follows,
+      this.posts,
+      this.comments,
+      this.followersCount = 0,
+      this.accPicId,
+      required this.userName,
+      this.about,
+      this.isDarkMode = true});
 
   Account copyWith({
     List<String>? follows,
@@ -38,30 +40,33 @@ class Account{
 
   Map<String, dynamic> toMap() {
     final result = <String, dynamic>{};
-  
-    if(follows != null){
+
+    if (follows != null) {
       result.addAll({'follows': follows});
     }
-    if(posts != null){
+    if (posts != null) {
       result.addAll({'posts': posts});
     }
-    if(comments != null){
+    if (comments != null) {
       result.addAll({'comments': comments});
     }
     result.addAll({'followersCount': followersCount});
-    if(accPicId != null){
+    if (accPicId != null) {
       result.addAll({'accPicId': accPicId});
     }
     result.addAll({'userName': userName});
-  
+
     return result;
   }
 
   factory Account.fromMap(Map<String, dynamic> map) {
     return Account(
-      follows: map.containsKey('follows')? List<String>.from(map['follows']) : null,
-      posts: map.containsKey('posts')? List<String>.from(map['posts']) : null,
-      comments: map.containsKey('comments')? List<String>.from(map['comments']) : null,
+      follows:
+          map.containsKey('follows') ? List<String>.from(map['follows']) : null,
+      posts: map.containsKey('posts') ? List<String>.from(map['posts']) : null,
+      comments: map.containsKey('comments')
+          ? List<String>.from(map['comments'])
+          : null,
       followersCount: map['followersCount']?.toInt() ?? 0,
       accPicId: map['accPicId'],
       userName: map['userName'] ?? '',
@@ -70,7 +75,8 @@ class Account{
 
   String toJson() => json.encode(toMap());
 
-  factory Account.fromJson(String source) => Account.fromMap(json.decode(source));
+  factory Account.fromJson(String source) =>
+      Account.fromMap(json.decode(source));
 
   @override
   String toString() {
