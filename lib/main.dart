@@ -72,7 +72,7 @@ class AppUI extends MaterialApp {
               overline: const TextStyle(fontFamily: 'NotoSans'),
             ),
             colorScheme:
-                ColorScheme.fromSwatch(primarySwatch: Colors.deepPurple)
+                ColorScheme.fromSwatch(primarySwatch: Colors.blue)
                     .copyWith(secondary: Colors.orange),
           ),
           navigatorObservers: [TransitionRouteObserver()],
