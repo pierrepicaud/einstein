@@ -1,10 +1,10 @@
+import 'package:einstein/data/main_screen/modules/card_events.dart';
+import 'package:einstein/data/main_screen/modules/post.dart';
 import 'package:einstein/logic/main_screen/post_hendler.dart';
 import 'package:einstein/logic/transitions/custom_route.dart';
 import 'package:einstein/ui/account/account.dart';
-import 'package:einstein/ui/home/homepage.dart';
+import 'package:einstein/ui/home/card_holder.dart';
 import 'package:flutter/material.dart';
-
-import 'package:einstein/data/constants.dart';
 import 'package:comment_box/comment/comment.dart';
 // ignore: todo
 //TODO: seporate logic from UI
@@ -136,6 +136,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     final post = postHandler.post;
+    final npost = postHandler.npost;
 
     return Scaffold(
       floatingActionButton: FloatingActionButton(
@@ -157,7 +158,29 @@ class _MainPageState extends State<MainPage> {
                     size: 40,
                   ))),
           //const CustTextField(title: '# search', isPass: false), -- textField
-          const SizedBox(height: 500, width: 500, child: HomePage()),
+          SizedBox(
+            height: 500,
+            width: 500,
+            child: (post != null && npost != null)
+                ? CardHolderInherit(
+                    currentPost: post,
+                    nextPost: npost,
+                    child: const CardHolder(),
+                    callback: (event) {
+                      switch (event) {
+                        case CardEvent.swipeLeft:
+                          postHandler.nextPost();
+                          break;
+                        case CardEvent.swipeRight:
+                          postHandler.previousPost();
+                          break;
+                        default:
+                      }
+                      setState(() {});
+                    },
+                  )
+                : const CircularProgressIndicator(),
+          ),
           Text(post?.text ?? ''),
           Container(
               alignment: Alignment.topCenter,
@@ -192,28 +215,24 @@ class _MainPageState extends State<MainPage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
-        onTap: (index) => setState(() => currentIndex = index) ,
+        onTap: (index) => setState(() => currentIndex = index),
         items: const [
           BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: "Home",
-              backgroundColor: Colors.blue
-          ),
+              backgroundColor: Colors.blue),
           BottomNavigationBarItem(
               icon: Icon(Icons.search),
               label: "Search",
-              backgroundColor: Colors.blue
-          ),
+              backgroundColor: Colors.blue),
           BottomNavigationBarItem(
               icon: Icon(Icons.circle_notifications_rounded),
               label: "Notifications",
-              backgroundColor: Colors.blue
-          ),
+              backgroundColor: Colors.blue),
           BottomNavigationBarItem(
               icon: Icon(Icons.person_outline_rounded),
               label: "Profile Page",
-              backgroundColor: Colors.blue
-          ),
+              backgroundColor: Colors.blue),
         ],
       ),
     );
@@ -248,6 +267,29 @@ class CustTextField extends StatelessWidget {
             ),
             obscureText: isPass,
             style: const TextStyle(fontSize: 15)));
+  }
+}
+
+class CardHolderInherit extends InheritedWidget {
+  final Post currentPost;
+  final Post nextPost;
+  final void Function(CardEvent)? callback;
+
+  const CardHolderInherit({
+    Key? key,
+    required Widget child,
+    required this.currentPost,
+    required this.nextPost,
+    this.callback,
+  }) : super(
+          key: key,
+          child: child,
+        );
+
+  @override
+  bool updateShouldNotify(CardHolderInherit oldWidget) {
+    return currentPost != oldWidget.currentPost ||
+        nextPost != oldWidget.nextPost;
   }
 }
 
