@@ -14,7 +14,7 @@ class NotifyConnectivity extends StatefulWidget {
 
 class _NotifyConnectivityState extends State<NotifyConnectivity> {
   late StreamSubscription subscription;
-
+  int state = 0;
   @override
   void initState() {
     super.initState();
@@ -32,12 +32,24 @@ class _NotifyConnectivityState extends State<NotifyConnectivity> {
 
   @override
   Widget build(BuildContext context) {
-    return widget.child;
+    return OverlaySupport.global(child: widget.child);
   }
 
   void showConnectivitySnackBar(ConnectivityResult result) {
-    print('reacted');
+    const message = 'Internet status changed';
+    const color = Colors.orange;
+    showSimpleNotification(
+      const Text('Internet Connectivity Update'),
+      duration: const Duration(seconds: 10),
+      subtitle: Text(message),
+      background: color,
+    );
+  }
+
+  /*void showConnectivitySnackBar(ConnectivityResult result) {
     final hasInternet = result != ConnectivityResult.none;
+    //final hasInternet = state != ConnectivityResult.none;
+    print(result);
     final message = hasInternet
         ? 'You have again ${result.toString()}'
         : 'You have no internet';
@@ -45,8 +57,9 @@ class _NotifyConnectivityState extends State<NotifyConnectivity> {
 
     showSimpleNotification(
       const Text('Internet Connectivity Update'),
+      duration: const Duration(seconds: 10),
       subtitle: Text(message),
       background: color,
     );
-  }
+  }*/
 }
