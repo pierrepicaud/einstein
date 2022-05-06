@@ -7,6 +7,7 @@ import 'package:einstein/ui/home/card_holder.dart';
 import 'package:flutter/material.dart';
 import 'package:einstein/ui/widgets/mainpage_comments_page.dart';
 
+import 'package:einstein/ui/search/search_page.dart';
 // ignore: todo
 //TODO: seporate logic from UI
 
@@ -38,6 +39,15 @@ class _MainPageState extends State<MainPage> {
   }
 
   void addcomment() {}
+
+  void __openSearchPage() async {
+    await Navigator.of(context).push(MaterialPageRoute<String>(
+        builder: (BuildContext context) {
+          return SearchPage();
+        },
+        fullscreenDialog: true));
+  }
+
   void __openComments(String? postid) async {
     if (postid == null) return;
     await Navigator.of(context).push(MaterialPageRoute<String>(
@@ -49,8 +59,34 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    final post = postHandler.post;
-    final npost = postHandler.npost;
+    if (currentIndex == 1) {
+      return Scaffold(
+          body: const SearchPage(),
+          bottomNavigationBar: BottomNavigationBar(
+            currentIndex: currentIndex,
+            onTap: (index) => setState(() => currentIndex = index),
+            items: const [
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: "Home",
+                  backgroundColor: Colors.blue),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.search),
+                  label: "Search",
+                  backgroundColor: Colors.blue),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.circle_notifications_rounded),
+                  label: "Notifications",
+                  backgroundColor: Colors.blue),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.person_outline_rounded),
+                  label: "Profile Page",
+                  backgroundColor: Colors.blue),
+            ],
+          ));
+    } else {
+      final post = postHandler.post;
+      final npost = postHandler.npost;
 
     return Scaffold(
       floatingActionButton: FloatingActionButton(
@@ -152,6 +188,7 @@ class _MainPageState extends State<MainPage> {
         ],
       ),
     );
+  }
   }
 }
 

@@ -21,11 +21,7 @@ class CommentData extends ChangeNotifier {
   List<Future<DataSnapshot>> _getListOfComments(List<String> commentsIDs) {
     final snapshots = <Future<DataSnapshot>>[];
     for (final commentID in commentsIDs) {
-<<<<<<< HEAD
       snapshots.add(_db.child(DbRoutes.commentData(commentID)).get());
-=======
-      snapshots.add(_db.child(DbRoutes.comments).equalTo(commentID).get());
->>>>>>> 8da032ba8afc862189c7c850632615e3d01e9dea
     }
     return snapshots;
   }

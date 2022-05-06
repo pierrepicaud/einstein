@@ -1,3 +1,4 @@
+import 'package:einstein/ui/connectivity/notify_connectivity.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:einstein/data/constants.dart';
 import 'package:einstein/firebase_options.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppUI();
+    return NotifyConnectivity(child: AppUI());
   }
 }
 

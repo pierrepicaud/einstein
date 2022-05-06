@@ -44,15 +44,12 @@ class HPost extends ChangeNotifier {
     notifyListeners();
   }
 
-<<<<<<< HEAD:lib/logic/main_screen/h_post.dart
   
   Future<String> getPictureUrl(String picID) async {
     return _picDb.getPostPictureURL(picID);
   }
 
 
-=======
->>>>>>> 8da032ba8afc862189c7c850632615e3d01e9dea:lib/logic/main_screen/post_hendler.dart
   void likePressed() async {
     String uid = _accountDb.user.uid;
 
