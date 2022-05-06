@@ -10,12 +10,12 @@ Test successful for: Samsung Galaxy A8, Realme x5, Honor 8 lite, and Smart Pixel
 ## About einstein
 mtwitt is a prototype of a minimalist tweeter that offers simplified functionalities so that you can process the tweets one by one.
 
-## Build
+## How to build
 - First download the repo `git clone git@github.com:pierrepicaud/einstein.git`
 - Then get the dependencies `flutter pub get`
 - Finally build for android `flutter build apk`
 
-## Functionality (With pictures)
+## Screens and Features
 TODO: Make photos explaining the points bellow
 - See you own profile (Screenshot of profile page)
 - Edit your personal info (Screenshot of profile page being edited)
