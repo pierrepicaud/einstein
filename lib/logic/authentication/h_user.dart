@@ -6,7 +6,6 @@ class HUser{
   
   final _db = AccountData();
   final _picDB = PictureData();
-
   Account? _user;
   Future<Account> get cUser => _user == null ? _fetchCurrentUser() : Future.value(_user) ;
   String get userID => _db.user.uid;
@@ -17,6 +16,7 @@ class HUser{
   }
 
   Future<Account> getUserByID(String userID) async{
+    print('getting user');
     return _db.fetchAccountData(userID);
   }
 

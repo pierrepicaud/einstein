@@ -6,7 +6,6 @@ import 'package:einstein/ui/account/account.dart';
 import 'package:einstein/ui/home/card_holder.dart';
 import 'package:flutter/material.dart';
 import 'package:einstein/ui/widgets/mainpage_comments_page.dart';
-import 'package:einstein/ui/widgets/mainpage_access_to_comments.dart';
 
 // ignore: todo
 //TODO: seporate logic from UI

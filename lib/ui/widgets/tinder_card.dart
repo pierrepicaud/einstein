@@ -1,6 +1,7 @@
 import 'package:einstein/data/authentication/modules/account.dart';
 import 'package:einstein/data/main_screen/modules/card_events.dart';
 import 'package:einstein/data/main_screen/modules/post.dart';
+import 'package:einstein/logic/authentication/h_user.dart';
 import 'package:einstein/ui/mainpage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swipable/flutter_swipable.dart';
@@ -19,9 +20,9 @@ class TinderCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final inherit =
-        context.getElementForInheritedWidgetOfExactType<CardHolderInherit>()!.widget
-            as CardHolderInherit;
+    final inherit = context
+        .getElementForInheritedWidgetOfExactType<CardHolderInherit>()!
+        .widget as CardHolderInherit;
     return Swipable(
       onSwipeLeft: (_) {
         if (inherit.callback != null) {
@@ -45,48 +46,118 @@ class TinderCard extends StatelessWidget {
 class TinderCardContent extends StatelessWidget {
   final Post post;
   // TODO: implement userlogic
-  // final UserLogic userLogic = HUser();
+  final userLogic = HUser();
 
-  const TinderCardContent({
+  TinderCardContent({
     Key? key,
     required this.post,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // TODO: user logic implement get user by ID
-    // final Account user = userLogic.getUserByID(post.author);
-    final Account user = Account(userName: 'Pepega');
-    // final String avatar = userLogic.getAvatarUrl(user.accPicId);
-    final String avatar =
-        'https://yt3.ggpht.com/ytc/AKedOLSIDMkTVcRmPtZlIyej4HC20Iaj4iemzLIUkmn8=s900-c-k-c0x00ffffff-no-rj';
-    final String postPic =
-        'https://96krock.com/wp-content/uploads/sites/61/2019/08/Toilet.jpg';
-
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          Row(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(
-                  right: 8.0,
-                ),
-                child: CircleAvatar(
-                    radius: 20, backgroundImage: NetworkImage(avatar)),
-              ),
-              Text(user.userName),
-            ],
+          FutureBuilder<Account>(
+            future: userLogic.getUserByID(post.author),
+            builder: (context, snapshot) {
+              print(snapshot.data);
+              if (snapshot.data == null) {
+                return Row(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        right: 8.0,
+                      ),
+                      child: SizedBox(
+                        height: 40,
+                        width: 40,
+                        child: Opacity(
+                          opacity: 1,
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              color: Colors.grey,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    if (snapshot.data == null)
+                      SizedBox(
+                        height: 20,
+                        width: 200,
+                        child: Opacity(
+                          opacity: 1,
+                          child: Container(
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ),
+                  ],
+                );
+              }
+
+              return Row(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      right: 8.0,
+                    ),
+                    child: FutureBuilder<String>(
+                      key: UniqueKey(),
+                      future: userLogic.getAvatarUrl(snapshot.data!.accPicId),
+                      builder: (context, snapshot) {
+                        if (snapshot.data == null) {
+                          return SizedBox(
+                            height: 40,
+                            width: 40,
+                            child: Opacity(
+                              opacity: 1,
+                              child: Container(
+                                decoration: const BoxDecoration(
+                                  color: Colors.grey,
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(20),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          );
+                        }
+                        return CircleAvatar(
+                            radius: 20,
+                            backgroundImage: NetworkImage(snapshot.data!));
+                      },
+                    ),
+                  ),
+                  Text(snapshot.data!.userName),
+                ],
+              );
+            },
           ),
           if (post.text != null)
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(post.text!),
             ),
-          // TODO: backend for loading images
-          if (post.picId != null) Image(image: NetworkImage(postPic)),
+          if (post.picId != null)
+            FutureBuilder<String>(
+              future: Future.value(
+                  'https://96krock.com/wp-content/uploads/sites/61/2019/08/Toilet.jpg'),
+              builder: (context, snapshot) {
+                if (snapshot.data == null) {
+                  return Container(
+                    color: Colors.grey,
+                  );
+                }
+                return Image.network(snapshot.data!);
+              },
+            ),
         ],
       ),
     );
