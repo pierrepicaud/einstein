@@ -42,7 +42,7 @@ jobs:
         with:
           flutter-version: "2.10.1"
           channel: 'stable'
-        run: flutter --version
+        # run: flutter --version
       - name: Get packages in a Flutter project
         run: flutter pub get
         run: flutter analyze .
@@ -62,7 +62,7 @@ jobs:
         with:
           flutter-version: '2.10.1'
           channel: 'stable'
-        run: flutter --version
+        # run: flutter --version
       - name: Get packages in a Flutter project
         run: flutter pub get
       - name: Build apk
