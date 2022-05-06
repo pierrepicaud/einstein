@@ -27,7 +27,8 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           check_name: 'Check code style'
-          commit_sha: ${{ github.event.pull_request.head.sha }}  flutter_test:
+          commit_sha: ${{ github.event.pull_request.head.sha }}
+  flutter_test:
     name: Run flutter test and analyze
     runs-on: ubuntu-20.04
     steps:
