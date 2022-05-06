@@ -46,12 +46,10 @@ jobs:
       - name: Get packages in a Flutter project
         run: flutter pub get
       - name: Run Flutter analyze
-        run: flutter analyze --no-fatal-info
+        run: flutter analyze .
       - name: Run Flutter Test
         run: flutter test
-      - name: Run flutter format
-        run:  flutter format --set-exit-if-changed .
-  build_android:
+  flutter_build_android:
     name: Build apk
     runs-on: ubuntu-20.04
     steps:
