@@ -70,7 +70,7 @@ jobs:
       - name: Get packages in a Flutter project
         run: flutter pub get
       - name: Build apk
-        run: flutter build apk -split-per-abi
+        run: flutter build apk
       # - name: Upload artifact
       #   uses: actions/upload-artifact@v3
       #   with:
