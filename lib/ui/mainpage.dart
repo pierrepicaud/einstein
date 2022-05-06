@@ -37,22 +37,12 @@ class _MainPageState extends State<MainPage> {
     super.dispose();
   }
 
-  /*Widget commentChild(data) {
-    return 
-  }*/
-
   void addcomment() {}
   void __openComments(String? postid) async {
-    if(postid == null) return;
+    if (postid == null) return;
     await Navigator.of(context).push(MaterialPageRoute<String>(
         builder: (BuildContext context) {
-          /*return CommentListInheritedWidget(
-              postid: postid,
-              listener: () {
-                setState(() {});
-              },
-              child: const CommentsPage());*/
-              return CommentsPage(postid: postid);
+          return CommentsPage(postid: postid);
         },
         fullscreenDialog: true));
   }
@@ -81,7 +71,6 @@ class _MainPageState extends State<MainPage> {
                     Icons.account_circle,
                     size: 40,
                   ))),
-          //const CustTextField(title: '# search', isPass: false), -- textField
           SizedBox(
             height: 500,
             width: 500,
@@ -92,11 +81,17 @@ class _MainPageState extends State<MainPage> {
                     child: const CardHolder(),
                     callback: (event) {
                       switch (event) {
+                        case CardEvent.swipeUp:
+                          __openComments(postHandler.postID);
+                          break;
+                        case CardEvent.swipeDown:
+                          __openComments(postHandler.postID);
+                          break;
                         case CardEvent.swipeLeft:
                           postHandler.nextPost();
                           break;
                         case CardEvent.swipeRight:
-                          postHandler.previousPost();
+                          postHandler.likePressed();
                           break;
                         default:
                       }
@@ -113,7 +108,6 @@ class _MainPageState extends State<MainPage> {
                   TextButton(
                     child: const Icon(Icons.favorite_outline_sharp),
                     onPressed: () {
-                      postHandler.likePressed();
                     },
                   ),
                   Text("${post?.likeCount}"),
@@ -127,8 +121,6 @@ class _MainPageState extends State<MainPage> {
                   TextButton(
                     child: const Icon(Icons.mode_comment_outlined),
                     onPressed: () {
-                      print('object');
-                      __openComments(postHandler.postID);
                       //postHandler.nextPost();
                     },
                   ),
@@ -216,60 +208,6 @@ class CardHolderInherit extends InheritedWidget {
         nextPost != oldWidget.nextPost;
   }
 }
-
-/*class CommentsPage extends StatefulWidget {
-  const CommentsPage({Key? key}) : super(key: key);
-
-  @override
-  State<CommentsPage> createState() => _CommentsPageState();
-}
-
-class _CommentsPageState extends State<CommentsPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-
-class SingleComment extends StatelessWidget {
-  static const _testIconLink =
-      'https://previews.123rf.com/images/vgstudio/vgstudio1308/vgstudio130800053/21269255-portrait-der-sch%C3%B6nen-jungen-gl%C3%BCcklich-l%C3%A4chelnde-frau-im-freien.jpg';
-  const SingleComment({Key? key, user_photo = _testIconLink}) : super(key: key);
-  user_photo
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(
-        left: 38,
-        top: 75,
-      ),
-      decoration: BoxDecoration(
-        border: Border(
-          left: BorderSide(width: 2.0, color: Colors.grey.shade400),
-        ),
-      ),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              IconButton(
-                icon: Image.network(_testIconLink),
-                iconSize: Constants.profilePictureSize,
-                onPressed: () {},
-              ),
-              Spacer(flex: 10),
-              Text("Name"),
-              Spacer(flex: 10),
-              Text("Date")
-            ],
-          ),
-          const Text("Here is first coment example")
-        ],
-      ),
-    );
-  }
-}*/
 
 class SingleComment extends StatelessWidget {
   const SingleComment({Key? key}) : super(key: key);

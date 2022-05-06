@@ -26,13 +26,27 @@ class TinderCard extends StatelessWidget {
         .widget as CardHolderInherit;
     return Swipable(
       onSwipeLeft: (_) {
+        print('swipe left');
         if (inherit.callback != null) {
           inherit.callback!(CardEvent.swipeLeft);
         }
       },
       onSwipeRight: (_) {
+        print('swipe right');
         if (inherit.callback != null) {
           inherit.callback!(CardEvent.swipeRight);
+        }
+      },
+      onSwipeDown: (_) {
+        print('swipe Down');
+        if (inherit.callback != null) {
+          inherit.callback!(CardEvent.swipeDown);
+        }
+      },
+      onSwipeUp: (_) {
+        print('swipe up');
+        if (inherit.callback != null) {
+          inherit.callback!(CardEvent.swipeUp);
         }
       },
       child: Container(
