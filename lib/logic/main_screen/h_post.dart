@@ -1,11 +1,13 @@
 import 'package:einstein/data/authentication/repos/account_database.dart';
 import 'package:einstein/data/main_screen/modules/post.dart';
+import 'package:einstein/data/main_screen/repos/picture_database.dart';
 import 'package:einstein/data/main_screen/repos/post_database.dart';
 import 'package:flutter/material.dart';
 
 class HPost extends ChangeNotifier {
   final _postDb = PostsData();
   final _accountDb = AccountData();
+  final _picDb = PictureData();
   Map<String, Post>? _posts;
   List<String>? _postsIDs;
   String? get _currentID => _postsIDs?[_currentPost];
@@ -42,6 +44,10 @@ class HPost extends ChangeNotifier {
   }
 
   
+  Future<String> getPictureUrl(String picID) async {
+    return _picDb.getPostPictureURL(picID);
+  }
+
 
   void likePressed() async {
     String uid = _accountDb.user.uid;

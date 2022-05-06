@@ -2,6 +2,7 @@ import 'package:einstein/data/authentication/modules/account.dart';
 import 'package:einstein/data/main_screen/modules/card_events.dart';
 import 'package:einstein/data/main_screen/modules/post.dart';
 import 'package:einstein/logic/authentication/h_user.dart';
+import 'package:einstein/logic/main_screen/h_post.dart';
 import 'package:einstein/ui/mainpage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swipable/flutter_swipable.dart';
@@ -47,6 +48,7 @@ class TinderCardContent extends StatelessWidget {
   final Post post;
   // TODO: implement userlogic
   final userLogic = HUser();
+  final postLogic = HPost();
 
   TinderCardContent({
     Key? key,
@@ -147,15 +149,17 @@ class TinderCardContent extends StatelessWidget {
             ),
           if (post.picId != null)
             FutureBuilder<String>(
-              future: Future.value(
-                  'https://96krock.com/wp-content/uploads/sites/61/2019/08/Toilet.jpg'),
+              future: postLogic.getPictureUrl(post.picId!),
               builder: (context, snapshot) {
                 if (snapshot.data == null) {
                   return Container(
                     color: Colors.grey,
                   );
                 }
-                return Image.network(snapshot.data!);
+                return Image(
+                  image: NetworkImage(snapshot.data!),
+                  fit: BoxFit.contain
+                );
               },
             ),
         ],

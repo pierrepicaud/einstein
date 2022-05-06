@@ -48,8 +48,7 @@ class CommentData extends ChangeNotifier {
   void addComment(String postID, Comments comment) async {
     Map<String, Map> updates = {};
     final post = await _postDB.getPost(postID);
-    assert(post != null);
-    final commetList = post!.comments ?? [];
+    final commetList = post.comments ?? [];
     final newCommentKey = _db.child(DbRoutes.comments).push().key;
     updates[DbRoutes.commentData(newCommentKey!)] = comment.toMap();
     commetList.add(newCommentKey);
