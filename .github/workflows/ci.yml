@@ -13,15 +13,15 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout source code
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: Install Flutter
-      - uses: subosito/flutter-action@v2
+        uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
       - name: Get packages in a Flutter project
-      - run: flutter pub get
+        run: flutter pub get
       - name: Run lint
-      - uses: kitek/dartanalyzer-annotations-action@v1  
+        uses: kitek/dartanalyzer-annotations-action@v1  
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
@@ -32,43 +32,43 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout source code
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: Setup Java
-      - uses: actions/setup-java@v1
+        uses: actions/setup-java@v1
         with:
           java-version: "12"
       - name: Install Flutter
-      - uses: subosito/flutter-action@v2
+        uses: subosito/flutter-action@v2
         with:
           flutter-version: "2.10.1"
           channel: 'stable'
-      - run: flutter --version
+        run: flutter --version
       - name: Get packages in a Flutter project
-      - run: flutter pub get
-      - run: flutter analyze .
-      - run: flutter test
+        run: flutter pub get
+        run: flutter analyze .
+        run: flutter test
   flutter_build_android:
     name: Build apk
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout source
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: Setup Java
-      - uses: actions/setup-java@v1
+        uses: actions/setup-java@v1
         with:
           java-version: "12"
       - name: Install Flutter
-      - uses: subosito/flutter-action@v2
+        uses: subosito/flutter-action@v2
         with:
           flutter-version: '2.10.1'
           channel: 'stable'
-      - run: flutter --version
+        run: flutter --version
       - name: Get packages in a Flutter project
-      - run: flutter pub get
+        run: flutter pub get
       - name: Build apk
-      - run: flutter build apk
+        run: flutter build apk
       - name: Upload artifact
-      - uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
           name: mtwitt-release.apk
           path: /build/app/outputs/flutter-apk/mtwitt-release.apk
