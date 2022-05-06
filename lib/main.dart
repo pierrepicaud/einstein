@@ -73,9 +73,8 @@ class AppUI extends MaterialApp {
               subtitle2: const TextStyle(fontFamily: 'NotoSans'),
               overline: const TextStyle(fontFamily: 'NotoSans'),
             ),
-            colorScheme:
-                ColorScheme.fromSwatch(primarySwatch: Colors.blue)
-                    .copyWith(secondary: Colors.orange),
+            colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue)
+                .copyWith(secondary: Colors.orange),
           ),
           navigatorObservers: [TransitionRouteObserver()],
           initialRoute: LoginScreen.routeName,

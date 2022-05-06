@@ -16,23 +16,24 @@ class PostsData extends ChangeNotifier {
         : List<String>.from(snapshot.value as List<dynamic>);
   }
 
-  List<Future<DataSnapshot>> _getListOfComments(List<String> commentsIDs){
+  List<Future<DataSnapshot>> _getListOfComments(List<String> commentsIDs) {
     final snapshots = <Future<DataSnapshot>>[];
-    for(final commentID in commentsIDs){
-       snapshots.add(_db.child(DbRoutes.comments).equalTo(commentID).get());
+    for (final commentID in commentsIDs) {
+      snapshots.add(_db.child(DbRoutes.comments).equalTo(commentID).get());
     }
     return snapshots;
   }
 
   Future<Map<String, Comments>?> fethcComments(String postID) async {
     List<String>? commentsIDs = await _getCommentsIDsList(postID);
-    if(commentsIDs == null) return null;
+    if (commentsIDs == null) return null;
     final Map<String, Comments> comments = {};
     final commentsList = _getListOfComments(commentsIDs);
-    for(final com in commentsList){
+    for (final com in commentsList) {
       final snapshot = await com;
       final entry = snapshot.value as MapEntry<dynamic, dynamic>;
-      comments[entry.key as String] = Comments.fromMap(Map<String, dynamic>.from(entry.value as Map<dynamic, dynamic>));
+      comments[entry.key as String] = Comments.fromMap(
+          Map<String, dynamic>.from(entry.value as Map<dynamic, dynamic>));
     }
     return comments;
   }

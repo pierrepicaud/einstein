@@ -21,7 +21,7 @@ class AccountData extends ChangeNotifier {
         Map<String, dynamic>.from(snapshot.value as Map<dynamic, dynamic>));
   }
 
-  void addAccount(String accountID, Account account) async{
+  void addAccount(String accountID, Account account) async {
     Map<String, Map> updates = {};
     updates[DbRoutes.userData(accountID)] = account.toMap();
     return _updateData(updates);

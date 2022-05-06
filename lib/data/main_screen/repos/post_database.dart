@@ -15,8 +15,14 @@ class PostsData extends ChangeNotifier {
         .limitToLast(200)
         .onValue
         .listen((event) {
-      final map = Map<String, dynamic>.from(event.snapshot.value as Map<dynamic, dynamic>);
-      _posts = map.map((key, value) => MapEntry(key, Post.fromMap(Map<String, dynamic>.from(value as Map<dynamic, dynamic>))),);
+      final map = Map<String, dynamic>.from(
+          event.snapshot.value as Map<dynamic, dynamic>);
+      _posts = map.map(
+        (key, value) => MapEntry(
+            key,
+            Post.fromMap(
+                Map<String, dynamic>.from(value as Map<dynamic, dynamic>))),
+      );
       notifyListeners();
     });
   }

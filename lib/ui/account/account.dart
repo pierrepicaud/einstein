@@ -12,8 +12,8 @@ class Account extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ProfilePage(
-        // onClicked: () {}, imagePath: '',
-      ),
+          // onClicked: () {}, imagePath: '',
+          ),
     );
   }
 }

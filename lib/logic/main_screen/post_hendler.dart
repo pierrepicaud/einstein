@@ -12,7 +12,8 @@ class PostHandler extends ChangeNotifier {
   int _currentPost = 0;
 
   Post? get post => _posts?[_currentID]!;
-  Post? get npost => _posts?[_postsIDs?[_currentPost + 1 < _postsIDs!.length? _currentPost + 1 : 0]]!;
+  Post? get npost => _posts?[
+      _postsIDs?[_currentPost + 1 < _postsIDs!.length ? _currentPost + 1 : 0]]!;
 
   PostHandler() {
     _postDb.addListener(() {
@@ -23,7 +24,7 @@ class PostHandler extends ChangeNotifier {
     });
   }
 
-  void addPost(){
+  void addPost() {
     //TODO: TBI
   }
 
@@ -34,12 +35,10 @@ class PostHandler extends ChangeNotifier {
   }
 
   void previousPost() {
-    if(_currentPost == 0) _currentPost = _postsIDs!.length; 
+    if (_currentPost == 0) _currentPost = _postsIDs!.length;
     _currentPost--;
     notifyListeners();
   }
-
-  
 
   void likePressed() async {
     String uid = _accountDb.user!.uid;

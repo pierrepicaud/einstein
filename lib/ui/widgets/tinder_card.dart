@@ -19,9 +19,9 @@ class TinderCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final inherit =
-        context.getElementForInheritedWidgetOfExactType<CardHolderInherit>()!.widget
-            as CardHolderInherit;
+    final inherit = context
+        .getElementForInheritedWidgetOfExactType<CardHolderInherit>()!
+        .widget as CardHolderInherit;
     return Swipable(
       onSwipeLeft: (_) {
         if (inherit.callback != null) {

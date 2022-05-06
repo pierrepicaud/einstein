@@ -12,7 +12,7 @@ class RouteGenerator {
     final agrs = settings.arguments;
     switch (settings.name) {
       case '/':
-        // return MaterialPageRoute(builder: (_) => LoginScreen.routeName);
+      // return MaterialPageRoute(builder: (_) => LoginScreen.routeName);
       case '/second': // another page
       default:
         return _errorRoute();

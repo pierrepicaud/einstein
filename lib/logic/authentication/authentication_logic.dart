@@ -9,11 +9,13 @@ class Authentication {
     return userCred != null ? null : "User not found";
   }
 
-  Future<String?> signUp(String login, String password, Map<String, String> additanalData) async {
+  Future<String?> signUp(
+      String login, String password, Map<String, String> additanalData) async {
     //TODO: make a safisient username check
-    if(!additanalData.containsKey('username') || additanalData['username']!.isEmpty) return "Username was not provided";
+    if (!additanalData.containsKey('username') ||
+        additanalData['username']!.isEmpty) return "Username was not provided";
     final userCred = await db.signUpWithPassword(login, password);
-    if(userCred == null) return "Cannot create such user";
+    if (userCred == null) return "Cannot create such user";
     final acc = Account(userName: additanalData['username']!);
     db.addAccount(userCred.user!.uid, acc);
     return null;

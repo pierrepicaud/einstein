@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 class Comments {
-
   String author;
   String text;
   String replyTo;
@@ -12,7 +11,6 @@ class Comments {
     required this.replyTo,
     required this.date,
   });
-
 
   Comments copyWith({
     String? author,
@@ -30,12 +28,12 @@ class Comments {
 
   Map<String, dynamic> toMap() {
     final result = <String, dynamic>{};
-  
+
     result.addAll({'author': author});
     result.addAll({'text': text});
     result.addAll({'replyTo': replyTo});
     result.addAll({'date': date});
-  
+
     return result;
   }
 
@@ -50,7 +48,8 @@ class Comments {
 
   String toJson() => json.encode(toMap());
 
-  factory Comments.fromJson(String source) => Comments.fromMap(json.decode(source));
+  factory Comments.fromJson(String source) =>
+      Comments.fromMap(json.decode(source));
 
   @override
   String toString() {

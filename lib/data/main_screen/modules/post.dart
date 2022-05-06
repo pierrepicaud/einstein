@@ -91,8 +91,11 @@ class Post {
       sharedCount: map['sharedCount']?.toInt() ?? 0,
       likeCount: map['likeCount']?.toInt() ?? 0,
       commentCount: map['commentCount']?.toInt() ?? 0,
-      likedBy: map.containsKey('likedBy')? List<String>.from(map['likedBy']) : null,
-      comments: map.containsKey('comments')? List<String>.from(map['comments']) : null,
+      likedBy:
+          map.containsKey('likedBy') ? List<String>.from(map['likedBy']) : null,
+      comments: map.containsKey('comments')
+          ? List<String>.from(map['comments'])
+          : null,
     );
   }
 
