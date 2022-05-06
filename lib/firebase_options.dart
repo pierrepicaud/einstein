@@ -63,7 +63,8 @@ class DefaultFirebaseOptions {
     projectId: 'einstein-cb7c2',
     databaseURL: 'https://einstein-cb7c2-default-rtdb.firebaseio.com',
     storageBucket: 'einstein-cb7c2.appspot.com',
-    iosClientId: '685549556150-f8o6n0cgasf9hilvmk0rbl5r8drgj6j7.apps.googleusercontent.com',
+    iosClientId:
+        '685549556150-f8o6n0cgasf9hilvmk0rbl5r8drgj6j7.apps.googleusercontent.com',
     iosBundleId: 'com.example.einstein',
   );
 }

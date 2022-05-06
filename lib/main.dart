@@ -39,16 +39,18 @@ class AppUI extends MaterialApp {
       : super(
           key: key,
           title: 'Login Demo',
+          debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            primaryColor: Colors.blue.shade400,
+            primaryColor: Colors.blue.shade300,
+            // primaryColor: Colors.black,
             dividerColor: Colors.black,
             textSelectionTheme:
-                const TextSelectionThemeData(cursorColor: Colors.orange),
+                const TextSelectionThemeData(cursorColor: Colors.blue),
             textTheme: TextTheme(
               headline3: const TextStyle(
                 fontFamily: 'OpenSans',
                 fontSize: 45.0,
-                color: Colors.orange,
+                color: Colors.blue,
               ),
               button: const TextStyle(
                 // OpenSans is similar to NotoSans but the uppercases look a bit better IMO
@@ -58,7 +60,7 @@ class AppUI extends MaterialApp {
                 fontFamily: 'NotoSans',
                 fontSize: 12.0,
                 fontWeight: FontWeight.normal,
-                color: Colors.deepPurple[300],
+                color: Colors.blue[300],
               ),
               headline1: const TextStyle(fontFamily: 'Quicksand'),
               headline2: const TextStyle(fontFamily: 'Quicksand'),
@@ -71,9 +73,8 @@ class AppUI extends MaterialApp {
               subtitle2: const TextStyle(fontFamily: 'NotoSans'),
               overline: const TextStyle(fontFamily: 'NotoSans'),
             ),
-            colorScheme:
-                ColorScheme.fromSwatch(primarySwatch: Colors.blue)
-                    .copyWith(secondary: Colors.orange),
+            colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue)
+                .copyWith(secondary: Colors.orange),
           ),
           navigatorObservers: [TransitionRouteObserver()],
           initialRoute: LoginScreen.routeName,

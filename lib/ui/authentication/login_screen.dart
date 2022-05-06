@@ -19,14 +19,15 @@ class LoginScreen extends StatelessWidget {
     return _authLogic.signIn(data.name, data.password);
   }
 
-  Future<String?> _signupUser(SignupData data) async{
+  Future<String?> _signupUser(SignupData data) async {
     if (data.name == null || data.password == null) {
       return Future.value("Provide email and password");
-    }
-    else if (data.additionalSignupData == null || !data.additionalSignupData!.containsKey('username')){
+    } else if (data.additionalSignupData == null ||
+        !data.additionalSignupData!.containsKey('username')) {
       return Future.value('Provide username');
     }
-    return _authLogic.signUp(data.name!, data.password!, data.additionalSignupData!);
+    return _authLogic.signUp(
+        data.name!, data.password!, data.additionalSignupData!);
   }
 
   Future<String?> _recoverPassword(String name) {

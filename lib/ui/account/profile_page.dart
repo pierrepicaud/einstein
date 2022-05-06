@@ -34,7 +34,8 @@ class _ProfilePageState extends State<ProfilePage> {
           const SizedBox(
             height: 24,
           ),
-          buildName(user.userName, "fakeEmail@gg.com"),
+          // TODO: Replace email with @Alias
+          buildName(user.userName, "@emimi.fukada.94"),
           const SizedBox(
             height: 24,
           ),
@@ -70,8 +71,9 @@ class _ProfilePageState extends State<ProfilePage> {
           )
         ],
       );
+  // TODO: increase follow count
   Widget buildUpgradeButton() => (ButtonWidget(
-        text: "Upgrade To Pro",
+        text: "Follow",
         onClicked: () {},
       ));
   Widget buildAbout(String about) => Container(

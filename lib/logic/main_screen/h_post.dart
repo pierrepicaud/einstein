@@ -15,7 +15,8 @@ class HPost extends ChangeNotifier {
   
   String? get postID => _currentID;
   Post? get post => _posts?[_currentID]!;
-  Post? get npost => _posts?[_postsIDs?[_currentPost + 1 < _postsIDs!.length? _currentPost + 1 : 0]]!;
+  Post? get npost => _posts?[
+      _postsIDs?[_currentPost + 1 < _postsIDs!.length ? _currentPost + 1 : 0]]!;
 
   HPost() {
     _postDb.addListener(() {
@@ -38,17 +39,20 @@ class HPost extends ChangeNotifier {
   }
 
   void previousPost() {
-    if(_currentPost == 0) _currentPost = _postsIDs!.length; 
+    if (_currentPost == 0) _currentPost = _postsIDs!.length;
     _currentPost--;
     notifyListeners();
   }
 
+<<<<<<< HEAD:lib/logic/main_screen/h_post.dart
   
   Future<String> getPictureUrl(String picID) async {
     return _picDb.getPostPictureURL(picID);
   }
 
 
+=======
+>>>>>>> 8da032ba8afc862189c7c850632615e3d01e9dea:lib/logic/main_screen/post_hendler.dart
   void likePressed() async {
     String uid = _accountDb.user.uid;
 

@@ -13,5 +13,4 @@ class DbRoutes{
   static String userData(String id) => '$users/$id';
   static String userAvatarPicture(String id) => '$avatar/$id$pictureExtenton';
   static String commentData(String id) => '$comments/$id';
-
 }
