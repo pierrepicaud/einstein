@@ -1,3 +1,4 @@
+import 'package:einstein/ui/connectivity/notify_connectivity.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:einstein/data/constants.dart';
 import 'package:einstein/firebase_options.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppUI();
+    return NotifyConnectivity(child: AppUI());
   }
 }
 
@@ -73,9 +74,8 @@ class AppUI extends MaterialApp {
               subtitle2: const TextStyle(fontFamily: 'NotoSans'),
               overline: const TextStyle(fontFamily: 'NotoSans'),
             ),
-            colorScheme:
-                ColorScheme.fromSwatch(primarySwatch: Colors.blue)
-                    .copyWith(secondary: Colors.orange),
+            colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue)
+                .copyWith(secondary: Colors.orange),
           ),
           navigatorObservers: [TransitionRouteObserver()],
           initialRoute: LoginScreen.routeName,

@@ -26,6 +26,9 @@ dependencies:
   flutter_swipable: ^1.2.1
   comment_box: ^0.0.17
   flutter_typeahead: ^3.2.5
+  connectivity_plus: ^2.3.0
+  overlay_support: ^1.2.1
+  connectivity: ^3.0.6
 
 dev_dependencies:
   flutter_test:
