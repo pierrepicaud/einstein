@@ -14,17 +14,19 @@ dependencies:
 
   hive: ^2.0.6
   crypto: ^3.0.1
-  flutter_login: ^3.2.0
-  login_screen: ^0.6.0
+  file_picker: ^4.5.1
   intl: ^0.17.0
 
   flutterfire_cli: ^0.2.1+1
   firebase_core: ^1.13.1
   firebase_auth: ^3.3.11
   firebase_database: ^9.0.10
+  firebase_storage: ^10.2.15
 
   flutter_swipable: ^1.2.1
   comment_box: ^0.0.17
+  flutter_login: ^3.2.0
+  login_screen: ^0.6.0
 
 dev_dependencies:
   flutter_test:

@@ -9,7 +9,8 @@ class AccountData extends ChangeNotifier {
   final _db = FirebaseDatabase.instance.ref();
 
   FirebaseAuth get auth => _auth;
-  User? get user => auth.currentUser;
+  User get user => auth.currentUser!;
+  String get userID => user!.uid;
 
   void _updateData(Map<String, Map?> updates) async =>
       _db.update(updates).then((_) => notifyListeners());

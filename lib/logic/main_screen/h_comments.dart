@@ -52,7 +52,7 @@ class HComments extends ChangeNotifier {
 
   void addComment(String msg) {
     final date = DateTime.now();   
-    final comment = Comments(author: _userHandler.userID, text: msg, replyTo: postID, date: date.microsecondsSinceEpoch,);
+    final comment = Comments(author: _userHandler.userID, text: msg, replyTo: postID, date: date.millisecondsSinceEpoch,);
     _db.addComment(postID, comment);
   }
 }
