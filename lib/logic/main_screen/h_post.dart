@@ -44,7 +44,7 @@ class HPost extends ChangeNotifier {
   
 
   void likePressed() async {
-    String uid = _accountDb.user!.uid;
+    String uid = _accountDb.user.uid;
 
     assert(this.post != null);
     assert(_currentID != null);

@@ -9,7 +9,7 @@ class HUser{
 
   Account? _user;
   Future<Account> get cUser => _user == null ? _fetchCurrentUser() : Future.value(_user) ;
-  String get userID => _db.user!.uid;
+  String get userID => _db.user.uid;
 
   Future<Account> _fetchCurrentUser() async {
     _user = await getUserByID(userID);
@@ -17,12 +17,13 @@ class HUser{
   }
 
   Future<Account> getUserByID(String userID) async{
-    //TODO: implement this function
-    return Account(userName: 'pepega');
+    return _db.fetchAccountData(userID);
   }
 
-  String getAvatarUrl(String? pictureID){
-    if(pictureID == null) return _picDB.baseAvatarUrl;
-    return 'https://www.classmag.ru/tilda.sites/classmag/classmag-img/tild6265-3863-4963-b761-653137363930__usersilhouette_.jpg';
+  Future<String> getAvatarUrl(String? pictureID) async {
+    
+    if(pictureID == null) return _picDB.getAvatarURL(_picDB.baseAvatarID);
+    
+    return _picDB.getAvatarURL(pictureID);;
   }
 }

@@ -21,16 +21,15 @@ class _CommentsPageState extends State<CommentsPage> {
   final formKey = GlobalKey<FormState>();
   late final String postid; 
   late final HComments commentHandler;
+  
+  void listner() => setState(() {}); 
 
   @override
   void initState() {
     super.initState();
     postid = widget.postid;
     commentHandler = HComments(postID: postid);
-    commentHandler.addListener(() {
-      setState(() {});
-      print('wtf');
-    });
+    commentHandler.addListener(listner);
   }
 
   @override
@@ -44,13 +43,18 @@ class _CommentsPageState extends State<CommentsPage> {
         body: CommentBox(
           userImage:
               "https://lh3.googleusercontent.com/a-/AOh14GjRHcaendrf6gU5fPIVd8GIl1OgblrMMvGUoCBj4g=s400",
-          child: CommentListInheritedWidget(
-              comments: commentHandler.commentsList,
-              postid: postid,
-              listener: () {
-                setState(() {});
-              },
-              child: const CommentsList()), //CommentsList(commentdata),
+          child: FutureBuilder<List<Map<String, String>>>(
+            future: commentHandler.commentsList,
+            builder: (context, snapshot) {
+              if(snapshot.data == null) return CircularProgressIndicator();
+              return CommentListInheritedWidget(
+                comments: snapshot.data!,
+                postid: postid,
+                listener: listner,
+                child: const CommentsList());
+            },
+            
+          ), //CommentsList(commentdata),
           labelText: 'Write a comment...',
           withBorder: false,
           errorText: 'Comment cannot be blank',

@@ -10,13 +10,13 @@ class AccountData extends ChangeNotifier {
 
   FirebaseAuth get auth => _auth;
   User get user => auth.currentUser!;
-  String get userID => user!.uid;
+  String get userID => user.uid;
 
   void _updateData(Map<String, Map?> updates) async =>
       _db.update(updates).then((_) => notifyListeners());
 
   Future<Account> fetchAccountData(String? accountID) async {
-    String accID = accountID ?? user!.uid;
+    String accID = accountID ?? user.uid;
     final snapshot = await _db.child(DbRoutes.userData(accID)).get();
     return Account.fromMap(
         Map<String, dynamic>.from(snapshot.value as Map<dynamic, dynamic>));

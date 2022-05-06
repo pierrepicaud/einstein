@@ -8,8 +8,8 @@ class PictureData {
   final _userDB = AccountData();
   final _db = FirebaseStorage.instance.ref();
 
-  String get baseAvatarUrl =>
-      'gs://einstein-cb7c2.appspot.com/avatar/image_2022-05-06_144921479.png';
+  String get baseAvatarID =>
+      'noPicture';
 
   void uploadAvatar(String filePath) async {
     final file = File(filePath);
@@ -23,11 +23,13 @@ class PictureData {
     });
   }
 
-  Future<String> getAvatarURL(String userID) async {
-    final url = await _db.child(DbRoutes.userAvatarPicture(userID)).getDownloadURL();
+  Future<String> getAvatarURL(String picID) async {
+    final url = await _db.child(DbRoutes.userAvatarPicture(picID)).getDownloadURL();
     return url;
   }
 
+
+  // TODO: system to save Post pictures
   // void uploadPostPicture()
   // String downloadPostPicture()
 }

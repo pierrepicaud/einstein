@@ -9,7 +9,7 @@ class HComments extends ChangeNotifier {
   final _userHandler = HUser();
   final String postID;
   List<Comments> _comments = [];
-  List<Map<String, String>> get commentsList => _commentsToMap();
+  Future<List<Map<String, String>>> get commentsList => _commentsToMap();
 
   HComments({
     required this.postID,
@@ -22,13 +22,13 @@ class HComments extends ChangeNotifier {
   
   
 
-  List<Map<String, String>> _commentsToMap() {
+  Future<List<Map<String, String>>> _commentsToMap() async {
     final ret = <Map<String, String>>[];
     for (final comment in _comments) {
-      final Account user = _userHandler.getUserByID(comment.author);
+      final Account user = await _userHandler.getUserByID(comment.author);
       ret.add({
         'name': user.userName,
-        'pic': _userHandler.getAvatarUrl(user.accPicId),
+        'pic': await _userHandler.getAvatarUrl(user.accPicId),
         'message': comment.text
       });
     }
