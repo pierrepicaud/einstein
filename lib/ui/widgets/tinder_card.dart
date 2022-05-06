@@ -45,7 +45,7 @@ class TinderCard extends StatelessWidget {
 class TinderCardContent extends StatelessWidget {
   final Post post;
   // TODO: implement userlogic
-  // final UserLogic userLogic = UserLogic();
+  // final UserLogic userLogic = HUser();
 
   const TinderCardContent({
     Key? key,

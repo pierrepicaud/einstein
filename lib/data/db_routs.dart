@@ -1,7 +1,7 @@
 class DbRoutes{
-  static const posts = 'post';
-  static const users = 'users';
-  static const comments = 'comments';
+  static const posts = '/post';
+  static const users = '/users';
+  static const comments = '/comments';
   static const _postComments = 'comments';
 
   static String postData(String id) => '$posts/$id';

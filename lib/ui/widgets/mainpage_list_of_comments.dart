@@ -3,7 +3,7 @@ import 'mainpage_access_to_comments.dart';
 import 'mainpage_comments_page.dart';
 
 class CommentsList extends StatefulWidget {
-  const CommentsList(List commentdata, {Key? key}) : super(key: key);
+  const CommentsList( {Key? key}) : super(key: key);
   @override
   State<CommentsList> createState() => _CommentsListState();
 }

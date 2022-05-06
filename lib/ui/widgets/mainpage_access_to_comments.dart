@@ -1,3 +1,4 @@
+import 'package:einstein/logic/main_screen/h_comments.dart';
 import 'package:flutter/material.dart';
 
 //Replace with backend
@@ -29,19 +30,19 @@ class CommentProvider {
 }
 
 class CommentListInheritedWidget extends InheritedWidget {
-  final String postid;
-  final List comments = CommentProvider.get();
-  final void listener;
-  void addComment(value) {
-    CommentProvider.addNewComment(value);
-    listener;
-  }
+  
 
-  CommentListInheritedWidget({
+  final String postid;
+  final List comments;
+  final void listener;
+
+
+  const CommentListInheritedWidget({
     Key? key,
     required this.postid,
     required this.listener,
     required Widget child,
+    required this.comments,
   }) : super(key: key, child: child);
 
   static CommentListInheritedWidget of(BuildContext context) {

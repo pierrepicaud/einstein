@@ -1,6 +1,6 @@
 import 'package:einstein/data/main_screen/modules/card_events.dart';
 import 'package:einstein/data/main_screen/modules/post.dart';
-import 'package:einstein/logic/main_screen/post_hendler.dart';
+import 'package:einstein/logic/main_screen/h_post.dart';
 import 'package:einstein/logic/transitions/custom_route.dart';
 import 'package:einstein/ui/account/account.dart';
 import 'package:einstein/ui/home/card_holder.dart';
@@ -21,7 +21,7 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  final postHandler = PostHandler();
+  final postHandler = HPost();
   void listener() => setState(() {});
   int currentIndex = 0;
 
@@ -43,16 +43,17 @@ class _MainPageState extends State<MainPage> {
   }*/
 
   void addcomment() {}
-  void __openComments() async {
-    String postid = "1";
+  void __openComments(String? postid) async {
+    if(postid == null) return;
     await Navigator.of(context).push(MaterialPageRoute<String>(
         builder: (BuildContext context) {
-          return CommentListInheritedWidget(
+          /*return CommentListInheritedWidget(
               postid: postid,
               listener: () {
                 setState(() {});
               },
-              child: const CommentsPage());
+              child: const CommentsPage());*/
+              return CommentsPage(postid: postid);
         },
         fullscreenDialog: true));
   }
@@ -128,7 +129,7 @@ class _MainPageState extends State<MainPage> {
                     child: const Icon(Icons.mode_comment_outlined),
                     onPressed: () {
                       print('object');
-                      __openComments();
+                      __openComments(postHandler.postID);
                       //postHandler.nextPost();
                     },
                   ),
