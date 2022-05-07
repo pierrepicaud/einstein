@@ -8,8 +8,10 @@ import 'package:comment_box/comment/comment.dart';
 
 class CommentsPage extends StatefulWidget {
   final String postid;
+  final String avatarUrl;
   const CommentsPage({
     Key? key,
+    required this.avatarUrl,
     required this.postid,
   }) : super(key: key);
   @override
@@ -21,13 +23,14 @@ class _CommentsPageState extends State<CommentsPage> {
   final formKey = GlobalKey<FormState>();
   late final String postid;
   late final HComments commentHandler;
-
+  late final String avatarUrl;
   void listner() => setState(() {});
 
   @override
   void initState() {
     super.initState();
     postid = widget.postid;
+    avatarUrl = widget.avatarUrl;
     commentHandler = HComments(postID: postid);
     commentHandler.addListener(listner);
   }
@@ -41,8 +44,7 @@ class _CommentsPageState extends State<CommentsPage> {
           backgroundColor: Colors.blue,
         ),
         body: CommentBox(
-          userImage:
-              "https://lh3.googleusercontent.com/a-/AOh14GjRHcaendrf6gU5fPIVd8GIl1OgblrMMvGUoCBj4g=s400",
+          userImage: avatarUrl,
           child: FutureBuilder<List<Map<String, String>>>(
             future: commentHandler.commentsList,
             builder: (context, snapshot) {

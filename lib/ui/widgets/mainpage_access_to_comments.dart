@@ -1,33 +1,4 @@
-import 'package:einstein/logic/main_screen/h_comments.dart';
 import 'package:flutter/material.dart';
-
-//Replace with backend
-class CommentProvider {
-  static List comments = [
-    {
-      'name': 'Adeleye Ayodeji',
-      'pic': 'https://picsum.photos/300/30',
-      'message': 'I love to code'
-    },
-    {
-      'name': 'Biggi Man',
-      'pic': 'https://picsum.photos/300/30',
-      'message': 'Very cool'
-    },
-    {
-      'name': 'Biggi Man',
-      'pic': 'https://picsum.photos/300/30',
-      'message': 'Very cool'
-    },
-  ];
-  static void addNewComment(element) {
-    comments.insert(0, element);
-  }
-
-  static List get() {
-    return comments;
-  }
-}
 
 class CommentListInheritedWidget extends InheritedWidget {
   final String postid;
@@ -50,6 +21,6 @@ class CommentListInheritedWidget extends InheritedWidget {
   }
 
   @override
-  bool updateShouldNotify(CommentListInheritedWidget old) =>
-      comments != old.comments;
+  bool updateShouldNotify(CommentListInheritedWidget oldWidget) =>
+      comments != oldWidget.comments;
 }

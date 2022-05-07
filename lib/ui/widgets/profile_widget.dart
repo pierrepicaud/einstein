@@ -5,12 +5,12 @@ import 'package:flutter/rendering.dart';
 import 'button_widget.dart';
 
 class ProfileWidget extends StatelessWidget {
-  final String imagePath;
+  final String? imagePath;
   final VoidCallback onClicked;
 
   const ProfileWidget({
     Key? key,
-    required this.imagePath,
+    this.imagePath,
     required this.onClicked,
   }) : super(key: key);
 
@@ -26,8 +26,21 @@ class ProfileWidget extends StatelessWidget {
   }
 
   Widget buildImage() {
-    final image = NetworkImage(imagePath);
+    final image = imagePath == null ? null : NetworkImage(imagePath!);
 
+    if (image == null) {
+      return ClipOval(
+        child: Material(
+          color: Colors.transparent,
+          child: Container(
+            decoration: const BoxDecoration(
+              color: Colors.grey,
+              borderRadius: BorderRadius.all(Radius.circular(64)),
+            ),
+          ),
+        ),
+      );
+    }
     return ClipOval(
       child: Material(
         color: Colors.transparent,

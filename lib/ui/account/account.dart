@@ -3,17 +3,15 @@ import 'package:einstein/ui/widgets/profile_settings_tile.dart';
 import 'package:einstein/ui/widgets/profile_widget.dart';
 import 'package:flutter/material.dart';
 
-class Account extends StatelessWidget {
+class AccountScreen extends StatelessWidget {
   static const routeName = "/home/profile";
 
-  const Account({Key? key}) : super(key: key);
+  const AccountScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ProfilePage(
-          // onClicked: () {}, imagePath: '',
-          ),
+    return const Scaffold(
+      body: ProfilePage(),
     );
   }
 }

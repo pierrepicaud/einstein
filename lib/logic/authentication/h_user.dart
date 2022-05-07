@@ -20,9 +20,13 @@ class HUser {
     return _db.fetchAccountData(userID);
   }
 
+  Future<String> getCurrentAvatarUrl() async {
+    final user = await cUser;
+    return getAvatarUrl(user.accPicId);
+  }
+
   Future<String> getAvatarUrl(String? pictureID) async {
     if (pictureID == null) return _picDB.getAvatarURL(_picDB.baseAvatarID);
-
     return _picDB.getAvatarURL(pictureID);
     ;
   }

@@ -82,7 +82,7 @@ class AppUI extends MaterialApp {
           routes: {
             LoginScreen.routeName: (context) => LoginScreen(),
             MainPage.routeName: (context) => const MainPage(),
-            Account.routeName: (context) => const Account(),
+            AccountScreen.routeName: (context) => const AccountScreen(),
           },
         );
 }
