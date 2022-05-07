@@ -1,3 +1,4 @@
+import 'package:einstein/data/authentication/modules/account.dart';
 import 'package:einstein/data/authentication/repos/account_database.dart';
 import 'package:einstein/data/main_screen/modules/post.dart';
 import 'package:einstein/data/main_screen/repos/picture_database.dart';
@@ -28,8 +29,15 @@ class HPost extends ChangeNotifier {
 
   Future<Post?> fetchPostByID(String postID) async => _postDb.getPost(postID);
 
-  void addPost() {
-    //TODO: TBI
+  void addPost() async {
+    final post = Post(
+      author: _accountDb.userID,
+      text: 'text',
+      picId: 'TBI',
+      date: DateTime.now().millisecondsSinceEpoch,
+    );
+
+    return _postDb.addPost(post);
   }
 
   void nextPost() {

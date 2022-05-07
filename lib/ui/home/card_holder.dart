@@ -22,7 +22,6 @@ class _CardHolderState extends State<CardHolder> {
     final snapshot =
         context.dependOnInheritedWidgetOfExactType<CardHolderInherit>()!;
     final post = snapshot.currentPost;
-    final npost = snapshot.nextPost;
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -30,8 +29,8 @@ class _CardHolderState extends State<CardHolder> {
           //Container with widget
           child: Stack(
             children: <Widget>[
+              TinderCard(key: k2, color: Colors.orange),
               TinderCard(key: k1, color: Colors.orange, post: post),
-              TinderCard(key: k2, color: Colors.orange, post: npost),
             ],
           ),
         ),

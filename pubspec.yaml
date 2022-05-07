@@ -32,6 +32,7 @@ dependencies:
   overlay_support: ^1.2.1
   connectivity: ^3.0.6
   flutter_settings_screens: ^0.3.2-null-safety
+  google_fonts: ^2.3.2
 
 dev_dependencies:
   flutter_test:

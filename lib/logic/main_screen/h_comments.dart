@@ -33,12 +33,6 @@ class HComments extends ChangeNotifier {
     return ret;
   }
 
-  // Comment example
-  // 'name': 'New User',
-  // 'pic':
-  //     'https://lh3.googleusercontent.com/a-/AOh14GjRHcaendrf6gU5fPIVd8GIl1OgblrMMvGUoCBj4g=s400',
-  // 'message': commentController.text
-
   void _fetchCommentsFromPost() async {
     _comments = [];
     final coms = await _db.fethcComments(postID);

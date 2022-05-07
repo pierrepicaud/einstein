@@ -11,7 +11,6 @@ class PostsData extends ChangeNotifier {
   PostsData() {
     _db
         .child(DbRoutes.posts)
-        .orderByChild('date')
         .limitToLast(200)
         .onValue
         .listen((event) {

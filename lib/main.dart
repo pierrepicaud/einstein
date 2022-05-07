@@ -51,7 +51,7 @@ class AppUI extends MaterialApp {
               headline3: const TextStyle(
                 fontFamily: 'OpenSans',
                 fontSize: 45.0,
-                color: Colors.blue,
+                color: Colors.white,
               ),
               button: const TextStyle(
                 // OpenSans is similar to NotoSans but the uppercases look a bit better IMO
@@ -75,7 +75,7 @@ class AppUI extends MaterialApp {
               overline: const TextStyle(fontFamily: 'NotoSans'),
             ),
             colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue)
-                .copyWith(secondary: Colors.orange),
+                .copyWith(secondary: Colors.blue),
           ),
           navigatorObservers: [TransitionRouteObserver()],
           initialRoute: LoginScreen.routeName,

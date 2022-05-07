@@ -1,3 +1,4 @@
+import 'package:einstein/data/constants.dart';
 import 'package:einstein/data/main_screen/modules/card_events.dart';
 import 'package:einstein/data/main_screen/modules/post.dart';
 import 'package:einstein/logic/authentication/h_user.dart';
@@ -9,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:einstein/ui/widgets/mainpage_comments_page.dart';
 
 import 'package:einstein/ui/search/search_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 // ignore: todo
 //TODO: seporate logic from UI
 
@@ -92,67 +94,80 @@ class _MainPageState extends State<MainPage> {
       );
     } else {
       final post = postHandler.post;
-      final npost = postHandler.npost;
 
       return Scaffold(
         floatingActionButton: FloatingActionButton(
             onPressed: () => postHandler.addPost(),
             tooltip: 'Increment Counter',
-            child: const Icon(Icons.add)),
+            child: const Icon(Icons.edit)),
         body: SafeArea(
           child: FutureBuilder<String>(
               future: userHandler.getCurrentAvatarUrl(),
               builder: (context, snapshot) {
                 final avatarImageUrl = snapshot.data;
                 return Column(
+                  mainAxisSize: MainAxisSize.max,
                   children: [
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: IconButton(
-                        onPressed: () {
-                          Navigator.of(context).push(
-                            FadePageRoute(
-                              builder: (context) => const AccountScreen(),
-                            ),
-                          );
-                        },
-                        icon: Container(
-                          decoration: const BoxDecoration(
-                            color: Colors.grey,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(20),
+                    Stack(
+                      children: [
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: IconButton(
+                            onPressed: () {
+                              Navigator.of(context).push(
+                                FadePageRoute(
+                                  builder: (context) => const AccountScreen(),
+                                ),
+                              );
+                            },
+                            icon: Container(
+                              decoration: const BoxDecoration(
+                                color: Colors.grey,
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(20),
+                                ),
+                              ),
+                              child: (avatarImageUrl == null)
+                                  ? null
+                                  : CircleAvatar(
+                                      radius: 20,
+                                      backgroundImage:
+                                          NetworkImage(avatarImageUrl),
+                                    ),
                             ),
                           ),
-                          child: (avatarImageUrl == null)
-                              ? null
-                              : CircleAvatar(
-                                  radius: 20,
-                                  backgroundImage:
-                                      NetworkImage(avatarImageUrl),
-                                ),
                         ),
-                      ),
+                        Center(
+                          child: Text(
+                            Constants.appName,
+                            style: GoogleFonts.varelaRound(
+                              fontSize: 34,
+                            ),
+                          ),
+                        )
+                      ],
                     ),
                     SizedBox(
-                      height: 500,
+                      height: 550,
                       width: 500,
-                      child: (post != null && npost != null)
+                      child: (post != null)
                           ? CardHolderInherit(
                               currentPost: post,
-                              nextPost: npost,
                               child: const CardHolder(),
                               callback: (event) {
                                 switch (event) {
                                   case CardEvent.swipeUp:
                                   case CardEvent.swipeDown:
-                                    if(avatarImageUrl == null) break;
-                                    __openComments(postHandler.postID, avatarImageUrl);
+                                    if (avatarImageUrl == null) break;
+                                    __openComments(
+                                        postHandler.postID, avatarImageUrl);
                                     break;
                                   case CardEvent.swipeLeft:
                                     postHandler.nextPost();
                                     break;
                                   case CardEvent.swipeRight:
                                     postHandler.likePressed();
+                                    postHandler.nextPost();
                                     break;
                                   default:
                                 }
@@ -161,9 +176,9 @@ class _MainPageState extends State<MainPage> {
                             )
                           : const CircularProgressIndicator(),
                     ),
-                    Container(
-                      alignment: Alignment.topCenter,
+                    Center(
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           TextButton(
                             child: const Icon(Icons.favorite_outline_sharp),
@@ -253,14 +268,12 @@ class CustTextField extends StatelessWidget {
 
 class CardHolderInherit extends InheritedWidget {
   final Post currentPost;
-  final Post nextPost;
   final void Function(CardEvent)? callback;
 
   const CardHolderInherit({
     Key? key,
     required Widget child,
     required this.currentPost,
-    required this.nextPost,
     this.callback,
   }) : super(
           key: key,
@@ -269,8 +282,7 @@ class CardHolderInherit extends InheritedWidget {
 
   @override
   bool updateShouldNotify(CardHolderInherit oldWidget) {
-    return currentPost != oldWidget.currentPost ||
-        nextPost != oldWidget.nextPost;
+    return true; //currentPost != oldWidget.currentPost;
   }
 }
 
