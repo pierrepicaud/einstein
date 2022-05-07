@@ -29,7 +29,7 @@ class _SettingsPageState extends State<SettingsPage> {
           },
           icon: const Icon(
             Icons.arrow_back,
-            color: Colors.green,
+            color: Colors.blue,
           ),
         ),
       ),
@@ -48,7 +48,7 @@ class _SettingsPageState extends State<SettingsPage> {
               children: const [
                 Icon(
                   Icons.person,
-                  color: Colors.green,
+                  color: Colors.blue,
                 ),
                 SizedBox(
                   width: 8,
@@ -78,7 +78,7 @@ class _SettingsPageState extends State<SettingsPage> {
               children: const [
                 Icon(
                   Icons.volume_up_outlined,
-                  color: Colors.green,
+                  color: Colors.blue,
                 ),
                 SizedBox(
                   width: 8,
