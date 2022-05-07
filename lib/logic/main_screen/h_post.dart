@@ -12,7 +12,7 @@ class HPost extends ChangeNotifier {
   List<String>? _postsIDs;
   String? get _currentID => _postsIDs?[_currentPost];
   int _currentPost = 0;
-  
+
   String? get postID => _currentID;
   Post? get post => _posts?[_currentID]!;
   Post? get npost => _posts?[
@@ -28,7 +28,7 @@ class HPost extends ChangeNotifier {
 
   Future<Post?> fetchPostByID(String postID) async => _postDb.getPost(postID);
 
-  void addPost(){
+  void addPost() {
     //TODO: TBI
   }
 
@@ -44,11 +44,9 @@ class HPost extends ChangeNotifier {
     notifyListeners();
   }
 
-  
   Future<String> getPictureUrl(String picID) async {
     return _picDb.getPostPictureURL(picID);
   }
-
 
   void likePressed() async {
     String uid = _accountDb.user.uid;

@@ -27,9 +27,10 @@ class PostsData extends ChangeNotifier {
     });
   }
 
-  Future<Post> getPost(postID) async{
+  Future<Post> getPost(postID) async {
     final snapshot = await _db.child(DbRoutes.postData(postID)).get();
-    final map = Map<String, dynamic>.from(snapshot.value as Map<dynamic, dynamic>);
+    final map =
+        Map<String, dynamic>.from(snapshot.value as Map<dynamic, dynamic>);
     return Post.fromMap(map);
   }
 

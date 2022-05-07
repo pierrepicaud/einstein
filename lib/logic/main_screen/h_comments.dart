@@ -19,8 +19,6 @@ class HComments extends ChangeNotifier {
       _fetchCommentsFromPost();
     });
   }
-  
-  
 
   Future<List<Map<String, String>>> _commentsToMap() async {
     final ret = <Map<String, String>>[];
@@ -51,8 +49,13 @@ class HComments extends ChangeNotifier {
   }
 
   void addComment(String msg) {
-    final date = DateTime.now();   
-    final comment = Comments(author: _userHandler.userID, text: msg, replyTo: postID, date: date.millisecondsSinceEpoch,);
+    final date = DateTime.now();
+    final comment = Comments(
+      author: _userHandler.userID,
+      text: msg,
+      replyTo: postID,
+      date: date.millisecondsSinceEpoch,
+    );
     _db.addComment(postID, comment);
   }
 }

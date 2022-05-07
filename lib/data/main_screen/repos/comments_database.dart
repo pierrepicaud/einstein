@@ -31,9 +31,10 @@ class CommentData extends ChangeNotifier {
     if (commentsIDs == null) return null;
     final Map<String, Comments> comments = {};
     final commentsList = _getListOfComments(commentsIDs);
-    for (final key in commentsList.asMap().keys){ 
+    for (final key in commentsList.asMap().keys) {
       final snapshot = await commentsList[key];
-      final map = Map<String, dynamic>.from(snapshot.value as Map<dynamic, dynamic>);
+      final map =
+          Map<String, dynamic>.from(snapshot.value as Map<dynamic, dynamic>);
       comments[commentsIDs[key]] = Comments.fromMap(map);
     }
     return comments;

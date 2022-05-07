@@ -171,9 +171,7 @@ class TinderCardContent extends StatelessWidget {
                   );
                 }
                 return Image(
-                  image: NetworkImage(snapshot.data!),
-                  fit: BoxFit.contain
-                );
+                    image: NetworkImage(snapshot.data!), fit: BoxFit.contain);
               },
             ),
         ],

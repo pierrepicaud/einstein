@@ -14,7 +14,15 @@ class _SettingsPageState extends State<SettingsPage> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         elevation: 1,
-        actions:[IconButton(icon: Icon(icon, color: Colors.black,), onPressed: () {},)],
+        actions: [
+          IconButton(
+            icon: Icon(
+              icon,
+              color: Colors.black,
+            ),
+            onPressed: () {},
+          )
+        ],
         leading: IconButton(
           onPressed: () {
             Navigator.of(context).pop();

@@ -88,107 +88,106 @@ class _MainPageState extends State<MainPage> {
       final post = postHandler.post;
       final npost = postHandler.npost;
 
-    return Scaffold(
-      floatingActionButton: FloatingActionButton(
-          onPressed: () => postHandler.addPost(),
-          tooltip: 'Increment Counter',
-          child: const Icon(Icons.add)),
-      body: SafeArea(
-        child: Column(children: [
-          Align(
-              alignment: Alignment.topLeft,
-              child: IconButton(
-                  onPressed: () {
-                    Navigator.of(context).push(FadePageRoute(
-                      builder: (context) => const Account(),
-                    ));
-                  },
-                  icon: const Icon(
-                    Icons.account_circle,
-                    size: 40,
-                  ))),
-          SizedBox(
-            height: 500,
-            width: 500,
-            child: (post != null && npost != null)
-                ? CardHolderInherit(
-                    currentPost: post,
-                    nextPost: npost,
-                    child: const CardHolder(),
-                    callback: (event) {
-                      switch (event) {
-                        case CardEvent.swipeUp:
-                          __openComments(postHandler.postID);
-                          break;
-                        case CardEvent.swipeDown:
-                          __openComments(postHandler.postID);
-                          break;
-                        case CardEvent.swipeLeft:
-                          postHandler.nextPost();
-                          break;
-                        case CardEvent.swipeRight:
-                          postHandler.likePressed();
-                          break;
-                        default:
-                      }
-                      setState(() {});
-                    },
-                  )
-                : const CircularProgressIndicator(),
-          ),
-          Text(post?.text ?? ''),
-          Container(
-              alignment: Alignment.topCenter,
-              child: Row(
-                children: <Widget>[
-                  TextButton(
-                    child: const Icon(Icons.favorite_outline_sharp),
+      return Scaffold(
+        floatingActionButton: FloatingActionButton(
+            onPressed: () => postHandler.addPost(),
+            tooltip: 'Increment Counter',
+            child: const Icon(Icons.add)),
+        body: SafeArea(
+          child: Column(children: [
+            Align(
+                alignment: Alignment.topLeft,
+                child: IconButton(
                     onPressed: () {
+                      Navigator.of(context).push(FadePageRoute(
+                        builder: (context) => const Account(),
+                      ));
                     },
-                  ),
-                  Text("${post?.likeCount}"),
-                  TextButton(
-                    child: const Icon(Icons.share_sharp),
-                    onPressed: () {
-                      postHandler.sharePressed();
-                    },
-                  ),
-                  Text("${post?.sharedCount}"),
-                  TextButton(
-                    child: const Icon(Icons.mode_comment_outlined),
-                    onPressed: () {
-                      //postHandler.nextPost();
-                    },
-                  ),
-                  Text("${post?.commentCount}"),
-                ],
-              )),
-        ]),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentIndex,
-        onTap: (index) => setState(() => currentIndex = index),
-        items: const [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: "Home",
-              backgroundColor: Colors.blue),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: "Search",
-              backgroundColor: Colors.blue),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.circle_notifications_rounded),
-              label: "Notifications",
-              backgroundColor: Colors.blue),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person_outline_rounded),
-              label: "Profile Page",
-              backgroundColor: Colors.blue),
-        ],
-      ),
-    );
-  }
+                    icon: const Icon(
+                      Icons.account_circle,
+                      size: 40,
+                    ))),
+            SizedBox(
+              height: 500,
+              width: 500,
+              child: (post != null && npost != null)
+                  ? CardHolderInherit(
+                      currentPost: post,
+                      nextPost: npost,
+                      child: const CardHolder(),
+                      callback: (event) {
+                        switch (event) {
+                          case CardEvent.swipeUp:
+                            __openComments(postHandler.postID);
+                            break;
+                          case CardEvent.swipeDown:
+                            __openComments(postHandler.postID);
+                            break;
+                          case CardEvent.swipeLeft:
+                            postHandler.nextPost();
+                            break;
+                          case CardEvent.swipeRight:
+                            postHandler.likePressed();
+                            break;
+                          default:
+                        }
+                        setState(() {});
+                      },
+                    )
+                  : const CircularProgressIndicator(),
+            ),
+            Text(post?.text ?? ''),
+            Container(
+                alignment: Alignment.topCenter,
+                child: Row(
+                  children: <Widget>[
+                    TextButton(
+                      child: const Icon(Icons.favorite_outline_sharp),
+                      onPressed: () {},
+                    ),
+                    Text("${post?.likeCount}"),
+                    TextButton(
+                      child: const Icon(Icons.share_sharp),
+                      onPressed: () {
+                        postHandler.sharePressed();
+                      },
+                    ),
+                    Text("${post?.sharedCount}"),
+                    TextButton(
+                      child: const Icon(Icons.mode_comment_outlined),
+                      onPressed: () {
+                        //postHandler.nextPost();
+                      },
+                    ),
+                    Text("${post?.commentCount}"),
+                  ],
+                )),
+          ]),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: currentIndex,
+          onTap: (index) => setState(() => currentIndex = index),
+          items: const [
+            BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: "Home",
+                backgroundColor: Colors.blue),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.search),
+                label: "Search",
+                backgroundColor: Colors.blue),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.circle_notifications_rounded),
+                label: "Notifications",
+                backgroundColor: Colors.blue),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.person_outline_rounded),
+                label: "Profile Page",
+                backgroundColor: Colors.blue),
+          ],
+        ),
+      );
+    }
   }
 }
 

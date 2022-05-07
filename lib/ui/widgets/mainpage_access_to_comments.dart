@@ -30,12 +30,9 @@ class CommentProvider {
 }
 
 class CommentListInheritedWidget extends InheritedWidget {
-  
-
   final String postid;
   final List comments;
   final void listener;
-
 
   const CommentListInheritedWidget({
     Key? key,

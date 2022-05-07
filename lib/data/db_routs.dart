@@ -1,4 +1,4 @@
-class DbRoutes{
+class DbRoutes {
   static const posts = '/post';
   static const users = '/users';
   static const comments = '/comments';
