@@ -29,8 +29,8 @@ class _CardHolderState extends State<CardHolder> {
           //Container with widget
           child: Stack(
             children: <Widget>[
-              TinderCard(key: k2, color: Colors.orange),
-              TinderCard(key: k1, color: Colors.orange, post: post),
+              TinderCard(key: k2, color: Theme.of(context).colorScheme.secondary),
+              TinderCard(key: k1, color: Theme.of(context).colorScheme.secondary, post: post),
             ],
           ),
         ),

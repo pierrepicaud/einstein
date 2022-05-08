@@ -43,7 +43,6 @@ class _ProfilePageState extends State<ProfilePage> {
             children: [
               if(user == null)
                 ProfileWidget(
-                    // TODO: make witget work with null
                     imagePath: null,
                     onClicked: () async {},
                   )
@@ -52,7 +51,6 @@ class _ProfilePageState extends State<ProfilePage> {
                 future: userHandler.getAvatarUrl(user.accPicId),
                 builder: (context, snap) {
                   return ProfileWidget(
-                    // TODO: make witget work with null
                     imagePath: snap.data,
                     onClicked: () async {},
                   );
@@ -61,13 +59,11 @@ class _ProfilePageState extends State<ProfilePage> {
               const SizedBox(
                 height: 24,
               ),
-              // TODO: make it work with null
               buildName(user?.userName, "@emimi.fukada.94"),
               const SizedBox(
                 height: 24,
               ),
               Center(
-                // Change to follow button
                 child: buildUpgradeButton(),
               ),
               const SizedBox(
@@ -77,7 +73,6 @@ class _ProfilePageState extends State<ProfilePage> {
               const SizedBox(
                 height: 80,
               ),
-              // TODO: make this work with null
               if (user?.about != null) buildAbout(user!.about!),
             ],
           );
@@ -112,8 +107,7 @@ class _ProfilePageState extends State<ProfilePage> {
           else
             Text(
               email,
-              // ignore: prefer_const_constructors
-              style: TextStyle(color: Colors.grey),
+              style: const TextStyle(color: Colors.grey),
             )
         ],
       );

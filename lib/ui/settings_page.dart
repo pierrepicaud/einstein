@@ -1,7 +1,15 @@
+import 'package:einstein/logic/authentication/h_user.dart';
+import 'package:einstein/ui/authentication/login_screen.dart';
+import 'package:einstein/ui/theam.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class SettingsPage extends StatefulWidget {
+  static const routeName = "/home/profile/settings";
+
+  const SettingsPage({Key? key}) : super(key: key);
+  
   @override
   _SettingsPageState createState() => _SettingsPageState();
 }
@@ -18,18 +26,21 @@ class _SettingsPageState extends State<SettingsPage> {
           IconButton(
             icon: Icon(
               icon,
-              color: Colors.black,
+              color: Theme.of(context).dividerColor,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Provider.of<ThemeProvider>(context, listen: false).changeMode();
+              HUser().setDarkMode(Provider.of<ThemeProvider>(context, listen: false).isDark());
+            },
           )
         ],
         leading: IconButton(
           onPressed: () {
             Navigator.of(context).pop();
           },
-          icon: const Icon(
+          icon: Icon(
             Icons.arrow_back,
-            color: Colors.blue,
+            color: Theme.of(context).dividerColor,
           ),
         ),
       ),
@@ -45,15 +56,15 @@ class _SettingsPageState extends State<SettingsPage> {
               height: 40,
             ),
             Row(
-              children: const [
+              children: [
                 Icon(
                   Icons.person,
-                  color: Colors.blue,
+                  color: Theme.of(context).primaryColor,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 8,
                 ),
-                Text(
+                const Text(
                   "Account",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
@@ -75,15 +86,15 @@ class _SettingsPageState extends State<SettingsPage> {
               height: 40,
             ),
             Row(
-              children: const [
+              children: [
                 Icon(
                   Icons.volume_up_outlined,
-                  color: Colors.blue,
+                  color: Theme.of(context).primaryColor,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 8,
                 ),
-                Text(
+                const Text(
                   "Notifications",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
@@ -107,10 +118,13 @@ class _SettingsPageState extends State<SettingsPage> {
                 padding: const EdgeInsets.symmetric(horizontal: 40),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                onPressed: () {},
-                child: const Text("SIGN OUT",
+                onPressed: () {
+                  HUser().signOut();
+                  Navigator.pushNamedAndRemoveUntil(context, LoginScreen.routeName, (_) => false);
+                },
+                child: Text("SIGN OUT",
                     style: TextStyle(
-                        fontSize: 16, letterSpacing: 2.2, color: Colors.black)),
+                        fontSize: 16, letterSpacing: 2.2, color: Theme.of(context).dividerColor)),
               ),
             )
           ],

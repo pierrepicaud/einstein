@@ -32,12 +32,12 @@ class SearchPage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text("Search"),
-          backgroundColor: Colors.blue,
+          backgroundColor: Theme.of(context).primaryColor,
         ),
         body: SafeArea(
           child: Container(
               child: TypeAheadField<Map<String, Account?>>(
-            debounceDuration: Duration(milliseconds: 100),
+            debounceDuration: const Duration(milliseconds: 100),
             textFieldConfiguration: const TextFieldConfiguration(
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.search),

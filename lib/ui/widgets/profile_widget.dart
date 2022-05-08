@@ -20,7 +20,7 @@ class ProfileWidget extends StatelessWidget {
     return Center(
       child: Stack(children: [
         buildImage(),
-        Positioned(bottom: 0, right: 4, child: buildEditIcon(color))
+        Positioned(bottom: 0, right: 4, child: buildEditIcon(context, color))
       ]),
     );
   }
@@ -56,8 +56,8 @@ class ProfileWidget extends StatelessWidget {
   }
 
   // ignore: prefer_const_constructors
-  Widget buildEditIcon(Color color) => buildCircle(
-      color: Colors.white,
+  Widget buildEditIcon(BuildContext context, Color color) => buildCircle(
+      color: Theme.of(context).scaffoldBackgroundColor,
       all: 3,
       child: buildCircle(
         color: color,

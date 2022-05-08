@@ -40,6 +40,10 @@ class AccountData extends ChangeNotifier {
     return _updateData(updates);
   }
 
+  void signOut() async {
+    await _auth.signOut();
+  }
+
   Future<UserCredential?> signInWithPassword(
       String email, String password) async {
     try {

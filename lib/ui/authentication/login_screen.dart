@@ -40,26 +40,10 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlutterLogin(
       title: Constants.appName,
-      // logo: AssetImage(),
       logoTag: Constants.logoTag,
       titleTag: Constants.titleTag,
       navigateBackAfterRecovery: true,
-      // onConfirmRecover: _signupConfirm, -- email address aprovement
-      // onConfirmSignup: _signupConfirm, -- email address aprovement
       loginAfterSignUp: true,
-      loginProviders: [
-        LoginProvider(
-          button: Buttons.Twitter,
-          label: 'Twitter',
-          callback: () async {
-            return null;
-          },
-          providerNeedsSignUpCallback: () {
-            // put here your logic to conditionally show the additional fields
-            return Future.value(true);
-          },
-        )
-      ],
       termsOfService: [
         TermOfService(
             id: 'general-term',

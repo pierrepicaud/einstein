@@ -41,7 +41,7 @@ class _CommentsPageState extends State<CommentsPage> {
     return Scaffold(
         appBar: AppBar(
           title: const Text("Comments"),
-          backgroundColor: Colors.blue,
+          backgroundColor: Theme.of(context).primaryColor,
         ),
         body: CommentBox(
           userImage: avatarUrl,
@@ -77,8 +77,7 @@ class _CommentsPageState extends State<CommentsPage> {
           },
           formKey: formKey,
           commentController: commentController,
-          backgroundColor: Colors.black,
-          textColor: Colors.white,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           sendWidget: Icon(Icons.send_sharp, size: 30, color: Colors.white),
         ));
   }

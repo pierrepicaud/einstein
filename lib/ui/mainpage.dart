@@ -6,11 +6,13 @@ import 'package:einstein/logic/main_screen/h_post.dart';
 import 'package:einstein/logic/transitions/custom_route.dart';
 import 'package:einstein/ui/account/account.dart';
 import 'package:einstein/ui/home/card_holder.dart';
+import 'package:einstein/ui/theam.dart';
 import 'package:flutter/material.dart';
 import 'package:einstein/ui/widgets/mainpage_comments_page.dart';
 
 import 'package:einstein/ui/search/search_page.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 // ignore: todo
 //TODO: seporate logic from UI
 
@@ -28,12 +30,14 @@ class _MainPageState extends State<MainPage> {
   final userHandler = HUser();
   void listener() => setState(() {});
   int currentIndex = 0;
+  bool isInit = true;
 
   @override
   void initState() {
     super.initState();
 
     postHandler.addListener(listener);
+    setAppTheme(context);
   }
 
   @override
@@ -43,6 +47,12 @@ class _MainPageState extends State<MainPage> {
   }
 
   void addcomment() {}
+
+  void setAppTheme(BuildContext context) async {
+    final user = await userHandler.cUser;
+    print('isD: ${user.isDarkMode}');
+    Provider.of<ThemeProvider>(context, listen: false).setMode(user.isDarkMode);
+  }
 
   void __openSearchPage() async {
     await Navigator.of(context).push(MaterialPageRoute<String>(
@@ -70,25 +80,43 @@ class _MainPageState extends State<MainPage> {
       return Scaffold(
         body: const SearchPage(),
         bottomNavigationBar: BottomNavigationBar(
+          backgroundColor:
+              Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+          selectedIconTheme:
+              Theme.of(context).bottomNavigationBarTheme.selectedIconTheme,
+          unselectedIconTheme:
+              Theme.of(context).bottomNavigationBarTheme.unselectedIconTheme,
+          selectedItemColor:
+              Theme.of(context).bottomNavigationBarTheme.selectedItemColor,
+          unselectedItemColor:
+              Theme.of(context).bottomNavigationBarTheme.unselectedItemColor,
           currentIndex: currentIndex,
           onTap: (index) => setState(() => currentIndex = index),
-          items: const [
+          items: [
             BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: "Home",
-                backgroundColor: Colors.blue),
+              icon: const Icon(Icons.home),
+              label: "Home",
+              backgroundColor:
+                  Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+            ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.search),
-                label: "Search",
-                backgroundColor: Colors.blue),
+              icon: const Icon(Icons.search),
+              label: "Search",
+              backgroundColor:
+                  Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+            ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.circle_notifications_rounded),
-                label: "Notifications",
-                backgroundColor: Colors.blue),
+              icon: const Icon(Icons.circle_notifications_rounded),
+              label: "Notifications",
+              backgroundColor:
+                  Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+            ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.person_outline_rounded),
-                label: "Profile Page",
-                backgroundColor: Colors.blue),
+              icon: const Icon(Icons.person_outline_rounded),
+              label: "Profile Page",
+              backgroundColor:
+                  Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+            ),
           ],
         ),
       );
@@ -97,9 +125,13 @@ class _MainPageState extends State<MainPage> {
 
       return Scaffold(
         floatingActionButton: FloatingActionButton(
+            backgroundColor: Theme.of(context).primaryColor,
             onPressed: () => postHandler.addPost(),
             tooltip: 'Increment Counter',
-            child: const Icon(Icons.edit)),
+            child: Icon(
+              Icons.edit,
+              color: Theme.of(context).dividerColor,
+            )),
         body: SafeArea(
           child: FutureBuilder<String>(
               future: userHandler.getCurrentAvatarUrl(),
@@ -209,23 +241,41 @@ class _MainPageState extends State<MainPage> {
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: currentIndex,
           onTap: (index) => setState(() => currentIndex = index),
-          items: const [
+          backgroundColor:
+              Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+          selectedIconTheme:
+              Theme.of(context).bottomNavigationBarTheme.selectedIconTheme,
+          unselectedIconTheme:
+              Theme.of(context).bottomNavigationBarTheme.unselectedIconTheme,
+          selectedItemColor:
+              Theme.of(context).bottomNavigationBarTheme.selectedItemColor,
+          unselectedItemColor:
+              Theme.of(context).bottomNavigationBarTheme.unselectedItemColor,
+          items: [
             BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: "Home",
-                backgroundColor: Colors.blue),
+              icon: const Icon(Icons.home),
+              label: "Home",
+              backgroundColor:
+                  Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+            ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.search),
-                label: "Search",
-                backgroundColor: Colors.blue),
+              icon: const Icon(Icons.search),
+              label: "Search",
+              backgroundColor:
+                  Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+            ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.circle_notifications_rounded),
-                label: "Notifications",
-                backgroundColor: Colors.blue),
+              icon: const Icon(Icons.circle_notifications_rounded),
+              label: "Notifications",
+              backgroundColor:
+                  Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+            ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.person_outline_rounded),
-                label: "Profile Page",
-                backgroundColor: Colors.blue),
+              icon: const Icon(Icons.person_outline_rounded),
+              label: "Profile Page",
+              backgroundColor:
+                  Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+            ),
           ],
         ),
       );
@@ -245,7 +295,7 @@ class CustTextField extends StatelessWidget {
       //color: Color.fromARGB(255, 152, 197, 219),
       margin: const EdgeInsets.symmetric(horizontal: 80),
       decoration: BoxDecoration(
-        color: Colors.blue.shade300,
+        color: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.circular(10),
       ),
       //padding: const EdgeInsets.symmetric(),
