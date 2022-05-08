@@ -18,6 +18,7 @@ mtwitt is a prototype of a minimalist tweeter that offers simplified functionali
 ## Screens and Features
 
 ![](images/images.jpeg)
+![](images/images-1.jpeg)
 
 - Login with firebase is available
   - email: `test@test.com`
