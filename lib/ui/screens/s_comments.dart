@@ -50,7 +50,6 @@ class _CommentsScreenState extends State<CommentsScreen> {
               return CommentListInherit(
                   comments: snapshot.data!,
                   postid: postid,
-                  listener: listner(),
                   child: const CommentsList());
             },
           ),
@@ -67,7 +66,7 @@ class _CommentsScreenState extends State<CommentsScreen> {
           formKey: formKey,
           commentController: commentController,
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-          sendWidget: const Icon(Icons.send_sharp, size: 30, color: Colors.white),
+          sendWidget: Icon(Icons.send_sharp, size: 30, color: Theme.of(context).dividerColor),
         ));
   }
 }

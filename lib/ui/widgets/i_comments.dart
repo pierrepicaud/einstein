@@ -3,12 +3,10 @@ import 'package:flutter/material.dart';
 class CommentListInherit extends InheritedWidget {
   final String postid;
   final List comments;
-  final void listener;
 
   const CommentListInherit({
     Key? key,
     required this.postid,
-    required this.listener,
     required Widget child,
     required this.comments,
   }) : super(key: key, child: child);
