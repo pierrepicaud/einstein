@@ -1,5 +1,8 @@
 import 'dart:convert';
 
+// generated with "dart data class generator"
+// extention for vs code
+
 class Account {
   final List<String>? follows;
   final List<String>? posts;

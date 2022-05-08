@@ -93,8 +93,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           else
             Text(
               name,
-              // ignore: prefer_const_constructors
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             ),
           const SizedBox(height: 4),
           if (email == null)
@@ -120,12 +119,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 48),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          // ignore: prefer_const_constructors
           children: [
-            // ignore: prefer_const_constructors
-            Text(
+            const Text(
               "About",
-              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(
               height: 16,

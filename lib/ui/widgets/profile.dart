@@ -50,8 +50,7 @@ class ProfileWidget extends StatelessWidget {
       ),
     );
   }
-
-  // ignore: prefer_const_constructors
+  
   Widget buildEditIcon(BuildContext context, Color color) => buildCircle(
       color: Theme.of(context).scaffoldBackgroundColor,
       all: 3,

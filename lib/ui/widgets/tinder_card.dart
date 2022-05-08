@@ -14,10 +14,8 @@ class TinderCard extends StatelessWidget {
     this.post,
   }) : super(key: key);
 
-  //On error remove
   final Color color;
   final Post? post;
-  // final tweet;
 
   @override
   Widget build(BuildContext context) {

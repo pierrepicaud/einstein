@@ -1,5 +1,8 @@
 import 'dart:convert';
 
+// generated with "dart data class generator"
+// extention for vs code
+
 class Comments {
   String author;
   String text;

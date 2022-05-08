@@ -53,7 +53,7 @@ class _CommentsScreenState extends State<CommentsScreen> {
                   listener: listner(),
                   child: const CommentsList());
             },
-          ), //CommentsList(commentdata),
+          ),
           labelText: 'Write a comment...',
           withBorder: false,
           errorText: 'Comment cannot be blank',
