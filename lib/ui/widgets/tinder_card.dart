@@ -1,9 +1,9 @@
-import 'package:einstein/data/authentication/modules/account.dart';
-import 'package:einstein/data/main_screen/modules/card_events.dart';
-import 'package:einstein/data/main_screen/modules/post.dart';
-import 'package:einstein/logic/authentication/h_user.dart';
-import 'package:einstein/logic/main_screen/h_post.dart';
-import 'package:einstein/ui/mainpage.dart';
+import 'package:einstein/data/modules/account.dart';
+import 'package:einstein/data/modules/card_events.dart';
+import 'package:einstein/data/modules/post.dart';
+import 'package:einstein/logic/h_post.dart';
+import 'package:einstein/logic/h_user.dart';
+import 'package:einstein/ui/screens/s_main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swipable/flutter_swipable.dart';
 

@@ -1,18 +1,18 @@
-import 'package:einstein/logic/authentication/h_user.dart';
-import 'package:einstein/ui/connectivity/notify_connectivity.dart';
-import 'package:einstein/ui/settings_page.dart';
-import 'package:einstein/ui/theam.dart';
+import 'package:einstein/data/repos/constants.dart';
+import 'package:einstein/logic/h_user.dart';
+import 'package:einstein/ui/screens/s_account.dart';
+import 'package:einstein/ui/screens/s_login.dart';
+import 'package:einstein/ui/screens/s_main.dart';
+import 'package:einstein/ui/screens/s_settings.dart';
+import 'package:einstein/ui/transitions/transition_route_observer.dart';
+import 'package:einstein/ui/widgets/notify_connectivity.dart';
+import 'package:einstein/ui/theme.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:einstein/data/constants.dart';
 import 'package:einstein/firebase_options.dart';
-import 'package:einstein/ui/account/account.dart';
-import 'package:einstein/ui/mainpage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'ui/authentication/login_screen.dart';
-import 'logic/transitions/transition_route_observer.dart';
 
 void main() async {
   SystemChrome.setSystemUIOverlayStyle(
@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
           final themeMode = Provider.of<ThemeProvider>(context).theme;
           return AppUI(
             themeMode: themeMode,
-            initialRoute: (auth.currentUser == null)? LoginScreen.routeName: MainPage.routeName,
+            initialRoute: (auth.currentUser == null)? LoginScreen.routeName: MainScreen.routeName,
           );
         },
       ),
@@ -69,9 +69,9 @@ class AppUI extends MaterialApp {
           initialRoute: initialRoute,
           routes: {
             LoginScreen.routeName: (context) => LoginScreen(),
-            MainPage.routeName: (context) => const MainPage(),
+            MainScreen.routeName: (context) => const MainScreen(),
             AccountScreen.routeName: (context) => const AccountScreen(),
-            SettingsPage.routeName: (context) => const SettingsPage(),
+            SettingsScreen.routeName: (context) => const SettingsScreen(),
           },
         );
 }
