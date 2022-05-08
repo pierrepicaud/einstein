@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'i_comments.dart';
-import '../screens/s_comments.dart';
 
 class CommentsList extends StatefulWidget {
   const CommentsList({Key? key}) : super(key: key);
@@ -20,8 +19,7 @@ class _CommentsListState extends State<CommentsList> {
             child: ListTile(
               leading: GestureDetector(
                 onTap: () async {
-                  // Display the image in large form.
-                  print("Comment Clicked");
+                  // TODO: Display the image in large form.
                 },
                 child: Container(
                   height: 50.0,
@@ -38,7 +36,7 @@ class _CommentsListState extends State<CommentsList> {
               ),
               title: Text(
                 commentdata[i]['name'],
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: const TextStyle(fontWeight: FontWeight.bold),
               ),
               subtitle: Text(commentdata[i]['message']),
             ),

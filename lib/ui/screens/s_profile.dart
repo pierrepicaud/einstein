@@ -41,21 +41,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
           return ListView(
             physics: const BouncingScrollPhysics(),
             children: [
-              if(user == null)
+              if (user == null)
                 ProfileWidget(
-                    imagePath: null,
-                    onClicked: () async {},
-                  )
+                  imagePath: null,
+                  onClicked: () async {},
+                )
               else
-              FutureBuilder<String>(
-                future: userHandler.getAvatarUrl(user.accPicId),
-                builder: (context, snap) {
-                  return ProfileWidget(
-                    imagePath: snap.data,
-                    onClicked: () async {},
-                  );
-                },
-              ),
+                FutureBuilder<String>(
+                  future: userHandler.getAvatarUrl(user.accPicId),
+                  builder: (context, snap) {
+                    return ProfileWidget(
+                      imagePath: snap.data,
+                      onClicked: () async {},
+                    );
+                  },
+                ),
               const SizedBox(
                 height: 24,
               ),
@@ -117,23 +117,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
         onClicked: () {},
       ));
   Widget buildAbout(String about) => Container(
-      padding: const EdgeInsets.symmetric(horizontal: 48),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        // ignore: prefer_const_constructors
-        children: [
+        padding: const EdgeInsets.symmetric(horizontal: 48),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           // ignore: prefer_const_constructors
-          Text(
-            "About",
-            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          Text(
-            about,
-            style: const TextStyle(fontSize: 16, height: 1.4),
-          )
-        ],
-      ));
+          children: [
+            // ignore: prefer_const_constructors
+            Text(
+              "About",
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            Text(
+              about,
+              style: const TextStyle(fontSize: 16, height: 1.4),
+            )
+          ],
+        ),
+      );
 }

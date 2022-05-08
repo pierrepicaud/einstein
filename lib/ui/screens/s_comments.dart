@@ -46,11 +46,11 @@ class _CommentsScreenState extends State<CommentsScreen> {
           child: FutureBuilder<List<Map<String, String>>>(
             future: commentHandler.commentsList,
             builder: (context, snapshot) {
-              if (snapshot.data == null) return CircularProgressIndicator();
+              if (snapshot.data == null) return const CircularProgressIndicator();
               return CommentListInherit(
                   comments: snapshot.data!,
                   postid: postid,
-                  listener: listner,
+                  listener: listner(),
                   child: const CommentsList());
             },
           ), //CommentsList(commentdata),
@@ -59,24 +59,15 @@ class _CommentsScreenState extends State<CommentsScreen> {
           errorText: 'Comment cannot be blank',
           sendButtonMethod: () {
             if (formKey.currentState!.validate()) {
-              // var value = {
-              //   'name': 'New User',
-              //   'pic':
-              //       'https://lh3.googleusercontent.com/a-/AOh14GjRHcaendrf6gU5fPIVd8GIl1OgblrMMvGUoCBj4g=s400',
-              //   'message': commentController.text
-              // };
-              // value;
               commentHandler.addComment(commentController.text);
               commentController.clear();
               FocusScope.of(context).unfocus();
-            } else {
-              print("Not validated");
             }
           },
           formKey: formKey,
           commentController: commentController,
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-          sendWidget: Icon(Icons.send_sharp, size: 30, color: Colors.white),
+          sendWidget: const Icon(Icons.send_sharp, size: 30, color: Colors.white),
         ));
   }
 }

@@ -1,5 +1,4 @@
 import 'package:einstein/data/modules/card_events.dart';
-import 'package:einstein/data/modules/post.dart';
 import 'package:einstein/data/repos/constants.dart';
 import 'package:einstein/logic/h_post.dart';
 import 'package:einstein/logic/h_user.dart';
@@ -8,12 +7,11 @@ import 'package:einstein/ui/screens/s_search.dart';
 import 'package:einstein/ui/transitions/custom_route.dart';
 import 'package:einstein/ui/widgets/card_holder.dart';
 import 'package:einstein/ui/theme.dart';
+import 'package:einstein/ui/widgets/i_cardholder.dart';
 import 'package:flutter/material.dart';
 import 'package:einstein/ui/screens/s_comments.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-// ignore: todo
-//TODO: seporate logic from UI
 
 class MainScreen extends StatefulWidget {
   static const routeName = "/home";
@@ -49,16 +47,7 @@ class _MainScreenState extends State<MainScreen> {
 
   void setAppTheme(BuildContext context) async {
     final user = await userHandler.cUser;
-    print('isD: ${user.isDarkMode}');
     Provider.of<ThemeProvider>(context, listen: false).setMode(user.isDarkMode);
-  }
-
-  void __openSearchPage() async {
-    await Navigator.of(context).push(MaterialPageRoute<String>(
-        builder: (BuildContext context) {
-          return const SearchScreen();
-        },
-        fullscreenDialog: true));
   }
 
   void __openComments(String? postid, String avatarUrl) async {
@@ -279,67 +268,5 @@ class _MainScreenState extends State<MainScreen> {
         ),
       );
     }
-  }
-}
-
-class CustTextField extends StatelessWidget {
-  final String title;
-  final bool isPass;
-  const CustTextField({Key? key, required this.title, required this.isPass})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      //color: Color.fromARGB(255, 152, 197, 219),
-      margin: const EdgeInsets.symmetric(horizontal: 80),
-      decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      //padding: const EdgeInsets.symmetric(),
-      //alignment: Alignment.center,
-      width: 450,
-      height: 40,
-      child: TextField(
-        keyboardType: TextInputType.text,
-        decoration: InputDecoration(
-          hintText: title,
-          contentPadding:
-              const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-        ),
-        obscureText: isPass,
-        style: const TextStyle(fontSize: 15),
-      ),
-    );
-  }
-}
-
-class CardHolderInherit extends InheritedWidget {
-  final Post currentPost;
-  final void Function(CardEvent)? callback;
-
-  const CardHolderInherit({
-    Key? key,
-    required Widget child,
-    required this.currentPost,
-    this.callback,
-  }) : super(
-          key: key,
-          child: child,
-        );
-
-  @override
-  bool updateShouldNotify(CardHolderInherit oldWidget) {
-    return true; //currentPost != oldWidget.currentPost;
-  }
-}
-
-class SingleComment extends StatelessWidget {
-  const SingleComment({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }

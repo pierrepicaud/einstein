@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 import 'package:flutter_login/flutter_login.dart';
 
-
 class LoginScreen extends StatelessWidget {
   static const routeName = '/auth';
   final _authLogic = HAuthentication();

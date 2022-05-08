@@ -3,7 +3,7 @@ import 'package:einstein/data/modules/card_events.dart';
 import 'package:einstein/data/modules/post.dart';
 import 'package:einstein/logic/h_post.dart';
 import 'package:einstein/logic/h_user.dart';
-import 'package:einstein/ui/screens/s_main.dart';
+import 'package:einstein/ui/widgets/i_cardholder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swipable/flutter_swipable.dart';
 
@@ -56,7 +56,6 @@ class TinderCard extends StatelessWidget {
 
 class TinderCardContent extends StatelessWidget {
   final Post? post;
-  // TODO: implement userlogic
   final userLogic = HUser();
   final postLogic = HPost();
 
@@ -111,7 +110,6 @@ class TinderCardContent extends StatelessWidget {
             FutureBuilder<Account>(
               future: userLogic.getUserByID(post!.author),
               builder: (context, snapshot) {
-                print(snapshot.data);
                 if (snapshot.data == null) {
                   return Row(
                     children: <Widget>[

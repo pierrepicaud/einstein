@@ -40,7 +40,7 @@ class _NotifyConnectivityState extends State<NotifyConnectivity> {
     showSimpleNotification(
       const Text('Internet Connectivity Update'),
       duration: const Duration(seconds: 1),
-      subtitle: Text(message),
+      subtitle: const Text(message),
       background: color,
     );
   }

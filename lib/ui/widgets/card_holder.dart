@@ -1,4 +1,4 @@
-import 'package:einstein/ui/screens/s_main.dart';
+import 'package:einstein/ui/widgets/i_cardholder.dart';
 import 'package:einstein/ui/widgets/tinder_card.dart';
 import 'package:flutter/material.dart';
 
