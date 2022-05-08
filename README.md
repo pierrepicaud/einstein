@@ -16,11 +16,10 @@ mtwitt is a prototype of a minimalist tweeter that offers simplified functionali
 - Finally build for android `flutter build apk`
 
 ## Screens and Features
-TODO: Make photos explaining the points bellow
-- See you own profile (Screenshot of profile page)
-- Edit your personal info (Screenshot of profile page being edited)
-- Process tweets one by one (Screenshot of moving the Tindercards )
-- Login with firebase (Screenshot of info in the fields)
+
+![](images/images.jpeg)
+
+- Login with firebase is available
   - email: `test@test.com`
   - password: `asdfgh`
 - Click signin with mtwitt to skip ()
