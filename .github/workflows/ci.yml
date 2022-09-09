@@ -6,7 +6,14 @@ on:
   pull_request:
     branches:
       - main
-
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags' 
 jobs:
   lint:
     name: Check code style
