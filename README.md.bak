@@ -11,7 +11,7 @@ Test successful for: Samsung Galaxy A8, Realme x5, Honor 8 lite, and Smart Pixel
 mtwitt is a prototype of a minimalist tweeter that offers simplified functionalities so that you can process the tweets one by one.
 
 ## How to build
-- First download the repository `git clone git@github.com:pierrepicaud/einstein.git`
+- First download the repo `git clone git@github.com:pierrepicaud/einstein.git`
 - Then get the dependencies `flutter pub get`
 - Finally build for android `flutter build apk`
 
@@ -20,10 +20,10 @@ mtwitt is a prototype of a minimalist tweeter that offers simplified functionali
 ![](images/images.jpeg)
 ![](images/images-1.jpeg)
 
-- Login with Firebase is available
+- Login with firebase is available
   - email: `test@test.com`
   - password: `asdfgh`
-- Click sign-in with mtwitt to skip ()
+- Click signin with mtwitt to skip ()
 
 ### Be available soon!
-- [ ] GitHub release is created with description of features that are already implemented (+1)
+- [ ] Github release is created with description of features that are already implemented (+1)
