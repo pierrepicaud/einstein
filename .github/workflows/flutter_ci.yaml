@@ -66,7 +66,6 @@ jobs:
     name: Android Build
     runs-on: ubuntu-latest
     steps:
-      - id: android_build
       - uses: actions/checkout@v3
       - uses: browser-actions/setup-chrome@latest
       - name: Setup Flutter SDK
@@ -79,6 +78,7 @@ jobs:
       - name: Run Lint
         run: flutter analyze .
       - name: Build APK
+      - id: android_build
         run: flutter build apk 
 
       
