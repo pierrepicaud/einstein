@@ -78,10 +78,9 @@ jobs:
       - name: Run Lint
         run: flutter analyze .
       - name: Build APK
-      - id: android_build
         run: flutter build apk 
+        id: android_build
 
-      
       - name: Notify Build Failed
         uses: appleboy/telegram-action@master
         if: steps.android_build.outcome == 'failed'
@@ -92,7 +91,6 @@ jobs:
             The ${{ github.event_name }} build failed
 
       - name: Upload APK Artifact    # Upload generated apk to the artifacts.
-        # needs: Build APK
         uses: actions/upload-artifact@v1
         if: steps.android_build.outcome == 'success'
         with:
