@@ -1,13 +1,14 @@
 import 'package:einstein/data/modules/post.dart';
-import 'package:einstein/data/repos/d_account.dart';
-import 'package:einstein/data/repos/d_picture.dart';
-import 'package:einstein/data/repos/d_post.dart';
 import 'package:flutter/material.dart';
 
+import '../data/repos/i_account.dart';
+import '../data/repos/i_picture.dart';
+import '../data/repos/i_post.dart';
+
 class HPost extends ChangeNotifier {
-  final _postDb = DPosts();
-  final _accountDb = DAccount();
-  final _picDb = DPicture();
+  final IPosts _postDb;
+  final IAccount _accountDb;
+  final IPicture _picDb;
   Map<String, Post>? _posts;
   List<String>? _postsIDs;
   String? get _currentID => _postsIDs?[_currentPost];
@@ -18,7 +19,11 @@ class HPost extends ChangeNotifier {
   Post? get npost => _posts?[
       _postsIDs?[_currentPost + 1 < _postsIDs!.length ? _currentPost + 1 : 0]]!;
 
-  HPost() {
+  HPost(
+    this._postDb,
+    this._accountDb,
+    this._picDb,
+  ) {
     _postDb.addListener(() {
       _posts = _postDb.posts;
       _postsIDs = _posts?.keys.toList().reversed.toList();

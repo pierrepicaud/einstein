@@ -1,11 +1,12 @@
 import 'package:einstein/data/modules/post.dart';
 import 'package:einstein/data/repos/db_routs.dart';
+import 'package:einstein/data/repos/i_post.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:flutter/material.dart';
 
-class DPosts extends ChangeNotifier {
+class DPosts  extends IPosts{
   final _db = FirebaseDatabase.instance.ref();
   Map<String, Post>? _posts;
+  @override
   Map<String, Post>? get posts => _posts;
 
   DPosts() {
@@ -26,6 +27,7 @@ class DPosts extends ChangeNotifier {
     });
   }
 
+  @override
   Future<Post> getPost(postID) async {
     final snapshot = await _db.child(DbRoutes.postData(postID)).get();
     final map =
@@ -36,12 +38,14 @@ class DPosts extends ChangeNotifier {
   void _updateData(Map<String, Map?> updates) async =>
       _db.update(updates).then((_) => notifyListeners());
 
+  @override
   void updatePost(String postID, Post post) async {
     Map<String, Map> updates = {};
     updates[DbRoutes.postData(postID)] = post.toMap();
     return _updateData(updates);
   }
 
+  @override
   void addPost(Post post) async {
     Map<String, Map> updates = {};
     final newPostKey = _db.child(DbRoutes.posts).push().key;
@@ -49,6 +53,7 @@ class DPosts extends ChangeNotifier {
     return _updateData(updates);
   }
 
+  @override
   void deletePost(String postID) async {
     Map<String, Map?> updates = {};
     updates[DbRoutes.postData(postID)] = null;

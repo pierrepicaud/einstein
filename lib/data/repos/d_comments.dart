@@ -1,10 +1,9 @@
 import 'package:einstein/data/modules/comments.dart';
 import 'package:einstein/data/repos/db_routs.dart';
 import 'package:einstein/data/repos/d_post.dart';
+import 'package:einstein/data/repos/i_comment.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:flutter/material.dart';
-
-class DComment extends ChangeNotifier {
+class DComment extends IComment{
   final _db = FirebaseDatabase.instance.ref();
   final _postDB = DPosts();
 
@@ -26,6 +25,7 @@ class DComment extends ChangeNotifier {
     return snapshots;
   }
 
+  @override
   Future<Map<String, Comments>?> fethcComments(String postID) async {
     List<String>? commentsIDs = await _getCommentsIDsList(postID);
     if (commentsIDs == null) return null;
@@ -40,12 +40,14 @@ class DComment extends ChangeNotifier {
     return comments;
   }
 
+  @override
   void updatecomment(String commentID, Comments comment) async {
     Map<String, Map> updates = {};
     updates[DbRoutes.commentData(commentID)] = comment.toMap();
     return _updateData(updates);
   }
 
+  @override
   void addComment(String postID, Comments comment) async {
     Map<String, Map> updates = {};
     final post = await _postDB.getPost(postID);
@@ -59,6 +61,7 @@ class DComment extends ChangeNotifier {
     return _updateData(updates);
   }
 
+  @override
   void deleteComment(String commentID) async {
     Map<String, Map?> updates = {};
     updates[DbRoutes.commentData(commentID)] = null;

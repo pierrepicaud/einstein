@@ -1,4 +1,6 @@
 import 'package:einstein/data/repos/constants.dart';
+import 'package:einstein/data/repos/d_account.dart';
+import 'package:einstein/data/repos/d_picture.dart';
 import 'package:einstein/logic/h_user.dart';
 import 'package:einstein/ui/screens/s_account.dart';
 import 'package:einstein/ui/screens/s_login.dart';
@@ -31,7 +33,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  final userHendeler = HUser();
+  final userHendeler = HUser(DAccount(), DPicture());
   
   MyApp({Key? key}) : super(key: key);
   

@@ -1,5 +1,8 @@
 import 'package:einstein/data/modules/card_events.dart';
 import 'package:einstein/data/repos/constants.dart';
+import 'package:einstein/data/repos/d_account.dart';
+import 'package:einstein/data/repos/d_picture.dart';
+import 'package:einstein/data/repos/d_post.dart';
 import 'package:einstein/logic/h_post.dart';
 import 'package:einstein/logic/h_user.dart';
 import 'package:einstein/ui/screens/s_account.dart';
@@ -23,8 +26,8 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  final postHandler = HPost();
-  final userHandler = HUser();
+  final postHandler = HPost(DPosts(), DAccount(), DPicture());
+  final userHandler = HUser(DAccount(), DPicture());
   void listener() => setState(() {});
   int currentIndex = 0;
   bool isInit = true;
