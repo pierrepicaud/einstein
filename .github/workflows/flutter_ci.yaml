@@ -4,6 +4,7 @@ name: Flutter CI
 on:
   push:
     branches:
+    - main
     - codecov
    
 jobs:
@@ -27,7 +28,7 @@ jobs:
           path: spellcheck-output.txt
 
   code_metric: # Check Code Metric
-    name: dart-code-metrics-action
+    name: Dart Code Metric
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -36,7 +37,24 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}  
 
-  Build: # Build for Android and Web
+  build_web: # Build for Android and Web
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: browser-actions/setup-chrome@latest
+      - name: Setup Flutter SDK
+        uses: flutter-actions/setup-flutter@v2
+        with:
+          channel: stable
+          version: 3.3.2
+      - name: Install dependancies
+        run: flutter pub get
+      # - name: Run tests
+      #   run: flutter test --platform chrome
+      - name: Build Web
+        run: flutter build web
+
+  build_android: # Build for Android and Web
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -50,14 +68,9 @@ jobs:
         run: flutter pub get
       - name: Run Lint
         run: flutter analyze .
-      # - name: Run tests
-      #   run: flutter test --platform chrome
-      - name: Build Web
-        run: flutter build web
       - name: Build APK
         run: flutter build apk 
-    # Upload generated apk to the artifacts.
-      - name: Upload APK Artifact
+      - name: Upload APK Artifact    # Upload generated apk to the artifacts.
         uses: actions/upload-artifact@v1
         with:
           name: release-apk
