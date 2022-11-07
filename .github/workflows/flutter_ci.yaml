@@ -14,26 +14,26 @@ jobs:
     name: Spellcheck
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.27.0
-      name: Spellcheck
-      with:
-        config_path: .spellcheck.yml 
-        source_files: README.md CHANGELOG.md notes/Notes.md
-        task_name: Markdown
-        output_file: spellcheck-output.txt
+      - uses: actions/checkout@master
+      - uses: rojopolis/spellcheck-github-actions@0.27.0
+        name: Spellcheck
+        with:
+          config_path: .spellcheck.yml 
+          source_files: README.md CHANGELOG.md notes/Notes.md
+          task_name: Markdown
+          output_file: spellcheck-output.txt
 
-    - uses: actions/upload-artifact@v3
-      with:
-        name: Spellcheck Report
-        path: spellcheck-output.txt
+      # Upload spell check report as a GitHub Artifact
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Spellcheck Report
+          path: spellcheck-output.txt
 
   code_metric: # Check Code Metric
     name: dart-code-metrics-action
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-          
+      - uses: actions/checkout@v3
       - name: dart-code-metrics
         uses: dart-code-checker/dart-code-metrics-action@v2
         with:
