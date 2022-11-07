@@ -39,20 +39,23 @@ jobs:
 
   build_web: # Build for Android and Web
     name: Web Build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3
-      - uses: browser-actions/setup-chrome@latest
-      - name: Setup Flutter SDK
-        uses: flutter-actions/setup-flutter@v2
+      - name: Checkout Source
+        uses: actions/checkout@v2
+      - name: Setup Java
+        uses: actions/setup-java@v1
         with:
-          channel: stable
-          version: 3.0.2
-      - name: Install dependancies
+          distribution: "zulu"
+          java-version: "12"
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '2.10.1'
+          channel: 'stable'
+      - name: Get Dependencies
         run: flutter pub get
-      # - name: Run tests
-      #   run: flutter test --platform chrome
-      - name: Build Web
+      - name: Build
         run: flutter build web
 
   build_android: # Build for Android and Web
