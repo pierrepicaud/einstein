@@ -373,9 +373,11 @@ packages:
   flutter_swipable:
     dependency: "direct main"
     description:
-      name: flutter_swipable
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: "7a25194839044dc617e07d3fe00c7d865240a449"
+      url: "https://github.com/zZzwat4er/swipable.git"
+    source: git
     version: "1.2.1"
   flutter_test:
     dependency: "direct dev"

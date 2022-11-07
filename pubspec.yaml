@@ -23,7 +23,9 @@ dependencies:
   firebase_database: ^9.0.10
   firebase_storage: ^10.2.15
 
-  flutter_swipable: ^1.2.1
+  flutter_swipable:
+    git: 
+      url: https://github.com/zZzwat4er/swipable.git
   comment_box: ^0.0.17
   flutter_login: ^3.2.0
   login_screen: ^0.6.0

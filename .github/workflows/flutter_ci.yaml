@@ -47,7 +47,7 @@ jobs:
         uses: flutter-actions/setup-flutter@v2
         with:
           channel: stable
-          version: 3.0.2
+          version: 3.3.6
       - name: Install dependancies
         run: flutter pub get
       # - name: Run tests
@@ -65,7 +65,7 @@ jobs:
         uses: flutter-actions/setup-flutter@v2
         with:
           channel: stable
-          version: 3.0.2
+          version: 3.3.6
       - name: Install dependancies
         run: flutter pub get
       - name: Run Lint
