@@ -132,18 +132,18 @@ jobs:
           python-version: 3.7
       - name: Generate coverage report
         run: |
-          pip install pytest
-          pip install pytest-cov
-          pytest --cov=./ --cov-report=xml
+          snap install flutter --classic
+          flutter test --coverage=./ --cov-report=xml
+          apt install lcov
+          genhtml coverage/lcov.info -o coverage/html
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          directory: ./coverage/reports/
+          directory: ./coverage/
           env_vars: OS,PYTHON
           fail_ci_if_error: true
-          files: ./coverage1.xml,./coverage2.xml
           flags: unittests
           name: codecov-umbrella
-          path_to_write_report: ./coverage/codecov_report.txt
+          path_to_write_report: ./coverage/lcov.info
           verbose: true
