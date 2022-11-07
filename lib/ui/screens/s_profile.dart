@@ -1,4 +1,6 @@
 import 'package:einstein/data/modules/account.dart';
+import 'package:einstein/data/repos/d_account.dart';
+import 'package:einstein/data/repos/d_picture.dart';
 import 'package:einstein/logic/h_user.dart';
 import 'package:einstein/ui/widgets/app_bar.dart';
 import 'package:einstein/ui/widgets/button.dart';
@@ -19,7 +21,7 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   String? userID;
-  final userHandler = HUser();
+  final userHandler = HUser(DAccount(), DPicture());
 
   @override
   void initState() {

@@ -1,3 +1,5 @@
+import 'package:einstein/data/repos/d_account.dart';
+import 'package:einstein/data/repos/d_picture.dart';
 import 'package:einstein/logic/h_user.dart';
 import 'package:einstein/ui/screens/s_login.dart';
 import 'package:einstein/ui/theme.dart';
@@ -30,7 +32,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             onPressed: () {
               Provider.of<ThemeProvider>(context, listen: false).changeMode();
-              HUser().setDarkMode(Provider.of<ThemeProvider>(context, listen: false).isDark());
+              HUser(DAccount(), DPicture()).setDarkMode(Provider.of<ThemeProvider>(context, listen: false).isDark());
             },
           )
         ],
@@ -119,7 +121,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
                 onPressed: () {
-                  HUser().signOut();
+                  HUser(DAccount(), DPicture()).signOut();
                   Navigator.pushNamedAndRemoveUntil(context, LoginScreen.routeName, (_) => false);
                 },
                 child: Text("SIGN OUT",

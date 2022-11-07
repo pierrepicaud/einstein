@@ -1,8 +1,13 @@
+import 'package:einstein/data/repos/d_account.dart';
+import 'package:einstein/data/repos/d_comments.dart';
+import 'package:einstein/data/repos/d_picture.dart';
 import 'package:einstein/logic/h_comments.dart';
 import 'package:einstein/ui/widgets/list_of_comments.dart';
 import 'package:flutter/material.dart';
 import 'package:einstein/ui/widgets/i_comments.dart';
 import 'package:comment_box/comment/comment.dart';
+
+import '../../logic/h_user.dart';
 
 class CommentsScreen extends StatefulWidget {
   final String postid;
@@ -29,7 +34,7 @@ class _CommentsScreenState extends State<CommentsScreen> {
     super.initState();
     postid = widget.postid;
     avatarUrl = widget.avatarUrl;
-    commentHandler = HComments(postID: postid);
+    commentHandler = HComments(DComment(), HUser(DAccount(), DPicture()) ,postID: postid);
     commentHandler.addListener(listner);
   }
 

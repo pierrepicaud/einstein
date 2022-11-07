@@ -1,6 +1,9 @@
 import 'package:einstein/data/modules/account.dart';
 import 'package:einstein/data/modules/card_events.dart';
 import 'package:einstein/data/modules/post.dart';
+import 'package:einstein/data/repos/d_account.dart';
+import 'package:einstein/data/repos/d_picture.dart';
+import 'package:einstein/data/repos/d_post.dart';
 import 'package:einstein/logic/h_post.dart';
 import 'package:einstein/logic/h_user.dart';
 import 'package:einstein/ui/widgets/i_cardholder.dart';
@@ -54,8 +57,8 @@ class TinderCard extends StatelessWidget {
 
 class TinderCardContent extends StatelessWidget {
   final Post? post;
-  final userLogic = HUser();
-  final postLogic = HPost();
+  final userLogic = HUser(DAccount(), DPicture());
+  final postLogic = HPost(DPosts(), DAccount(), DPicture());
 
   TinderCardContent({
     Key? key,

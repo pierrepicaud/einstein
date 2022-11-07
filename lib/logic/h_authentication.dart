@@ -1,8 +1,10 @@
 import 'package:einstein/data/modules/account.dart';
-import 'package:einstein/data/repos/d_account.dart';
+import '../data/repos/i_account.dart';
 
 class HAuthentication {
-  final DAccount db = DAccount();
+  final IAccount db;
+
+  const HAuthentication(this.db);
 
   Future<String?> signIn(String login, String password) async {
     final userCred = await db.signInWithPassword(login, password);

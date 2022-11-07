@@ -1,4 +1,5 @@
 import 'package:einstein/data/repos/constants.dart';
+import 'package:einstein/data/repos/d_account.dart';
 import 'package:einstein/logic/h_authentication.dart';
 import 'package:einstein/ui/screens/s_main.dart';
 import 'package:einstein/ui/transitions/custom_route.dart';
@@ -8,7 +9,7 @@ import 'package:flutter_login/flutter_login.dart';
 
 class LoginScreen extends StatelessWidget {
   static const routeName = '/auth';
-  final _authLogic = HAuthentication();
+  final _authLogic = HAuthentication(DAccount());
 
   LoginScreen({Key? key}) : super(key: key);
 

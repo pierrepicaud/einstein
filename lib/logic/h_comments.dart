@@ -1,17 +1,20 @@
 import 'package:einstein/data/modules/account.dart';
 import 'package:einstein/data/modules/comments.dart';
-import 'package:einstein/data/repos/d_comments.dart';
-import 'package:einstein/logic/h_user.dart';
 import 'package:flutter/material.dart';
 
+import '../data/repos/i_comment.dart';
+import '../data/repos/i_user.dart';
+
 class HComments extends ChangeNotifier {
-  final _db = DComment();
-  final _userHandler = HUser();
+  final IComment _db;
+  final IUser _userHandler;
   final String postID;
   List<Comments> _comments = [];
   Future<List<Map<String, String>>> get commentsList => _commentsToMap();
 
-  HComments({
+  HComments(
+    this._db,
+    this._userHandler, {
     required this.postID,
   }) {
     _fetchCommentsFromPost();
