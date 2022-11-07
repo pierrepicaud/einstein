@@ -38,6 +38,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}  
 
   build_web: # Build for Android and Web
+    name: Web Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -55,6 +56,7 @@ jobs:
         run: flutter build web
 
   build_android: # Build for Android and Web
+    name: Android Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
