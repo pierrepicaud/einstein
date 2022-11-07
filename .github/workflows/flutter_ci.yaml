@@ -1,0 +1,35 @@
+name: Flutter CI
+
+# This workflow is triggered on pushes to the repository.
+on:
+  push:
+    branches:
+    - main
+       
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: browser-actions/setup-chrome@latest
+      - name: Setup Flutter SDK
+        uses: flutter-actions/setup-flutter@v2
+        with:
+          channel: stable
+          version: 3.3.2
+      - name: Install dependancies
+        run: flutter pub get
+      - name: Run Lint
+        run: flutter analyze .
+      # - name: Run tests
+      #   run: flutter test --platform chrome
+      - name: Build Web
+        run: flutter build web
+      - name: Build APK
+        run: flutter build apk 
+    # Upload generated apk to the artifacts.
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: release-apk
+          path: build/app/outputs/apk/release/app-release.apk
