@@ -6,6 +6,13 @@ on:
     branches:
     - main
     - codecov
+  workflow_dispatch:
+    inputs:
+      failJob:
+        description: Fail the job to trigger Telegram?
+        type: boolean
+        required: true
+        default: false
    
 jobs:
   aspell: # REAME.md Spell Checker
@@ -72,8 +79,45 @@ jobs:
         run: flutter analyze .
       - name: Build APK
         run: flutter build apk 
+        id: android_build
+
+      - name: Notify Build Failed
+        uses: appleboy/telegram-action@master
+        if: ${{ (steps.android_build.outcome == 'failed') || (github.event.inputs.failJob == 'true') }}
+        with:
+          to: ${{ secrets.TELEGRAM_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            The ${{ github.event_name }} build failed
+
+
+      - name: Create Release
+        uses: actions/create-release@v1
+        if: steps.android_build.outcome == 'success'
+        id: create_release
+        with:
+          draft: false
+          prerelease: false
+          release_name: ${{ github.ref }}
+          tag_name: ${{ github.ref }}
+          body_path: CHANGELOG.md
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
       - name: Upload APK Artifact    # Upload generated apk to the artifacts.
         uses: actions/upload-artifact@v1
+        if: steps.create_release.outcome == 'success'
         with:
           name: release-apk
           path: build/app/outputs/apk/release/app-release.apk
+      
+      - name: Upload Release APK Artifact
+        uses: actions/upload-release-asset@v1
+        if: steps.create_release.outcome == 'success'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: build/app/outputs/apk/release/app-release.apk
+          asset_name: release-apk.apk
+          asset_content_type: application/gzip
