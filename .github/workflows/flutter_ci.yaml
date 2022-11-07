@@ -5,9 +5,58 @@ on:
   push:
     branches:
     - main
-       
+    - codecov
+   
 jobs:
-  Build:
+  aspell: # REAME.md Spell Checker
+    name: Spellcheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: rojopolis/spellcheck-github-actions@0.27.0
+        name: Spellcheck
+        with:
+          config_path: .spellcheck.yml 
+          source_files: README.md CHANGELOG.md notes/Notes.md
+          task_name: Markdown
+          output_file: spellcheck-output.txt
+
+      # Upload spell check report as a GitHub Artifact
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Spellcheck Report
+          path: spellcheck-output.txt
+
+  code_metric: # Check Code Metric
+    name: Dart Code Metric
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: dart-code-metrics
+        uses: dart-code-checker/dart-code-metrics-action@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  
+
+  build_web: # Build for Android and Web
+    name: Web Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: browser-actions/setup-chrome@latest
+      - name: Setup Flutter SDK
+        uses: flutter-actions/setup-flutter@v2
+        with:
+          channel: stable
+          version: 3.3.2
+      - name: Install dependancies
+        run: flutter pub get
+      # - name: Run tests
+      #   run: flutter test --platform chrome
+      - name: Build Web
+        run: flutter build web
+
+  build_android: # Build for Android and Web
+    name: Android Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -21,14 +70,9 @@ jobs:
         run: flutter pub get
       - name: Run Lint
         run: flutter analyze .
-      # - name: Run tests
-      #   run: flutter test --platform chrome
-      - name: Build Web
-        run: flutter build web
       - name: Build APK
         run: flutter build apk 
-    # Upload generated apk to the artifacts.
-      - name: Upload APK Artifact
+      - name: Upload APK Artifact    # Upload generated apk to the artifacts.
         uses: actions/upload-artifact@v1
         with:
           name: release-apk
