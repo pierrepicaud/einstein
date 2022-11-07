@@ -6,6 +6,13 @@ on:
     branches:
     - main
     - codecov
+  workflow_dispatch:
+    inputs:
+      failJob:
+        description: Fail the job to trigger Telegram?
+        type: boolean
+        required: true
+        default: false
    
 jobs:
   aspell: # REAME.md Spell Checker
@@ -59,6 +66,7 @@ jobs:
     name: Android Build
     runs-on: ubuntu-latest
     steps:
+      - id: android_build
       - uses: actions/checkout@v3
       - uses: browser-actions/setup-chrome@latest
       - name: Setup Flutter SDK
@@ -72,7 +80,24 @@ jobs:
         run: flutter analyze .
       - name: Build APK
         run: flutter build apk 
+
+      
+      - name: Notify Build Failed
+      # needs: ${{ build_android.status == failed }}
+      if: steps.android_build.outcome == 'failed'
+      runs-on: ubuntu-latest
+      steps:
+      - name: send custom message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            The ${{ github.event_name }} build failed
+
       - name: Upload APK Artifact    # Upload generated apk to the artifacts.
+        # needs: Build APK
+      if: steps.android_build.outcome == 'success'
         uses: actions/upload-artifact@v1
         with:
           name: release-apk
