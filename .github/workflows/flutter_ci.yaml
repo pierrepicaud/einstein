@@ -97,7 +97,7 @@ jobs:
 
       - name: Upload APK Artifact    # Upload generated apk to the artifacts.
         # needs: Build APK
-      if: steps.android_build.outcome == 'success'
+        if: steps.android_build.outcome == 'success'
         uses: actions/upload-artifact@v1
         with:
           name: release-apk
