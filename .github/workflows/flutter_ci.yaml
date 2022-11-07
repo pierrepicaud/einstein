@@ -83,22 +83,18 @@ jobs:
 
       
       - name: Notify Build Failed
-      # needs: ${{ build_android.status == failed }}
+        uses: appleboy/telegram-action@master
         if: steps.android_build.outcome == 'failed'
-        runs-on: ubuntu-latest
-        steps:
-        - name: send custom message
-          uses: appleboy/telegram-action@master
-          with:
-            to: ${{ secrets.TELEGRAM_ID }}
-            token: ${{ secrets.TELEGRAM_TOKEN }}
-            message: |
-              The ${{ github.event_name }} build failed
+        with:
+          to: ${{ secrets.TELEGRAM_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            The ${{ github.event_name }} build failed
 
       - name: Upload APK Artifact    # Upload generated apk to the artifacts.
         # needs: Build APK
-        if: steps.android_build.outcome == 'success'
         uses: actions/upload-artifact@v1
+        if: steps.android_build.outcome == 'success'
         with:
           name: release-apk
           path: build/app/outputs/apk/release/app-release.apk
