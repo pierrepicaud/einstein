@@ -132,10 +132,9 @@ jobs:
           python-version: 3.7
       - name: Generate coverage report
         run: |
-          snap install flutter --classic
-          pip install coveragepy
+          sudo snap install flutter --classic
           flutter test --coverage
-          apt install lcov
+          sudo apt install lcov
           genhtml coverage/lcov.info -o coverage/html
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
@@ -148,3 +147,4 @@ jobs:
           flags: flutter_tests
           name: codecov-umbrella
           verbose: true
+
