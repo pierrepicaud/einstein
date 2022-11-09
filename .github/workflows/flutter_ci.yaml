@@ -55,7 +55,7 @@ jobs:
         with:
           channel: stable
           version: 3.3.6
-      - name: Install dependancies
+      - name: Install dependencies
         run: flutter pub get
       # - name: Run tests
       #   run: flutter test --platform chrome
@@ -73,7 +73,7 @@ jobs:
         with:
           channel: stable
           version: 3.3.6
-      - name: Install dependancies
+      - name: Install dependencies
         run: flutter pub get
       - name: Run Lint
         run: flutter analyze .
@@ -121,3 +121,30 @@ jobs:
           asset_path: build/app/outputs/apk/release/app-release.apk
           asset_name: release-apk.apk
           asset_content_type: application/gzip
+
+  codecov: # check code coverage
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@master
+        with:
+          python-version: 3.7
+      - name: Generate coverage report
+        run: |
+          sudo snap install flutter --classic
+          flutter test --coverage
+          sudo apt install lcov
+          genhtml coverage/lcov.info -o coverage/html
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: ./coverage/
+          env_vars: OS,PYTHON
+          fail_ci_if_error: false
+          files: ./coverage/lcov.info
+          flags: flutter_tests
+          name: codecov-umbrella
+          verbose: true
+
