@@ -1,5 +1,5 @@
 # mtwitt
-[![codecov](https://codecov.io/gh/pierrepicaud/einstein/branch/main/graph/badge.svg?token=5TPQHZDTVK)](https://codecov.io/gh/pierrepicaud/einstein)[![CI](https://github.com/pierrepicaud/einstein/actions/workflows/flutter_ci.yaml/badge.svg)](https://github.com/pierrepicaud/einstein/actions/workflows/flutter_ci.yaml)
+[![codecov](https://codecov.io/gh/pierrepicaud/corrupted_einstein/branch/main/graph/badge.svg?token=9T8YSW7Z6Q)](https://codecov.io/gh/pierrepicaud/corrupted_einstein)[![CI](https://github.com/pierrepicaud/einstein/actions/workflows/flutter_ci.yaml/badge.svg)](https://github.com/pierrepicaud/einstein/actions/workflows/flutter_ci.yaml)
 - Danil Shalagin
 - Du Tham Lieu (Thomas)
 - Valentin Chernyshov
