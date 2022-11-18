@@ -88,7 +88,7 @@ jobs:
           to: ${{ secrets.TELEGRAM_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            The ${{ github.event_name }} build failed
+            Einstein build failed
 
 
       - name: Create Release
